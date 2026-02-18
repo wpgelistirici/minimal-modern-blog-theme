@@ -9,15 +9,17 @@ const VIEWPORTS = {
   xl: { width: 1920, height: 1080 },
 };
 
-// Wait for Storybook to be ready
-test.beforeEach(async ({ page }) => {
-  // Check if Storybook is running
+// Wait for Storybook to be ready once before all tests
+test.beforeAll(async ({ browser }) => {
+  const page = await browser.newPage();
   try {
     await page.goto(STORYBOOK_URL, { waitUntil: 'networkidle', timeout: 5000 });
   } catch (error) {
     throw new Error(
       'Storybook is not running. Please start Storybook with `npm run storybook` before running tests.'
     );
+  } finally {
+    await page.close();
   }
 });
 
@@ -40,29 +42,35 @@ test.describe('Design System Token Validation', () => {
 
       const button = page.locator('button').first();
 
-      // Check color tokens
+      // Check color tokens - ensure not using browser defaults
       const bgColor = await button.evaluate((el) => 
         window.getComputedStyle(el).backgroundColor
       );
-      expect(bgColor).toBeTruthy();
+      expect(bgColor).not.toBe('');
+      expect(bgColor).not.toBe('rgba(0, 0, 0, 0)');
+      expect(bgColor).not.toBe('rgb(0, 0, 0)');
 
-      // Check spacing tokens
+      // Check spacing tokens - ensure padding is applied
       const padding = await button.evaluate((el) => 
         window.getComputedStyle(el).padding
       );
-      expect(padding).toBeTruthy();
+      expect(padding).not.toBe('');
+      expect(padding).not.toBe('0px');
+      expect(padding).toMatch(/px/);
 
-      // Check border radius token
+      // Check border radius token - ensure it's applied
       const borderRadius = await button.evaluate((el) => 
         window.getComputedStyle(el).borderRadius
       );
-      expect(borderRadius).toBeTruthy();
+      expect(borderRadius).not.toBe('');
+      expect(borderRadius).not.toBe('0px');
 
-      // Check shadow token
+      // Check shadow token - ensure a box shadow is applied
       const boxShadow = await button.evaluate((el) => 
         window.getComputedStyle(el).boxShadow
       );
-      expect(boxShadow).toBeTruthy();
+      expect(boxShadow).not.toBe('');
+      expect(boxShadow).not.toBe('none');
     });
 
     test('should show all button states', async ({ page }) => {
@@ -116,7 +124,8 @@ test.describe('Design System Token Validation', () => {
       );
       
       // Check if focus ring is applied (should not be 'none')
-      expect(outline).toBeTruthy();
+      expect(outline).not.toBe('none');
+      expect(outline).not.toContain('none');
     });
   });
 

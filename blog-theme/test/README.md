@@ -285,4 +285,4 @@ This test suite ensures:
 - ✅ Dark mode works correctly
 - ✅ No visual regressions occur
 
-Total test coverage: **100+ automated tests** across all components and states.
+Total test coverage: **34 automated tests** across all components and states.

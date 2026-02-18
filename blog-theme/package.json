@@ -22,7 +22,7 @@
     "validate:states": "node scripts/validate-states.js",
     "validate:responsive": "node scripts/validate-responsive.js",
     "validate:token-mapping": "node scripts/validate-token-mapping.js",
-    "validate:all": "npm run validate:colors && npm run validate:typography && npm run validate:tokens && npm run validate:animations && npm run validate:states && npm run validate:responsive && npm run validate:token-mapping"
+    "validate:all": "node scripts/validate-all.js"
   },
   "keywords": [
     "blog",

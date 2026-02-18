@@ -49,7 +49,7 @@ npm run storybook
 ### 3. Visual Regression Testing
 
 - **Tool:** Playwright v1.58.2
-- **Coverage:** 100+ automated tests
+- **Coverage:** 34 automated tests
 - **Tests Include:**
   - All component variants
   - All states (default, hover, focus, disabled, etc.)
@@ -197,14 +197,14 @@ npm run screenshots            # Generate documentation images
 
 ### Testing
 - @playwright/test@^1.58.2
-- @axe-core/playwright@^5.1.1
+- @axe-core/playwright@^4.11.1
 - axe-core@^4.11.1
 
 ## Success Metrics
 
 - ✅ 3 components implemented with full token support
 - ✅ 30+ Storybook stories created
-- ✅ 100+ automated tests passing
+- ✅ 34 automated tests passing
 - ✅ 264 token references validated
 - ✅ 0 security vulnerabilities
 - ✅ 0 visual regressions

@@ -71,10 +71,17 @@ const createButton = ({ variant = 'primary', size = 'md', label = 'Button', stat
   const isDisabled = state === 'disabled';
   const isLoading = state === 'loading';
   
+  // Apply actual state styles directly instead of non-existent CSS classes
   let stateClasses = '';
-  if (state === 'hover') stateClasses = 'hover-simulation';
-  if (state === 'active') stateClasses = 'active-simulation';
-  if (state === 'focus') stateClasses = 'focus-visible-simulation';
+  if (state === 'hover') {
+    stateClasses = variantClasses.hover.replace('hover:', '') + ' shadow-md scale-[1.02]';
+  }
+  if (state === 'active') {
+    stateClasses = variantClasses.active.replace('active:', '') + ' scale-[0.98] shadow-sm';
+  }
+  if (state === 'focus') {
+    stateClasses = 'ring-2 ' + variantClasses.focus.replace('focus-visible:', '') + ' ring-offset-2';
+  }
 
   const button = document.createElement('button');
   button.type = 'button';

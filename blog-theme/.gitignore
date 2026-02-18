@@ -27,4 +27,3 @@ npm-debug.log*
 # Testing
 test-results/
 playwright-report/
-test/snapshots/
