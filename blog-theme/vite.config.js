@@ -17,6 +17,7 @@ export default defineConfig({
         main: resolve(__dirname, 'src/pages/index.html'),
         typography: resolve(__dirname, 'src/pages/typography-test.html'),
         tokens: resolve(__dirname, 'src/pages/tokens-test.html'),
+        animations: resolve(__dirname, 'src/pages/animations-test.html'),
       }
     }
   },
