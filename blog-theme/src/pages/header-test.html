@@ -115,10 +115,9 @@
       <!-- Mobile Navigation Menu -->
       <div 
         id="mobile-menu"
-        class="mobile-menu md:hidden hidden overflow-hidden transition-all duration-normal ease-out"
-        role="navigation"
-        aria-label="Mobile navigation">
-        <nav class="py-4 space-y-2">
+        class="mobile-menu md:hidden hidden overflow-hidden transition-all duration-normal ease-out">
+        <nav class="py-4 space-y-2" aria-label="Mobile navigation">
+          <!-- NOTE: Set aria-current="page" dynamically based on the current page URL -->
           <a 
             href="/" 
             class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
