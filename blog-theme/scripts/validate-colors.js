@@ -168,22 +168,22 @@ function runValidations(colors, results) {
   });
 
   // Test 4: Color scales have all required shades
-console.log('\n📋 Test 4: Checking color scales...');
+  console.log('\n📋 Test 4: Checking color scales...');
 
-const requiredShades = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', '950'];
-const primitiveColors = ['primary', 'secondary', 'accent', 'neutral'];
+  const requiredShades = ['50', '100', '200', '300', '400', '500', '600', '700', '800', '900', '950'];
+  const primitiveColors = ['primary', 'secondary', 'accent', 'neutral'];
 
-primitiveColors.forEach(colorName => {
-  const missing = requiredShades.filter(shade => !colors.primitive[colorName][shade]);
-  
-  if (missing.length === 0) {
-    console.log(`✅ ${colorName}: All 11 shades present`);
-    results.passed++;
-  } else {
-    console.log(`❌ ${colorName}: Missing shades: ${missing.join(', ')}`);
-    results.failed++;
-  }
-});
+  primitiveColors.forEach(colorName => {
+    const missing = requiredShades.filter(shade => !colors.primitive[colorName][shade]);
+    
+    if (missing.length === 0) {
+      console.log(`✅ ${colorName}: All 11 shades present`);
+      results.passed++;
+    } else {
+      console.log(`❌ ${colorName}: Missing shades: ${missing.join(', ')}`);
+      results.failed++;
+    }
+  });
 }
 
 // Run main function
