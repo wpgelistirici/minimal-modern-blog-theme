@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Component Test - Minimal Modern Blog Theme</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&family=Fira+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/tailwind.css">
+  <style>
+    /* Visual helpers for testing */
+    .test-outline {
+      outline: 2px dashed rgba(72, 98, 139, 0.3);
+      outline-offset: -2px;
+    }
+    .viewport-indicator {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background: rgba(72, 98, 139, 0.9);
+      color: white;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body class="bg-surface-background text-surface-foreground">
+  <!-- Viewport Size Indicator -->
+  <div class="viewport-indicator">
+    <span class="sm:hidden">Mobile (&lt;480px)</span>
+    <span class="hidden sm:inline md:hidden">Tablet (≥480px)</span>
+    <span class="hidden md:inline lg:hidden">MD (≥768px)</span>
+    <span class="hidden lg:inline xl:hidden">Desktop (≥1024px)</span>
+    <span class="hidden xl:inline">XL (≥1280px)</span>
+  </div>
+
+  <!-- Page Header -->
+  <header class="bg-surface-card border-b border-surface-border">
+    <div class="container mx-auto px-4 py-6 md:px-6 md:py-8">
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-h2 font-heading text-surface-foreground mb-2">Layout Component Test</h1>
+          <p class="text-body text-surface-mutedForeground">Testing responsive grid and container structures</p>
+        </div>
+        <button 
+          onclick="document.documentElement.classList.toggle('dark')"
+          class="px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-normal shadow-sm"
+          aria-label="Toggle dark mode"
+        >
+          Toggle Dark
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="py-8 space-y-12">
+    
+    <!-- Section 1: Basic Container -->
+    <section class="space-y-4">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-h3 font-heading text-surface-foreground mb-2">1. Basic Container Layout</h2>
+        <p class="text-body text-surface-mutedForeground mb-4">Container with responsive padding (16px → 24px → 32px → 40px)</p>
+      </div>
+      
+      <div class="container mx-auto bg-surface-background text-surface-foreground">
+        <div class="px-4 py-6 md:px-6 md:py-8 test-outline">
+          <div class="bg-surface-card p-6 rounded-lg border border-surface-border">
+            <h3 class="text-h4 font-heading mb-3">Content Area</h3>
+            <p class="text-body font-body text-surface-foreground">
+              This container uses responsive padding from the design system. 
+              Resize your browser to see the padding adjust at different breakpoints.
+            </p>
+            <div class="mt-4 grid grid-cols-2 gap-4 text-body-sm font-mono">
+              <div class="bg-primary-50 p-3 rounded">
+                <strong>Padding sm:</strong> 16px (spacing.4)
+              </div>
+              <div class="bg-primary-50 p-3 rounded">
+                <strong>Padding md:</strong> 24px (spacing.6)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Single Column Grid (Mobile) -->
+    <section class="space-y-4">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-h3 font-heading text-surface-foreground mb-2">2. Single Column Grid (Mobile)</h2>
+        <p class="text-body text-surface-mutedForeground mb-4">One column layout for mobile devices (&lt;640px)</p>
+      </div>
+      
+      <div class="container mx-auto bg-surface-background text-surface-foreground">
+        <div class="grid grid-cols-1 gap-4 px-4 py-6 md:gap-6 md:px-6 md:py-8 test-outline">
+          <div class="bg-primary-100 p-6 rounded-lg border border-surface-border">
+            <h4 class="text-h5 font-heading mb-2">Grid Item 1</h4>
+            <p class="text-body">Single column on mobile, responsive on larger screens.</p>
+          </div>
+          <div class="bg-secondary-100 p-6 rounded-lg border border-surface-border">
+            <h4 class="text-h5 font-heading mb-2">Grid Item 2</h4>
+            <p class="text-body">Each item takes full width on mobile.</p>
+          </div>
+          <div class="bg-accent-100 p-6 rounded-lg border border-surface-border">
+            <h4 class="text-h5 font-heading mb-2">Grid Item 3</h4>
+            <p class="text-body">Stacks vertically for better mobile readability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Two Column Grid (Tablet) -->
+    <section class="space-y-4">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-h3 font-heading text-surface-foreground mb-2">3. Two Column Grid (Tablet)</h2>
+        <p class="text-body text-surface-mutedForeground mb-4">Two columns for tablet devices (≥640px)</p>
+      </div>
+      
+      <div class="container mx-auto bg-surface-background text-surface-foreground">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 py-6 md:gap-6 md:px-6 md:py-8 test-outline">
+          <div class="bg-primary-100 p-6 rounded-lg border border-surface-border">
+            <h4 class="text-h5 font-heading mb-2">Card 1</h4>
+            <p class="text-body">Displays in 2 columns on tablet and above.</p>
+          </div>
+          <div class="bg-primary-100 p-6 rounded-lg border border-surface-border">
+            <h4 class="text-h5 font-heading mb-2">Card 2</h4>
+            <p class="text-body">Responsive grid layout adapts to screen size.</p>
+          </div>
+          <div class="bg-secondary-100 p-6 rounded-lg border border-surface-border">
+            <h4 class="text-h5 font-heading mb-2">Card 3</h4>
+            <p class="text-body">Gap spacing adjusts: 16px → 24px.</p>
+          </div>
+          <div class="bg-secondary-100 p-6 rounded-lg border border-surface-border">
+            <h4 class="text-h5 font-heading mb-2">Card 4</h4>
+            <p class="text-body">Mobile-first approach ensures accessibility.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Three Column Grid (Desktop) -->
+    <section class="space-y-4">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-h3 font-heading text-surface-foreground mb-2">4. Three Column Grid (Desktop)</h2>
+        <p class="text-body text-surface-mutedForeground mb-4">Three columns for desktop devices (≥1024px)</p>
+      </div>
+      
+      <div class="container mx-auto bg-surface-background text-surface-foreground">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-6 md:gap-6 md:px-6 md:py-8 test-outline">
+          <article class="bg-surface-card p-4 rounded-md border border-surface-border md:p-6 hover:shadow-lg transition-shadow duration-normal">
+            <h3 class="text-h4 font-heading mb-3 text-primary-600">Article 1</h3>
+            <p class="text-body font-body text-surface-foreground mb-4">
+              Three column layout optimized for desktop viewing experience.
+            </p>
+            <a href="#" class="text-primary-500 hover:text-primary-600 text-body-sm font-body transition-colors">Read more →</a>
+          </article>
+          
+          <article class="bg-surface-card p-4 rounded-md border border-surface-border md:p-6 hover:shadow-lg transition-shadow duration-normal">
+            <h3 class="text-h4 font-heading mb-3 text-secondary-600">Article 2</h3>
+            <p class="text-body font-body text-surface-foreground mb-4">
+              Proper spacing and typography for optimal readability.
+            </p>
+            <a href="#" class="text-secondary-500 hover:text-secondary-600 text-body-sm font-body transition-colors">Read more →</a>
+          </article>
+          
+          <article class="bg-surface-card p-4 rounded-md border border-surface-border md:p-6 hover:shadow-lg transition-shadow duration-normal">
+            <h3 class="text-h4 font-heading mb-3 text-accent-600">Article 3</h3>
+            <p class="text-body font-body text-surface-foreground mb-4">
+              Grid automatically adjusts: 1 col → 2 cols → 3 cols.
+            </p>
+            <a href="#" class="text-accent-500 hover:text-accent-600 text-body-sm font-body transition-colors">Read more →</a>
+          </article>
+          
+          <article class="bg-surface-card p-4 rounded-md border border-surface-border md:p-6 hover:shadow-lg transition-shadow duration-normal">
+            <h3 class="text-h4 font-heading mb-3 text-primary-600">Article 4</h3>
+            <p class="text-body font-body text-surface-foreground mb-4">
+              Uses design system tokens for consistency.
+            </p>
+            <a href="#" class="text-primary-500 hover:text-primary-600 text-body-sm font-body transition-colors">Read more →</a>
+          </article>
+          
+          <article class="bg-surface-card p-4 rounded-md border border-surface-border md:p-6 hover:shadow-lg transition-shadow duration-normal">
+            <h3 class="text-h4 font-heading mb-3 text-secondary-600">Article 5</h3>
+            <p class="text-body font-body text-surface-foreground mb-4">
+              WCAG AA contrast requirements met.
+            </p>
+            <a href="#" class="text-secondary-500 hover:text-secondary-600 text-body-sm font-body transition-colors">Read more →</a>
+          </article>
+          
+          <article class="bg-surface-card p-4 rounded-md border border-surface-border md:p-6 hover:shadow-lg transition-shadow duration-normal">
+            <h3 class="text-h4 font-heading mb-3 text-accent-600">Article 6</h3>
+            <p class="text-body font-body text-surface-foreground mb-4">
+              Semantic HTML with proper accessibility.
+            </p>
+            <a href="#" class="text-accent-500 hover:text-accent-600 text-body-sm font-body transition-colors">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Asymmetric Grid (Blog Layout) -->
+    <section class="space-y-4">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-h3 font-heading text-surface-foreground mb-2">5. Asymmetric Grid (Blog Layout)</h2>
+        <p class="text-body text-surface-mutedForeground mb-4">Main content (2/3) with sidebar (1/3) on desktop</p>
+      </div>
+      
+      <div class="container mx-auto bg-surface-background text-surface-foreground">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 py-6 md:px-6 md:py-8 test-outline">
+          <!-- Main Content -->
+          <main class="lg:col-span-2 space-y-6">
+            <article class="bg-surface-card p-6 rounded-lg border border-surface-border">
+              <h3 class="text-h3 font-heading mb-3 text-surface-foreground">Main Content Area</h3>
+              <p class="text-body font-body text-surface-foreground mb-4">
+                This area takes 2/3 of the width on desktop, providing ample space for main content
+                while maintaining a comfortable reading width. On mobile, it stacks vertically.
+              </p>
+              <p class="text-body font-body text-surface-foreground">
+                The asymmetric layout is perfect for blog posts, articles, and documentation pages
+                where you need both primary content and supplementary information.
+              </p>
+            </article>
+            
+            <article class="bg-surface-card p-6 rounded-lg border border-surface-border">
+              <h4 class="text-h4 font-heading mb-3">Another Article</h4>
+              <p class="text-body font-body text-surface-foreground">
+                Multiple articles can be stacked in the main content area.
+              </p>
+            </article>
+          </main>
+          
+          <!-- Sidebar -->
+          <aside class="space-y-6">
+            <div class="bg-primary-50 p-6 rounded-lg border border-primary-200">
+              <h4 class="text-h5 font-heading mb-3 text-primary-700">Sidebar Widget 1</h4>
+              <p class="text-body-sm text-surface-foreground">
+                Sidebar content takes 1/3 width on desktop.
+              </p>
+            </div>
+            
+            <div class="bg-secondary-50 p-6 rounded-lg border border-secondary-200">
+              <h4 class="text-h5 font-heading mb-3 text-secondary-700">Sidebar Widget 2</h4>
+              <p class="text-body-sm text-surface-foreground">
+                Perfect for navigation, tags, or related content.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Max-Width Constraints -->
+    <section class="space-y-4">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-h3 font-heading text-surface-foreground mb-2">6. Max-Width Constraints</h2>
+        <p class="text-body text-surface-mutedForeground mb-4">Container max-widths: sm: 100%, md: 720px, lg: 960px, xl: 1140px</p>
+      </div>
+      
+      <div class="w-full bg-surface-card border-y border-surface-border">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 md:px-6 md:py-12 test-outline">
+          <div class="bg-surface-background p-6 rounded-lg border border-surface-border">
+            <h3 class="text-h4 font-heading mb-3">Full-Width with Constraints</h3>
+            <p class="text-body font-body text-surface-foreground mb-4">
+              This section demonstrates full-width background with constrained content area.
+              The content never exceeds 1280px (xl breakpoint) for optimal readability.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-6">
+              <div class="bg-primary-100 p-4 rounded text-center">
+                <p class="text-body-sm font-mono font-semibold">sm: 100%</p>
+              </div>
+              <div class="bg-primary-200 p-4 rounded text-center">
+                <p class="text-body-sm font-mono font-semibold">md: 720px</p>
+              </div>
+              <div class="bg-primary-300 p-4 rounded text-center">
+                <p class="text-body-sm font-mono font-semibold">lg: 960px</p>
+              </div>
+              <div class="bg-primary-400 p-4 rounded text-center text-white">
+                <p class="text-body-sm font-mono font-semibold">xl: 1140px</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Color Contrast Test -->
+    <section class="space-y-4">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-h3 font-heading text-surface-foreground mb-2">7. WCAG AA Contrast Test</h2>
+        <p class="text-body text-surface-mutedForeground mb-4">Verifying color contrast requirements</p>
+      </div>
+      
+      <div class="container mx-auto bg-surface-background text-surface-foreground">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 py-6 md:px-6 md:py-8">
+          <div class="bg-surface-background p-6 rounded-lg border-2 border-surface-border">
+            <h4 class="text-h4 font-heading mb-3 text-surface-foreground">Background + Foreground</h4>
+            <p class="text-body font-body text-surface-foreground mb-2">
+              <strong>Background:</strong> #ffffff (255, 255, 255)
+            </p>
+            <p class="text-body font-body text-surface-foreground">
+              <strong>Foreground:</strong> #232323 (35, 35, 35)
+            </p>
+            <div class="mt-4 p-3 bg-success-light rounded">
+              <p class="text-body-sm text-success font-semibold">✓ WCAG AA Compliant</p>
+            </div>
+          </div>
+          
+          <div class="bg-surface-card p-6 rounded-lg border-2 border-surface-border">
+            <h4 class="text-h4 font-heading mb-3 text-surface-foreground">Card + Foreground</h4>
+            <p class="text-body font-body text-surface-foreground mb-2">
+              <strong>Card Background:</strong> #f7f7f7 (247, 247, 247)
+            </p>
+            <p class="text-body font-body text-surface-foreground">
+              <strong>Foreground:</strong> #232323 (35, 35, 35)
+            </p>
+            <div class="mt-4 p-3 bg-success-light rounded">
+              <p class="text-body-sm text-success font-semibold">✓ WCAG AA Compliant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-card border-t border-surface-border mt-12">
+    <div class="container mx-auto px-4 py-8 md:px-6 md:py-10">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div>
+          <h5 class="text-h5 font-heading mb-3">Layout Features</h5>
+          <ul class="space-y-2 text-body-sm text-surface-mutedForeground">
+            <li>✓ Responsive container</li>
+            <li>✓ Mobile-first grid</li>
+            <li>✓ Design tokens</li>
+            <li>✓ WCAG AA compliant</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-h5 font-heading mb-3">Breakpoints</h5>
+          <ul class="space-y-2 text-body-sm font-mono text-surface-mutedForeground">
+            <li>sm: 480px</li>
+            <li>md: 768px</li>
+            <li>lg: 1024px</li>
+            <li>xl: 1280px</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-h5 font-heading mb-3">Spacing</h5>
+          <ul class="space-y-2 text-body-sm font-mono text-surface-mutedForeground">
+            <li>spacing.4: 16px</li>
+            <li>spacing.6: 24px</li>
+            <li>spacing.8: 32px</li>
+            <li>spacing.10: 40px</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-surface-border text-center">
+        <p class="text-body-sm text-surface-mutedForeground">
+          Layout Component Test Page • Minimal Modern Blog Theme
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
