@@ -7,13 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test:token-mapping": "node tests/token-mapping.test.js",
     "validate:colors": "node scripts/validate-colors.js",
     "validate:typography": "node scripts/validate-typography.js",
     "validate:tokens": "node scripts/validate-tokens.js",
     "validate:animations": "node scripts/validate-animations.js",
     "validate:states": "node scripts/validate-states.js",
     "validate:responsive": "node scripts/validate-responsive.js",
-    "validate:all": "npm run validate:colors && npm run validate:typography && npm run validate:tokens && npm run validate:animations && npm run validate:states && npm run validate:responsive"
+    "validate:token-mapping": "node scripts/validate-token-mapping.js",
+    "validate:all": "npm run validate:colors && npm run validate:typography && npm run validate:tokens && npm run validate:animations && npm run validate:states && npm run validate:responsive && npm run validate:token-mapping"
   },
   "keywords": [
     "blog",
