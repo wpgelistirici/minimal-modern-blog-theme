@@ -1,0 +1,23 @@
+{
+  "breakpoints": {
+    "sm": "480px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px"
+  },
+  "container": {
+    "padding": {
+      "default": "24px",
+      "sm": "16px",
+      "md": "24px",
+      "lg": "32px",
+      "xl": "40px"
+    },
+    "maxWidth": {
+      "sm": "100%",
+      "md": "720px",
+      "lg": "960px",
+      "xl": "1140px"
+    }
+  }
+}

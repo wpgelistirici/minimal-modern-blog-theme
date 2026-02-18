@@ -5,6 +5,7 @@ import borders from './src/styles/tokens/borders.json' with { type: 'json' };
 import shadows from './src/styles/tokens/shadows.json' with { type: 'json' };
 import animations from './src/styles/tokens/animations.json' with { type: 'json' };
 import states from './src/styles/tokens/states.json' with { type: 'json' };
+import responsive from './src/styles/tokens/responsive.json' with { type: 'json' };
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -15,6 +16,23 @@ export default {
   ],
   darkMode: 'class',
   theme: {
+    screens: responsive.breakpoints,
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: responsive.container.padding.default,
+        sm: responsive.container.padding.sm,
+        md: responsive.container.padding.md,
+        lg: responsive.container.padding.lg,
+        xl: responsive.container.padding.xl,
+      },
+      screens: {
+        sm: responsive.container.maxWidth.sm,
+        md: responsive.container.maxWidth.md,
+        lg: responsive.container.maxWidth.lg,
+        xl: responsive.container.maxWidth.xl,
+      },
+    },
     extend: {
       spacing: spacing.spacing,
       borderRadius: borders.borderRadius,

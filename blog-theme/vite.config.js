@@ -19,6 +19,7 @@ export default defineConfig({
         tokens: resolve(__dirname, 'src/pages/tokens-test.html'),
         animations: resolve(__dirname, 'src/pages/animations-test.html'),
         states: resolve(__dirname, 'src/pages/states-test.html'),
+        responsive: resolve(__dirname, 'src/pages/responsive-test.html'),
       }
     }
   },
