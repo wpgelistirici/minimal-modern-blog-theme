@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "validate:colors": "node scripts/validate-colors.js"
+    "validate:colors": "node scripts/validate-colors.js",
+    "validate:typography": "node scripts/validate-typography.js",
+    "validate:all": "npm run validate:colors && npm run validate:typography"
   },
   "keywords": [
     "blog",
