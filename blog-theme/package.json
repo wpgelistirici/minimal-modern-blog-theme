@@ -10,7 +10,8 @@
     "validate:colors": "node scripts/validate-colors.js",
     "validate:typography": "node scripts/validate-typography.js",
     "validate:tokens": "node scripts/validate-tokens.js",
-    "validate:all": "npm run validate:colors && npm run validate:typography && npm run validate:tokens"
+    "validate:animations": "node scripts/validate-animations.js",
+    "validate:all": "npm run validate:colors && npm run validate:typography && npm run validate:tokens && npm run validate:animations"
   },
   "keywords": [
     "blog",
