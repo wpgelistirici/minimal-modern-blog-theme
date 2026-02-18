@@ -295,10 +295,6 @@ export default {
     {
       pattern: /ring-state-focus-ring/,
     },
-    // Ensure responsive utilities are generated for all breakpoints
-    {
-      pattern: /(sm|md|lg|xl):(grid-cols|gap|p|m|text|flex|hidden|inline|block)-(.*)/,
-    },
   ],
   plugins: [
     require('@tailwindcss/typography'),
