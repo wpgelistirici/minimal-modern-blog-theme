@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Tokens Test - Spacing, Border Radius & Shadows</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600&family=Fira+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/tailwind.css">
+</head>
+<body class="bg-surface-background text-surface-foreground font-body">
+  <div class="p-8">
+    <header class="mb-12">
+      <h1 class="text-h1 font-heading mb-3">Design Tokens Test Page</h1>
+      <p class="text-body-lg text-neutral-600">Testing spacing, border radius, and shadow tokens</p>
+    </header>
+
+    <!-- Spacing Tokens Test -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Spacing Tokens (4px Grid)</h2>
+      <div class="space-y-4">
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.0</div>
+          <div class="bg-primary-500 h-8" style="width: 0px;"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">0px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.1 (p-1)</div>
+          <div class="bg-primary-500 h-8 w-1"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">4px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.2 (p-2)</div>
+          <div class="bg-primary-500 h-8 w-2"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">8px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.3 (p-3)</div>
+          <div class="bg-primary-500 h-8 w-3"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">12px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.4 (p-4)</div>
+          <div class="bg-primary-500 h-8 w-4"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">16px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.5 (p-5)</div>
+          <div class="bg-primary-500 h-8 w-5"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">20px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.6 (p-6)</div>
+          <div class="bg-primary-500 h-8 w-6"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">24px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.8 (p-8)</div>
+          <div class="bg-primary-500 h-8 w-8"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">32px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.10 (p-10)</div>
+          <div class="bg-primary-500 h-8 w-10"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">40px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.12 (p-12)</div>
+          <div class="bg-primary-500 h-8 w-12"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">48px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.16 (p-16)</div>
+          <div class="bg-primary-500 h-8 w-16"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">64px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.20 (p-20)</div>
+          <div class="bg-primary-500 h-8 w-20"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">80px</div>
+        </div>
+        <div class="flex items-center">
+          <div class="w-32 text-body-sm font-mono text-neutral-600">spacing.24 (p-24)</div>
+          <div class="bg-primary-500 h-8 w-24"></div>
+          <div class="ml-4 text-body-sm text-neutral-500">96px</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Border Radius Tokens Test -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Border Radius Tokens</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="bg-secondary-500 w-24 h-24 rounded-none mx-auto mb-2"></div>
+          <div class="text-body-sm font-mono text-neutral-600">rounded-none</div>
+          <div class="text-body-sm text-neutral-500">0px</div>
+        </div>
+        <div class="text-center">
+          <div class="bg-secondary-500 w-24 h-24 rounded-sm mx-auto mb-2"></div>
+          <div class="text-body-sm font-mono text-neutral-600">rounded-sm</div>
+          <div class="text-body-sm text-neutral-500">2px</div>
+        </div>
+        <div class="text-center">
+          <div class="bg-secondary-500 w-24 h-24 rounded-md mx-auto mb-2"></div>
+          <div class="text-body-sm font-mono text-neutral-600">rounded-md</div>
+          <div class="text-body-sm text-neutral-500">4px</div>
+        </div>
+        <div class="text-center">
+          <div class="bg-secondary-500 w-24 h-24 rounded-lg mx-auto mb-2"></div>
+          <div class="text-body-sm font-mono text-neutral-600">rounded-lg</div>
+          <div class="text-body-sm text-neutral-500">8px</div>
+        </div>
+        <div class="text-center">
+          <div class="bg-secondary-500 w-24 h-24 rounded-xl mx-auto mb-2"></div>
+          <div class="text-body-sm font-mono text-neutral-600">rounded-xl</div>
+          <div class="text-body-sm text-neutral-500">12px</div>
+        </div>
+        <div class="text-center">
+          <div class="bg-secondary-500 w-24 h-24 rounded-full mx-auto mb-2"></div>
+          <div class="text-body-sm font-mono text-neutral-600">rounded-full</div>
+          <div class="text-body-sm text-neutral-500">9999px</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shadow Tokens Test -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Shadow Tokens (Elevation)</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-surface-card p-6 rounded-lg shadow-sm">
+          <div class="text-body font-semibold mb-2">shadow-sm</div>
+          <div class="text-body-sm text-neutral-500 mb-4">Hafif yükseltme</div>
+          <div class="text-caption font-mono text-neutral-400">0 1px 2px 0 rgba(30, 34, 40, 0.04)</div>
+          <div class="text-body-sm text-neutral-600 mt-3">Button, input border</div>
+        </div>
+        <div class="bg-surface-card p-6 rounded-lg shadow-md">
+          <div class="text-body font-semibold mb-2">shadow-md</div>
+          <div class="text-body-sm text-neutral-500 mb-4">Card, dropdown</div>
+          <div class="text-caption font-mono text-neutral-400">0 2px 8px 0 rgba(30, 34, 40, 0.08)</div>
+          <div class="text-body-sm text-neutral-600 mt-3">Standard elevation</div>
+        </div>
+        <div class="bg-surface-card p-6 rounded-lg shadow-lg">
+          <div class="text-body font-semibold mb-2">shadow-lg</div>
+          <div class="text-body-sm text-neutral-500 mb-4">Modal, popover</div>
+          <div class="text-caption font-mono text-neutral-400">0 4px 16px 0 rgba(30, 34, 40, 0.12)</div>
+          <div class="text-body-sm text-neutral-600 mt-3">Floating element</div>
+        </div>
+        <div class="bg-surface-card p-6 rounded-lg shadow-xl">
+          <div class="text-body font-semibold mb-2">shadow-xl</div>
+          <div class="text-body-sm text-neutral-500 mb-4">Hero card</div>
+          <div class="text-caption font-mono text-neutral-400">0 8px 32px 0 rgba(30, 34, 40, 0.16)</div>
+          <div class="text-body-sm text-neutral-600 mt-3">Spotlight element</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Combined Example -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Combined Token Usage Example</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Card Example 1 -->
+        <div class="bg-surface-card p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+          <h3 class="text-h4 font-heading mb-3">Card with Tokens</h3>
+          <p class="text-body text-neutral-600 mb-4">This card uses spacing.6 (p-6), rounded-lg (8px), and shadow-md with hover effect.</p>
+          <button class="bg-primary-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-primary-600 hover:shadow-md transition-all duration-200">
+            Action Button
+          </button>
+        </div>
+        
+        <!-- Card Example 2 -->
+        <div class="bg-accent-100 p-8 rounded-xl shadow-md">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center text-white font-heading text-h5">A</div>
+            <div>
+              <div class="text-body font-semibold">Accent Card</div>
+              <div class="text-body-sm text-accent-700">With avatar</div>
+            </div>
+          </div>
+          <p class="text-body-sm text-accent-800">Spacing: gap-3, p-8<br>Border Radius: rounded-xl, rounded-full<br>Shadow: shadow-md</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Guide -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Token Usage Guidelines</h2>
+      <div class="bg-info-light p-6 rounded-lg border border-info/20">
+        <h3 class="text-h5 font-heading mb-3 text-info-dark">How to Use These Tokens</h3>
+        <ul class="space-y-2 text-body text-neutral-700">
+          <li><strong>Spacing:</strong> Use p-{value}, m-{value}, gap-{value} classes (e.g., p-6 = 24px)</li>
+          <li><strong>Border Radius:</strong> Use rounded-{size} classes (e.g., rounded-lg = 8px)</li>
+          <li><strong>Shadows:</strong> Use shadow-{level} classes (e.g., shadow-md for cards)</li>
+          <li><strong>Consistency:</strong> Always use tokens instead of arbitrary values</li>
+          <li><strong>4px Grid:</strong> All spacing follows a 4px grid system for visual harmony</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="text-center pt-8 border-t border-surface-border">
+      <p class="text-body-sm text-neutral-500">Design Tokens Test Page - Minimal Modern Blog Theme</p>
+    </footer>
+  </div>
+</body>
+</html>
