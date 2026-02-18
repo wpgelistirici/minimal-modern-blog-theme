@@ -1,0 +1,575 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "semantic.json",
+  "title": "Semantic Design Tokens",
+  "description": "Semantic tokens - component-specific tokens that reference aliases or primitives. These provide the highest level of context and should be used in component implementations.",
+  "button": {
+    "primary": {
+      "default": {
+        "background": {
+          "_ref": "aliases.color.brand.primary",
+          "_primitiveRef": "primitives.colors.primary.500",
+          "_value": "#5d7ea6"
+        },
+        "foreground": {
+          "_ref": "aliases.color.text.inverted",
+          "_primitiveRef": "primitives.colors.white",
+          "_value": "#ffffff"
+        },
+        "border": {
+          "_ref": "aliases.color.brand.primary",
+          "_primitiveRef": "primitives.colors.primary.500",
+          "_value": "#5d7ea6"
+        },
+        "shadow": {
+          "_ref": "aliases.elevation.flat",
+          "_primitiveRef": "primitives.boxShadow.sm",
+          "_value": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+        }
+      },
+      "hover": {
+        "background": {
+          "_ref": "aliases.color.brand.primaryHover",
+          "_primitiveRef": "primitives.colors.primary.600",
+          "_value": "#48628b"
+        },
+        "foreground": {
+          "_ref": "aliases.color.text.inverted",
+          "_primitiveRef": "primitives.colors.white",
+          "_value": "#ffffff"
+        },
+        "border": {
+          "_ref": "aliases.color.brand.primaryHover",
+          "_primitiveRef": "primitives.colors.primary.600",
+          "_value": "#48628b"
+        },
+        "shadow": {
+          "_ref": "aliases.elevation.subtle",
+          "_primitiveRef": "primitives.boxShadow.md",
+          "_value": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+        }
+      },
+      "active": {
+        "background": {
+          "_ref": "aliases.color.brand.primaryActive",
+          "_primitiveRef": "primitives.colors.primary.700",
+          "_value": "#3a4c6c"
+        },
+        "foreground": {
+          "_ref": "aliases.color.text.inverted",
+          "_primitiveRef": "primitives.colors.white",
+          "_value": "#ffffff"
+        },
+        "border": {
+          "_ref": "aliases.color.brand.primaryActive",
+          "_primitiveRef": "primitives.colors.primary.700",
+          "_value": "#3a4c6c"
+        },
+        "shadow": {
+          "_ref": "aliases.elevation.flat",
+          "_primitiveRef": "primitives.boxShadow.sm",
+          "_value": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+        }
+      },
+      "disabled": {
+        "background": {
+          "_ref": "aliases.color.background.muted",
+          "_primitiveRef": "primitives.colors.neutral.100",
+          "_value": "#f5f5f5"
+        },
+        "foreground": {
+          "_ref": "aliases.color.text.disabled",
+          "_primitiveRef": "primitives.colors.neutral.400",
+          "_value": "#a3a3a3"
+        },
+        "border": {
+          "_ref": "aliases.color.border.subtle",
+          "_primitiveRef": "primitives.colors.neutral.200",
+          "_value": "#e5e5e5"
+        }
+      }
+    },
+    "secondary": {
+      "default": {
+        "background": {
+          "_ref": "aliases.color.brand.secondary",
+          "_primitiveRef": "primitives.colors.secondary.500",
+          "_value": "#6b998d"
+        },
+        "foreground": {
+          "_ref": "aliases.color.text.inverted",
+          "_primitiveRef": "primitives.colors.white",
+          "_value": "#ffffff"
+        },
+        "border": {
+          "_ref": "aliases.color.brand.secondary",
+          "_primitiveRef": "primitives.colors.secondary.500",
+          "_value": "#6b998d"
+        },
+        "shadow": {
+          "_ref": "aliases.elevation.flat",
+          "_primitiveRef": "primitives.boxShadow.sm",
+          "_value": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+        }
+      },
+      "hover": {
+        "background": {
+          "_ref": "aliases.color.brand.secondaryHover",
+          "_primitiveRef": "primitives.colors.secondary.600",
+          "_value": "#507b6f"
+        },
+        "foreground": {
+          "_ref": "aliases.color.text.inverted",
+          "_primitiveRef": "primitives.colors.white",
+          "_value": "#ffffff"
+        },
+        "border": {
+          "_ref": "aliases.color.brand.secondaryHover",
+          "_primitiveRef": "primitives.colors.secondary.600",
+          "_value": "#507b6f"
+        },
+        "shadow": {
+          "_ref": "aliases.elevation.subtle",
+          "_primitiveRef": "primitives.boxShadow.md",
+          "_value": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+        }
+      }
+    },
+    "accent": {
+      "default": {
+        "background": {
+          "_ref": "aliases.color.brand.accent",
+          "_primitiveRef": "primitives.colors.accent.500",
+          "_value": "#c07247"
+        },
+        "foreground": {
+          "_ref": "aliases.color.text.inverted",
+          "_primitiveRef": "primitives.colors.white",
+          "_value": "#ffffff"
+        },
+        "border": {
+          "_ref": "aliases.color.brand.accent",
+          "_primitiveRef": "primitives.colors.accent.500",
+          "_value": "#c07247"
+        },
+        "shadow": {
+          "_ref": "aliases.elevation.flat",
+          "_primitiveRef": "primitives.boxShadow.sm",
+          "_value": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+        }
+      },
+      "hover": {
+        "background": {
+          "_ref": "aliases.color.brand.accentHover",
+          "_primitiveRef": "primitives.colors.accent.600",
+          "_value": "#a15b35"
+        },
+        "foreground": {
+          "_ref": "aliases.color.text.inverted",
+          "_primitiveRef": "primitives.colors.white",
+          "_value": "#ffffff"
+        },
+        "border": {
+          "_ref": "aliases.color.brand.accentHover",
+          "_primitiveRef": "primitives.colors.accent.600",
+          "_value": "#a15b35"
+        },
+        "shadow": {
+          "_ref": "aliases.elevation.subtle",
+          "_primitiveRef": "primitives.boxShadow.md",
+          "_value": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+        }
+      }
+    },
+    "spacing": {
+      "padding": {
+        "_ref": "aliases.space.stack",
+        "_primitiveRef": "primitives.spacing.4",
+        "_value": "16px"
+      },
+      "gap": {
+        "_ref": "aliases.space.inline",
+        "_primitiveRef": "primitives.spacing.1",
+        "_value": "4px"
+      }
+    },
+    "borderRadius": {
+      "_ref": "aliases.radius.medium",
+      "_primitiveRef": "primitives.borderRadius.md",
+      "_value": "4px"
+    },
+    "transition": {
+      "duration": {
+        "_ref": "aliases.animation.normal",
+        "_primitiveRef": "primitives.transitionDuration.normal",
+        "_value": "220ms"
+      },
+      "timing": {
+        "_ref": "aliases.animation.easeDefault",
+        "_primitiveRef": "primitives.transitionTimingFunction.default",
+        "_value": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    }
+  },
+  "input": {
+    "default": {
+      "background": {
+        "_ref": "aliases.color.background.default",
+        "_primitiveRef": "primitives.colors.white",
+        "_value": "#ffffff"
+      },
+      "foreground": {
+        "_ref": "aliases.color.text.primary",
+        "_primitiveRef": "primitives.colors.neutral.900",
+        "_value": "#171717"
+      },
+      "border": {
+        "_ref": "aliases.color.border.default",
+        "_primitiveRef": "primitives.colors.neutral.300",
+        "_value": "#d4d4d4"
+      },
+      "placeholder": {
+        "_ref": "aliases.color.text.tertiary",
+        "_primitiveRef": "primitives.colors.neutral.500",
+        "_value": "#737373"
+      },
+      "shadow": {
+        "_ref": "aliases.elevation.flat",
+        "_primitiveRef": "primitives.boxShadow.sm",
+        "_value": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+      }
+    },
+    "hover": {
+      "border": {
+        "_ref": "aliases.color.border.focus",
+        "_primitiveRef": "primitives.colors.primary.300",
+        "_value": "#91b3d1"
+      }
+    },
+    "focus": {
+      "border": {
+        "_ref": "aliases.color.brand.primary",
+        "_primitiveRef": "primitives.colors.primary.500",
+        "_value": "#5d7ea6"
+      },
+      "shadow": {
+        "_ref": "aliases.elevation.subtle",
+        "_primitiveRef": "primitives.boxShadow.md",
+        "_value": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+      }
+    },
+    "error": {
+      "border": {
+        "_ref": "aliases.color.feedback.error",
+        "_primitiveRef": "primitives.colors.error.DEFAULT",
+        "_value": "#d13b3b"
+      }
+    },
+    "success": {
+      "border": {
+        "_ref": "aliases.color.feedback.success",
+        "_primitiveRef": "primitives.colors.success.DEFAULT",
+        "_value": "#0f7d4f"
+      }
+    },
+    "spacing": {
+      "padding": {
+        "_ref": "aliases.space.inset",
+        "_primitiveRef": "primitives.spacing.2",
+        "_value": "8px"
+      }
+    },
+    "borderRadius": {
+      "_ref": "aliases.radius.medium",
+      "_primitiveRef": "primitives.borderRadius.md",
+      "_value": "4px"
+    },
+    "transition": {
+      "duration": {
+        "_ref": "aliases.animation.normal",
+        "_primitiveRef": "primitives.transitionDuration.normal",
+        "_value": "220ms"
+      }
+    }
+  },
+  "card": {
+    "default": {
+      "background": {
+        "_ref": "aliases.color.background.subtle",
+        "_primitiveRef": "primitives.colors.neutral.50",
+        "_value": "#fafafa"
+      },
+      "foreground": {
+        "_ref": "aliases.color.text.primary",
+        "_primitiveRef": "primitives.colors.neutral.900",
+        "_value": "#171717"
+      },
+      "border": {
+        "_ref": "aliases.color.border.subtle",
+        "_primitiveRef": "primitives.colors.neutral.200",
+        "_value": "#e5e5e5"
+      },
+      "shadow": {
+        "_ref": "aliases.elevation.subtle",
+        "_primitiveRef": "primitives.boxShadow.md",
+        "_value": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+      }
+    },
+    "hover": {
+      "background": {
+        "_ref": "aliases.color.background.default",
+        "_primitiveRef": "primitives.colors.white",
+        "_value": "#ffffff"
+      },
+      "border": {
+        "_ref": "aliases.color.border.focus",
+        "_primitiveRef": "primitives.colors.primary.300",
+        "_value": "#91b3d1"
+      },
+      "shadow": {
+        "_ref": "aliases.elevation.prominent",
+        "_primitiveRef": "primitives.boxShadow.lg",
+        "_value": "0 4px 16px 0 rgba(30, 34, 40, 0.12)"
+      }
+    },
+    "spacing": {
+      "padding": {
+        "_ref": "aliases.space.section",
+        "_primitiveRef": "primitives.spacing.8",
+        "_value": "32px"
+      },
+      "gap": {
+        "_ref": "aliases.space.stack",
+        "_primitiveRef": "primitives.spacing.4",
+        "_value": "16px"
+      }
+    },
+    "borderRadius": {
+      "_ref": "aliases.radius.large",
+      "_primitiveRef": "primitives.borderRadius.lg",
+      "_value": "8px"
+    },
+    "transition": {
+      "duration": {
+        "_ref": "aliases.animation.normal",
+        "_primitiveRef": "primitives.transitionDuration.normal",
+        "_value": "220ms"
+      },
+      "timing": {
+        "_ref": "aliases.animation.easeDefault",
+        "_primitiveRef": "primitives.transitionTimingFunction.default",
+        "_value": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    }
+  },
+  "badge": {
+    "default": {
+      "background": {
+        "_ref": "aliases.color.brand.primaryLight",
+        "_primitiveRef": "primitives.colors.primary.100",
+        "_value": "#e3eaf3"
+      },
+      "foreground": {
+        "_ref": "aliases.color.brand.primaryDark",
+        "_primitiveRef": "primitives.colors.primary.800",
+        "_value": "#2d3a52"
+      },
+      "border": {
+        "_ref": "aliases.color.brand.primary",
+        "_primitiveRef": "primitives.colors.primary.500",
+        "_value": "#5d7ea6"
+      }
+    },
+    "success": {
+      "background": {
+        "_ref": "aliases.color.feedback.successLight",
+        "_primitiveRef": "primitives.colors.success.light",
+        "_value": "#d4f4e6"
+      },
+      "foreground": {
+        "_ref": "aliases.color.feedback.successDark",
+        "_primitiveRef": "primitives.colors.success.dark",
+        "_value": "#0a5a38"
+      },
+      "border": {
+        "_ref": "aliases.color.feedback.success",
+        "_primitiveRef": "primitives.colors.success.DEFAULT",
+        "_value": "#0f7d4f"
+      }
+    },
+    "error": {
+      "background": {
+        "_ref": "aliases.color.feedback.errorLight",
+        "_primitiveRef": "primitives.colors.error.light",
+        "_value": "#fce8e8"
+      },
+      "foreground": {
+        "_ref": "aliases.color.feedback.errorDark",
+        "_primitiveRef": "primitives.colors.error.dark",
+        "_value": "#a52d2d"
+      },
+      "border": {
+        "_ref": "aliases.color.feedback.error",
+        "_primitiveRef": "primitives.colors.error.DEFAULT",
+        "_value": "#d13b3b"
+      }
+    },
+    "warning": {
+      "background": {
+        "_ref": "aliases.color.feedback.warningLight",
+        "_primitiveRef": "primitives.colors.warning.light",
+        "_value": "#fff4d9"
+      },
+      "foreground": {
+        "_ref": "aliases.color.feedback.warningDark",
+        "_primitiveRef": "primitives.colors.warning.dark",
+        "_value": "#cc9619"
+      },
+      "border": {
+        "_ref": "aliases.color.feedback.warning",
+        "_primitiveRef": "primitives.colors.warning.DEFAULT",
+        "_value": "#ffbb23"
+      }
+    },
+    "info": {
+      "background": {
+        "_ref": "aliases.color.feedback.infoLight",
+        "_primitiveRef": "primitives.colors.info.light",
+        "_value": "#e0f3f9"
+      },
+      "foreground": {
+        "_ref": "aliases.color.feedback.infoDark",
+        "_primitiveRef": "primitives.colors.info.dark",
+        "_value": "#2382a7"
+      },
+      "border": {
+        "_ref": "aliases.color.feedback.info",
+        "_primitiveRef": "primitives.colors.info.DEFAULT",
+        "_value": "#2fa3d1"
+      }
+    },
+    "spacing": {
+      "padding": {
+        "_ref": "aliases.space.inset",
+        "_primitiveRef": "primitives.spacing.2",
+        "_value": "8px"
+      }
+    },
+    "borderRadius": {
+      "_ref": "aliases.radius.small",
+      "_primitiveRef": "primitives.borderRadius.sm",
+      "_value": "2px"
+    }
+  },
+  "link": {
+    "default": {
+      "foreground": {
+        "_ref": "aliases.color.brand.primary",
+        "_primitiveRef": "primitives.colors.primary.500",
+        "_value": "#5d7ea6"
+      }
+    },
+    "hover": {
+      "foreground": {
+        "_ref": "aliases.color.brand.primaryHover",
+        "_primitiveRef": "primitives.colors.primary.600",
+        "_value": "#48628b"
+      }
+    },
+    "active": {
+      "foreground": {
+        "_ref": "aliases.color.brand.primaryActive",
+        "_primitiveRef": "primitives.colors.primary.700",
+        "_value": "#3a4c6c"
+      }
+    },
+    "visited": {
+      "foreground": {
+        "_ref": "aliases.color.brand.secondary",
+        "_primitiveRef": "primitives.colors.secondary.500",
+        "_value": "#6b998d"
+      }
+    },
+    "transition": {
+      "duration": {
+        "_ref": "aliases.animation.fast",
+        "_primitiveRef": "primitives.transitionDuration.fast",
+        "_value": "120ms"
+      }
+    }
+  },
+  "focusRing": {
+    "color": {
+      "_ref": "aliases.color.border.focus",
+      "_primitiveRef": "primitives.colors.primary.300",
+      "_value": "#91b3d1"
+    },
+    "width": {
+      "_ref": "primitives.borderWidth.2",
+      "_value": "2px"
+    },
+    "offset": {
+      "_ref": "primitives.spacing.1",
+      "_value": "4px"
+    }
+  },
+  "typography": {
+    "heading": {
+      "fontFamily": {
+        "_ref": "aliases.typography.heading",
+        "_primitiveRef": "primitives.typography.fontFamily.sans",
+        "_value": "'Inter', sans-serif"
+      },
+      "fontWeight": {
+        "_ref": "primitives.typography.fontWeight.bold",
+        "_value": "700"
+      },
+      "lineHeight": {
+        "_ref": "primitives.typography.lineHeight.tight",
+        "_value": "1.2"
+      }
+    },
+    "body": {
+      "fontFamily": {
+        "_ref": "aliases.typography.body",
+        "_primitiveRef": "primitives.typography.fontFamily.serif",
+        "_value": "'IBM Plex Sans', sans-serif"
+      },
+      "fontWeight": {
+        "_ref": "primitives.typography.fontWeight.normal",
+        "_value": "400"
+      },
+      "lineHeight": {
+        "_ref": "primitives.typography.lineHeight.loose",
+        "_value": "1.6"
+      }
+    },
+    "code": {
+      "fontFamily": {
+        "_ref": "aliases.typography.code",
+        "_primitiveRef": "primitives.typography.fontFamily.mono",
+        "_value": "'Fira Mono', monospace"
+      },
+      "background": {
+        "_ref": "aliases.color.background.muted",
+        "_primitiveRef": "primitives.colors.neutral.100",
+        "_value": "#f5f5f5"
+      },
+      "foreground": {
+        "_ref": "aliases.color.text.primary",
+        "_primitiveRef": "primitives.colors.neutral.900",
+        "_value": "#171717"
+      },
+      "spacing": {
+        "_ref": "aliases.space.inset",
+        "_primitiveRef": "primitives.spacing.2",
+        "_value": "8px"
+      },
+      "borderRadius": {
+        "_ref": "aliases.radius.small",
+        "_primitiveRef": "primitives.borderRadius.sm",
+        "_value": "2px"
+      }
+    }
+  }
+}
