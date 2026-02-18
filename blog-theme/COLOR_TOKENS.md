@@ -28,17 +28,17 @@ blog-theme/
 
 All primitive colors use an 11-step scale (50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950):
 
-#### Primary (#5d7ea6)
+#### Primary (#48628b)
 - Main brand color for primary actions and key elements
-- Scale: `#f0f4f8` (50) to `#0f141c` (950)
-- Main shade: `500` (#5d7ea6)
-- Hover shade: `600` (#48628b)
+- Scale: `#f0f4f8` (50) to `#070a0e` (950)
+- Main shade: `500` (#48628b)
+- Hover shade: `600` (#3a4c6c)
 
-#### Secondary (#6b998d)
+#### Secondary (#507b6f)
 - Supporting brand color for secondary actions
-- Scale: `#f0f5f4` (50) to `#101918` (950)
-- Main shade: `500` (#6b998d)
-- Hover shade: `600` (#507b6f)
+- Scale: `#f0f5f4` (50) to `#080c0c` (950)
+- Main shade: `500` (#507b6f)
+- Hover shade: `600` (#3e6057)
 
 #### Accent (#c07247)
 - Accent color for highlights and emphasis
@@ -54,7 +54,7 @@ All primitive colors use an 11-step scale (50, 100, 200, 300, 400, 500, 600, 700
 
 Purpose-based colors with light, default, and dark variants:
 
-- **Success**: `#1ca06a` - Positive actions and confirmations
+- **Success**: `#0f7d4f` - Positive actions and confirmations
 - **Error**: `#d13b3b` - Errors and destructive actions
 - **Warning**: `#ffbb23` - Warnings and cautions
 - **Info**: `#2fa3d1` - Informational messages
