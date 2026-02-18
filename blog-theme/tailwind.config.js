@@ -275,7 +275,10 @@ export default {
       pattern: /ring-offset-(0|1|2|4|8)/,
     },
     {
-      pattern: /ring-(primary|state-focus-ring|error|success|warning|info)-(50|100|200|300|400|500|600|700|800|900|950|DEFAULT|light|dark)/,
+      pattern: /ring-(primary|error|success|warning|info)-(300|DEFAULT)/,
+    },
+    {
+      pattern: /ring-state-focus-ring/,
     },
   ],
   plugins: [

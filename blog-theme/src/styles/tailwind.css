@@ -105,7 +105,8 @@
   }
   
   .card-interactive:active {
-    @apply scale-[1.0];
+    /* Reset scale on active to cancel hover scale effect */
+    @apply scale-100;
   }
   
   /* Badge states */
