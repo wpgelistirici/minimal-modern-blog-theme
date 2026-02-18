@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "primitives.json",
+  "title": "Primitive Design Tokens",
+  "description": "Base primitive tokens - the foundational values that all other tokens reference",
+  "colors": {
+    "primary": {
+      "50": "#f0f4f8",
+      "100": "#e3eaf3",
+      "200": "#c1d3e4",
+      "300": "#91b3d1",
+      "400": "#7895ba",
+      "500": "#48628b",
+      "600": "#3a4c6c",
+      "700": "#2d3a52",
+      "800": "#1e2838",
+      "900": "#0f141c",
+      "950": "#070a0e"
+    },
+    "secondary": {
+      "50": "#f0f5f4",
+      "100": "#e9f0ed",
+      "200": "#ccdfd8",
+      "300": "#a3c7bc",
+      "400": "#83afa0",
+      "500": "#507b6f",
+      "600": "#3e6057",
+      "700": "#2f4942",
+      "800": "#20312d",
+      "900": "#101918",
+      "950": "#080c0c"
+    },
+    "accent": {
+      "50": "#fdf6f2",
+      "100": "#f9eae2",
+      "200": "#f3d2be",
+      "300": "#e8af8d",
+      "400": "#d89160",
+      "500": "#c07247",
+      "600": "#a15b35",
+      "700": "#7c4527",
+      "800": "#5e341e",
+      "900": "#3f2314",
+      "950": "#1f110a"
+    },
+    "neutral": {
+      "50": "#fafafa",
+      "100": "#f5f5f5",
+      "200": "#e5e5e5",
+      "300": "#d4d4d4",
+      "400": "#a3a3a3",
+      "500": "#737373",
+      "600": "#525252",
+      "700": "#404040",
+      "800": "#262626",
+      "900": "#171717",
+      "950": "#0a0a0a"
+    },
+    "white": "#ffffff",
+    "black": "#000000",
+    "success": {
+      "DEFAULT": "#0f7d4f",
+      "light": "#d4f4e6",
+      "dark": "#0a5a38"
+    },
+    "error": {
+      "DEFAULT": "#d13b3b",
+      "light": "#fce8e8",
+      "dark": "#a52d2d"
+    },
+    "warning": {
+      "DEFAULT": "#ffbb23",
+      "light": "#fff4d9",
+      "dark": "#cc9619"
+    },
+    "info": {
+      "DEFAULT": "#2fa3d1",
+      "light": "#e0f3f9",
+      "dark": "#2382a7"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "sans": "'Inter', sans-serif",
+      "serif": "'IBM Plex Sans', sans-serif",
+      "mono": "'Fira Mono', monospace"
+    },
+    "fontSize": {
+      "xs": "0.64rem",
+      "sm": "0.704rem",
+      "base": "0.889rem",
+      "md": "0.79rem",
+      "lg": "1rem",
+      "xl": "1.125rem",
+      "2xl": "1.2rem",
+      "3xl": "1.44rem",
+      "4xl": "1.728rem",
+      "5xl": "2.074rem",
+      "6xl": "2.488rem",
+      "7xl": "2.986rem"
+    },
+    "fontWeight": {
+      "normal": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700"
+    },
+    "lineHeight": {
+      "tight": "1.2",
+      "snug": "1.3",
+      "normal": "1.4",
+      "relaxed": "1.5",
+      "loose": "1.6"
+    },
+    "letterSpacing": {
+      "tighter": "-0.02em",
+      "tight": "-0.01em",
+      "normal": "0em",
+      "wide": "0.01em",
+      "wider": "0.1em"
+    }
+  },
+  "spacing": {
+    "0": "0px",
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "20px",
+    "6": "24px",
+    "8": "32px",
+    "10": "40px",
+    "12": "48px",
+    "16": "64px",
+    "20": "80px",
+    "24": "96px"
+  },
+  "borderRadius": {
+    "none": "0px",
+    "sm": "2px",
+    "md": "4px",
+    "lg": "8px",
+    "xl": "12px",
+    "full": "9999px"
+  },
+  "borderWidth": {
+    "0": "0px",
+    "1": "1px",
+    "2": "2px",
+    "4": "4px"
+  },
+  "boxShadow": {
+    "sm": "0 1px 2px 0 rgba(30, 34, 40, 0.04)",
+    "md": "0 2px 8px 0 rgba(30, 34, 40, 0.08)",
+    "lg": "0 4px 16px 0 rgba(30, 34, 40, 0.12)",
+    "xl": "0 8px 32px 0 rgba(30, 34, 40, 0.16)"
+  },
+  "transitionDuration": {
+    "fast": "120ms",
+    "normal": "220ms",
+    "slow": "420ms"
+  },
+  "transitionTimingFunction": {
+    "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "in": "cubic-bezier(0.4, 0, 1, 1)",
+    "out": "cubic-bezier(0, 0, 0.2, 1)",
+    "inOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "spring": "cubic-bezier(0.22, 1, 0.36, 1)"
+  },
+  "breakpoints": {
+    "sm": "480px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px"
+  }
+}

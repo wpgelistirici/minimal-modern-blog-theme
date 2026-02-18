@@ -1,0 +1,334 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aliases.json",
+  "title": "Alias Design Tokens",
+  "description": "Alias tokens - semantic names that reference primitive values. These provide context-specific naming while maintaining connection to primitives.",
+  "color": {
+    "brand": {
+      "primary": {
+        "_ref": "primitives.colors.primary.500",
+        "_value": "#48628b"
+      },
+      "primaryHover": {
+        "_ref": "primitives.colors.primary.600",
+        "_value": "#3a4c6c"
+      },
+      "primaryActive": {
+        "_ref": "primitives.colors.primary.700",
+        "_value": "#3a4c6c"
+      },
+      "primaryLight": {
+        "_ref": "primitives.colors.primary.100",
+        "_value": "#e3eaf3"
+      },
+      "primaryDark": {
+        "_ref": "primitives.colors.primary.800",
+        "_value": "#2d3a52"
+      },
+      "secondary": {
+        "_ref": "primitives.colors.secondary.500",
+        "_value": "#507b6f"
+      },
+      "secondaryHover": {
+        "_ref": "primitives.colors.secondary.600",
+        "_value": "#3e6057"
+      },
+      "secondaryActive": {
+        "_ref": "primitives.colors.secondary.700",
+        "_value": "#3e6057"
+      },
+      "secondaryLight": {
+        "_ref": "primitives.colors.secondary.100",
+        "_value": "#e9f0ed"
+      },
+      "secondaryDark": {
+        "_ref": "primitives.colors.secondary.800",
+        "_value": "#2f4942"
+      },
+      "accent": {
+        "_ref": "primitives.colors.accent.500",
+        "_value": "#c07247"
+      },
+      "accentHover": {
+        "_ref": "primitives.colors.accent.600",
+        "_value": "#a15b35"
+      },
+      "accentActive": {
+        "_ref": "primitives.colors.accent.700",
+        "_value": "#7c4527"
+      },
+      "accentLight": {
+        "_ref": "primitives.colors.accent.100",
+        "_value": "#f9eae2"
+      },
+      "accentDark": {
+        "_ref": "primitives.colors.accent.800",
+        "_value": "#5e341e"
+      }
+    },
+    "text": {
+      "primary": {
+        "_ref": "primitives.colors.neutral.900",
+        "_value": "#171717"
+      },
+      "secondary": {
+        "_ref": "primitives.colors.neutral.600",
+        "_value": "#525252"
+      },
+      "tertiary": {
+        "_ref": "primitives.colors.neutral.500",
+        "_value": "#737373"
+      },
+      "disabled": {
+        "_ref": "primitives.colors.neutral.400",
+        "_value": "#a3a3a3"
+      },
+      "inverted": {
+        "_ref": "primitives.colors.white",
+        "_value": "#ffffff"
+      }
+    },
+    "background": {
+      "default": {
+        "_ref": "primitives.colors.white",
+        "_value": "#ffffff"
+      },
+      "subtle": {
+        "_ref": "primitives.colors.neutral.50",
+        "_value": "#fafafa"
+      },
+      "muted": {
+        "_ref": "primitives.colors.neutral.100",
+        "_value": "#f5f5f5"
+      },
+      "inverted": {
+        "_ref": "primitives.colors.neutral.950",
+        "_value": "#0a0a0a"
+      }
+    },
+    "border": {
+      "default": {
+        "_ref": "primitives.colors.neutral.300",
+        "_value": "#d4d4d4"
+      },
+      "subtle": {
+        "_ref": "primitives.colors.neutral.200",
+        "_value": "#e5e5e5"
+      },
+      "strong": {
+        "_ref": "primitives.colors.neutral.400",
+        "_value": "#a3a3a3"
+      },
+      "focus": {
+        "_ref": "primitives.colors.primary.300",
+        "_value": "#91b3d1"
+      }
+    },
+    "feedback": {
+      "success": {
+        "_ref": "primitives.colors.success.DEFAULT",
+        "_value": "#0f7d4f"
+      },
+      "successLight": {
+        "_ref": "primitives.colors.success.light",
+        "_value": "#d4f4e6"
+      },
+      "successDark": {
+        "_ref": "primitives.colors.success.dark",
+        "_value": "#0a5a38"
+      },
+      "error": {
+        "_ref": "primitives.colors.error.DEFAULT",
+        "_value": "#d13b3b"
+      },
+      "errorLight": {
+        "_ref": "primitives.colors.error.light",
+        "_value": "#fce8e8"
+      },
+      "errorDark": {
+        "_ref": "primitives.colors.error.dark",
+        "_value": "#a52d2d"
+      },
+      "warning": {
+        "_ref": "primitives.colors.warning.DEFAULT",
+        "_value": "#ffbb23"
+      },
+      "warningLight": {
+        "_ref": "primitives.colors.warning.light",
+        "_value": "#fff4d9"
+      },
+      "warningDark": {
+        "_ref": "primitives.colors.warning.dark",
+        "_value": "#cc9619"
+      },
+      "info": {
+        "_ref": "primitives.colors.info.DEFAULT",
+        "_value": "#2fa3d1"
+      },
+      "infoLight": {
+        "_ref": "primitives.colors.info.light",
+        "_value": "#e0f3f9"
+      },
+      "infoDark": {
+        "_ref": "primitives.colors.info.dark",
+        "_value": "#2382a7"
+      }
+    }
+  },
+  "typography": {
+    "heading": {
+      "_ref": "primitives.typography.fontFamily.sans",
+      "_value": "'Inter', sans-serif"
+    },
+    "body": {
+      "_ref": "primitives.typography.fontFamily.serif",
+      "_value": "'IBM Plex Sans', sans-serif"
+    },
+    "code": {
+      "_ref": "primitives.typography.fontFamily.mono",
+      "_value": "'Fira Mono', monospace"
+    }
+  },
+  "scale": {
+    "display": {
+      "_ref": "primitives.typography.fontSize.7xl",
+      "_value": "2.986rem"
+    },
+    "h1": {
+      "_ref": "primitives.typography.fontSize.6xl",
+      "_value": "2.488rem"
+    },
+    "h2": {
+      "_ref": "primitives.typography.fontSize.5xl",
+      "_value": "2.074rem"
+    },
+    "h3": {
+      "_ref": "primitives.typography.fontSize.4xl",
+      "_value": "1.728rem"
+    },
+    "h4": {
+      "_ref": "primitives.typography.fontSize.3xl",
+      "_value": "1.44rem"
+    },
+    "h5": {
+      "_ref": "primitives.typography.fontSize.2xl",
+      "_value": "1.2rem"
+    },
+    "h6": {
+      "_ref": "primitives.typography.fontSize.lg",
+      "_value": "1rem"
+    },
+    "bodyXL": {
+      "_ref": "primitives.typography.fontSize.xl",
+      "_value": "1.125rem"
+    },
+    "bodyLG": {
+      "_ref": "primitives.typography.fontSize.lg",
+      "_value": "1rem"
+    },
+    "body": {
+      "_ref": "primitives.typography.fontSize.base",
+      "_value": "0.889rem"
+    },
+    "bodySM": {
+      "_ref": "primitives.typography.fontSize.md",
+      "_value": "0.79rem"
+    },
+    "caption": {
+      "_ref": "primitives.typography.fontSize.sm",
+      "_value": "0.704rem"
+    },
+    "overline": {
+      "_ref": "primitives.typography.fontSize.xs",
+      "_value": "0.64rem"
+    }
+  },
+  "space": {
+    "inline": {
+      "_ref": "primitives.spacing.1",
+      "_value": "4px"
+    },
+    "inset": {
+      "_ref": "primitives.spacing.2",
+      "_value": "8px"
+    },
+    "stack": {
+      "_ref": "primitives.spacing.4",
+      "_value": "16px"
+    },
+    "section": {
+      "_ref": "primitives.spacing.8",
+      "_value": "32px"
+    },
+    "page": {
+      "_ref": "primitives.spacing.12",
+      "_value": "48px"
+    }
+  },
+  "radius": {
+    "small": {
+      "_ref": "primitives.borderRadius.sm",
+      "_value": "2px"
+    },
+    "medium": {
+      "_ref": "primitives.borderRadius.md",
+      "_value": "4px"
+    },
+    "large": {
+      "_ref": "primitives.borderRadius.lg",
+      "_value": "8px"
+    },
+    "full": {
+      "_ref": "primitives.borderRadius.full",
+      "_value": "9999px"
+    }
+  },
+  "elevation": {
+    "flat": {
+      "_ref": "primitives.boxShadow.sm",
+      "_value": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+    },
+    "subtle": {
+      "_ref": "primitives.boxShadow.md",
+      "_value": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+    },
+    "prominent": {
+      "_ref": "primitives.boxShadow.lg",
+      "_value": "0 4px 16px 0 rgba(30, 34, 40, 0.12)"
+    },
+    "spotlight": {
+      "_ref": "primitives.boxShadow.xl",
+      "_value": "0 8px 32px 0 rgba(30, 34, 40, 0.16)"
+    }
+  },
+  "animation": {
+    "fast": {
+      "_ref": "primitives.transitionDuration.fast",
+      "_value": "120ms"
+    },
+    "normal": {
+      "_ref": "primitives.transitionDuration.normal",
+      "_value": "220ms"
+    },
+    "slow": {
+      "_ref": "primitives.transitionDuration.slow",
+      "_value": "420ms"
+    },
+    "easeDefault": {
+      "_ref": "primitives.transitionTimingFunction.default",
+      "_value": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "easeIn": {
+      "_ref": "primitives.transitionTimingFunction.in",
+      "_value": "cubic-bezier(0.4, 0, 1, 1)"
+    },
+    "easeOut": {
+      "_ref": "primitives.transitionTimingFunction.out",
+      "_value": "cubic-bezier(0, 0, 0.2, 1)"
+    },
+    "easeSpring": {
+      "_ref": "primitives.transitionTimingFunction.spring",
+      "_value": "cubic-bezier(0.22, 1, 0.36, 1)"
+    }
+  }
+}
