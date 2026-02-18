@@ -3,6 +3,7 @@ import typography from './src/styles/tokens/typography.json' with { type: 'json'
 import spacing from './src/styles/tokens/spacing.json' with { type: 'json' };
 import borders from './src/styles/tokens/borders.json' with { type: 'json' };
 import shadows from './src/styles/tokens/shadows.json' with { type: 'json' };
+import animations from './src/styles/tokens/animations.json' with { type: 'json' };
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -17,6 +18,38 @@ export default {
       spacing: spacing.spacing,
       borderRadius: borders.borderRadius,
       boxShadow: shadows.boxShadow,
+      transitionDuration: animations.transitionDuration,
+      transitionTimingFunction: animations.transitionTimingFunction,
+      transitionProperty: animations.transitionProperty,
+      keyframes: {
+        fadeIn: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        fadeOut: {
+          from: { opacity: '1' },
+          to: { opacity: '0' },
+        },
+        slideUp: {
+          from: { opacity: '0', transform: 'translateY(1rem)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideDown: {
+          from: { opacity: '0', transform: 'translateY(-1rem)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          from: { opacity: '0', transform: 'scale(0.95)' },
+          to: { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 220ms cubic-bezier(0.4, 0, 0.2, 1)',
+        'fade-out': 'fadeOut 220ms cubic-bezier(0.4, 0, 0.2, 1)',
+        'slide-up': 'slideUp 220ms cubic-bezier(0, 0, 0.2, 1)',
+        'slide-down': 'slideDown 220ms cubic-bezier(0, 0, 0.2, 1)',
+        'scale-in': 'scaleIn 120ms cubic-bezier(0.22, 1, 0.36, 1)',
+      },
       fontFamily: {
         heading: ['Inter', 'sans-serif'],
         body: ['IBM Plex Sans', 'sans-serif'],
@@ -200,6 +233,20 @@ export default {
     // Ensure shadow utilities are generated
     {
       pattern: /shadow-(sm|md|lg|xl)/,
+    },
+    // Ensure transition utilities are generated
+    {
+      pattern: /transition-(colors|opacity|shadow|transform|all)/,
+    },
+    {
+      pattern: /duration-(fast|normal|slow)/,
+    },
+    {
+      pattern: /ease-(default|in|out|inOut|spring)/,
+    },
+    // Ensure animation utilities are generated
+    {
+      pattern: /animate-(fade-in|fade-out|slide-up|slide-down|scale-in)/,
     },
   ],
   plugins: [
