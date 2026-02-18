@@ -15,6 +15,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'src/pages/index.html'),
+        typography: resolve(__dirname, 'src/pages/typography-test.html'),
       }
     }
   },

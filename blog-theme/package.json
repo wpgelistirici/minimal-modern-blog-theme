@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "validate:colors": "node scripts/validate-colors.js"
+    "validate:colors": "node scripts/validate-colors.js",
+    "validate:typography": "node scripts/validate-typography.js",
+    "validate:all": "npm run validate:colors && npm run validate:typography"
   },
   "keywords": [
     "blog",
@@ -23,5 +25,8 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
     "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19"
   }
 }

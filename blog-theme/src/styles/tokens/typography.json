@@ -1,0 +1,87 @@
+{
+  "fontFamily": {
+    "heading": "'Inter', sans-serif",
+    "body": "'IBM Plex Sans', sans-serif",
+    "mono": "'Fira Mono', monospace"
+  },
+  "fontSize": {
+    "display": {
+      "value": "2.986rem",
+      "lineHeight": "1.2",
+      "fontWeight": "700",
+      "letterSpacing": "-0.02em"
+    },
+    "h1": {
+      "value": "2.488rem",
+      "lineHeight": "1.2",
+      "fontWeight": "700",
+      "letterSpacing": "-0.02em"
+    },
+    "h2": {
+      "value": "2.074rem",
+      "lineHeight": "1.3",
+      "fontWeight": "700",
+      "letterSpacing": "-0.01em"
+    },
+    "h3": {
+      "value": "1.728rem",
+      "lineHeight": "1.4",
+      "fontWeight": "600",
+      "letterSpacing": "-0.01em"
+    },
+    "h4": {
+      "value": "1.44rem",
+      "lineHeight": "1.4",
+      "fontWeight": "600",
+      "letterSpacing": "0em"
+    },
+    "h5": {
+      "value": "1.2rem",
+      "lineHeight": "1.5",
+      "fontWeight": "600",
+      "letterSpacing": "0em"
+    },
+    "h6": {
+      "value": "1rem",
+      "lineHeight": "1.5",
+      "fontWeight": "600",
+      "letterSpacing": "0em"
+    },
+    "body-xl": {
+      "value": "1.125rem",
+      "lineHeight": "1.6",
+      "fontWeight": "400",
+      "letterSpacing": "0em"
+    },
+    "body-lg": {
+      "value": "1rem",
+      "lineHeight": "1.6",
+      "fontWeight": "400",
+      "letterSpacing": "0em"
+    },
+    "body": {
+      "value": "0.889rem",
+      "lineHeight": "1.6",
+      "fontWeight": "400",
+      "letterSpacing": "0em"
+    },
+    "body-sm": {
+      "value": "0.79rem",
+      "lineHeight": "1.5",
+      "fontWeight": "400",
+      "letterSpacing": "0em"
+    },
+    "caption": {
+      "value": "0.704rem",
+      "lineHeight": "1.4",
+      "fontWeight": "400",
+      "letterSpacing": "0.01em"
+    },
+    "overline": {
+      "value": "0.64rem",
+      "lineHeight": "1.4",
+      "fontWeight": "600",
+      "letterSpacing": "0.1em"
+    }
+  }
+}
