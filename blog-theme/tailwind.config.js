@@ -16,7 +16,6 @@ export default {
         body: ['IBM Plex Sans', 'sans-serif'],
         mono: ['Fira Mono', 'monospace'],
         sans: ['IBM Plex Sans', 'sans-serif'], // Default sans-serif
-        serif: ['Georgia', 'serif'],
       },
       fontSize: {
         'display': [typography.fontSize.display.value, {
@@ -113,7 +112,7 @@ export default {
         DEFAULT: {
           css: {
             fontFamily: theme('fontFamily.body').join(', '),
-            color: theme('colors.surface.foreground'),
+            color: 'rgb(var(--color-surface-foreground))',
             h1: {
               fontFamily: theme('fontFamily.heading').join(', '),
               fontWeight: typography.fontSize.h1.fontWeight,

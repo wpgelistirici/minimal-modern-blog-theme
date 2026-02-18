@@ -83,17 +83,5 @@
       "fontWeight": "600",
       "letterSpacing": "0.1em"
     }
-  },
-  "responsive": {
-    "mobile": {
-      "scaleFactor": 0.9,
-      "minBodySize": "16px"
-    },
-    "tablet": {
-      "scaleFactor": 1.0
-    },
-    "desktop": {
-      "scaleFactor": 1.0
-    }
   }
 }

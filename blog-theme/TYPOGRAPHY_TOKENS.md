@@ -99,7 +99,7 @@ Fonts are loaded from Google Fonts with `display=swap` to ensure optimal perform
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=IBM+Plex+Sans:wght@400;600;700&family=Fira+Mono:wght@400&display=swap" rel="stylesheet">
 ```
 
 ## Accessibility
@@ -118,7 +118,7 @@ The typography system is designed to be responsive:
 - **Tablet**: Typography scales appropriately for medium screens
 - **Desktop**: Full typography scale is utilized
 
-Body text maintains a minimum of 16px on mobile devices for optimal readability.
+Body text maintains a minimum of 14.2px (0.889rem) on mobile devices for optimal readability.
 
 ## Token File
 
