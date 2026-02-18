@@ -12,7 +12,8 @@
     "validate:tokens": "node scripts/validate-tokens.js",
     "validate:animations": "node scripts/validate-animations.js",
     "validate:states": "node scripts/validate-states.js",
-    "validate:all": "npm run validate:colors && npm run validate:typography && npm run validate:tokens && npm run validate:animations && npm run validate:states"
+    "validate:responsive": "node scripts/validate-responsive.js",
+    "validate:all": "npm run validate:colors && npm run validate:typography && npm run validate:tokens && npm run validate:animations && npm run validate:states && npm run validate:responsive"
   },
   "keywords": [
     "blog",

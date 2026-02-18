@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Breakpoints Test</title>
+    <link rel="stylesheet" href="./src/styles/tailwind.css">
+</head>
+<body class="bg-surface-background text-surface-foreground">
+    <div class="container mx-auto py-8">
+        <h1 class="text-h1 font-heading mb-6">Responsive Breakpoints Test</h1>
+        
+        <!-- Breakpoint Indicator -->
+        <div class="mb-8 p-4 bg-primary-50 rounded-lg border border-primary-200">
+            <h2 class="text-h3 font-heading mb-4">Current Breakpoint:</h2>
+            <div class="text-body-lg font-medium">
+                <span class="sm:hidden">Default (< 480px)</span>
+                <span class="hidden sm:inline md:hidden">Small (≥ 480px)</span>
+                <span class="hidden md:inline lg:hidden">Medium (≥ 768px)</span>
+                <span class="hidden lg:inline xl:hidden">Large (≥ 1024px)</span>
+                <span class="hidden xl:inline">Extra Large (≥ 1280px)</span>
+            </div>
+        </div>
+
+        <!-- Responsive Grid -->
+        <section class="mb-8">
+            <h2 class="text-h2 font-heading mb-4">Responsive Grid Layout</h2>
+            <p class="text-body mb-4">Grid changes from 1 column (default) → 2 columns (md) → 3 columns (lg) → 4 columns (xl)</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div class="p-4 bg-accent-100 rounded-lg">
+                    <h3 class="text-h4 font-heading mb-2">Card 1</h3>
+                    <p class="text-body-sm">Responsive content</p>
+                </div>
+                <div class="p-4 bg-accent-100 rounded-lg">
+                    <h3 class="text-h4 font-heading mb-2">Card 2</h3>
+                    <p class="text-body-sm">Responsive content</p>
+                </div>
+                <div class="p-4 bg-accent-100 rounded-lg">
+                    <h3 class="text-h4 font-heading mb-2">Card 3</h3>
+                    <p class="text-body-sm">Responsive content</p>
+                </div>
+                <div class="p-4 bg-accent-100 rounded-lg">
+                    <h3 class="text-h4 font-heading mb-2">Card 4</h3>
+                    <p class="text-body-sm">Responsive content</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsive Padding Test -->
+        <section class="mb-8">
+            <h2 class="text-h2 font-heading mb-4">Container Padding Test</h2>
+            <p class="text-body mb-4">Container padding adapts: 16px (sm) → 24px (md) → 32px (lg) → 40px (xl)</p>
+            <div class="bg-secondary-50 border border-secondary-200 rounded-lg">
+                <div class="p-4 sm:p-4 md:p-6 lg:p-8 xl:p-10">
+                    <p class="text-body">This content has responsive padding that follows the design system tokens.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Responsive Typography -->
+        <section class="mb-8">
+            <h2 class="text-h2 font-heading mb-4">Responsive Typography</h2>
+            <p class="text-body-sm sm:text-body md:text-body-lg lg:text-body-xl">
+                This text scales from body-sm → body → body-lg → body-xl across breakpoints.
+            </p>
+        </section>
+
+        <!-- Container Max-Width Visualization -->
+        <section>
+            <h2 class="text-h2 font-heading mb-4">Container Max-Width</h2>
+            <div class="bg-neutral-100 p-4 rounded-lg">
+                <p class="text-body mb-2"><strong>Current container max-widths:</strong></p>
+                <ul class="list-disc list-inside text-body-sm space-y-1">
+                    <li>sm: 100% (full width on small screens)</li>
+                    <li>md: 720px (tablets)</li>
+                    <li>lg: 960px (desktops)</li>
+                    <li>xl: 1140px (large desktops, capped for readability)</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
