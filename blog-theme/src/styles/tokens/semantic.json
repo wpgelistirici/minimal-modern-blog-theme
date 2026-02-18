@@ -9,7 +9,7 @@
         "background": {
           "_ref": "aliases.color.brand.primary",
           "_primitiveRef": "primitives.colors.primary.500",
-          "_value": "#5d7ea6"
+          "_value": "#48628b"
         },
         "foreground": {
           "_ref": "aliases.color.text.inverted",
@@ -19,7 +19,7 @@
         "border": {
           "_ref": "aliases.color.brand.primary",
           "_primitiveRef": "primitives.colors.primary.500",
-          "_value": "#5d7ea6"
+          "_value": "#48628b"
         },
         "shadow": {
           "_ref": "aliases.elevation.flat",
@@ -94,7 +94,7 @@
         "background": {
           "_ref": "aliases.color.brand.secondary",
           "_primitiveRef": "primitives.colors.secondary.500",
-          "_value": "#6b998d"
+          "_value": "#507b6f"
         },
         "foreground": {
           "_ref": "aliases.color.text.inverted",
@@ -104,7 +104,7 @@
         "border": {
           "_ref": "aliases.color.brand.secondary",
           "_primitiveRef": "primitives.colors.secondary.500",
-          "_value": "#6b998d"
+          "_value": "#507b6f"
         },
         "shadow": {
           "_ref": "aliases.elevation.flat",
@@ -250,7 +250,7 @@
       "border": {
         "_ref": "aliases.color.brand.primary",
         "_primitiveRef": "primitives.colors.primary.500",
-        "_value": "#5d7ea6"
+        "_value": "#48628b"
       },
       "shadow": {
         "_ref": "aliases.elevation.subtle",
@@ -377,7 +377,7 @@
       "border": {
         "_ref": "aliases.color.brand.primary",
         "_primitiveRef": "primitives.colors.primary.500",
-        "_value": "#5d7ea6"
+        "_value": "#48628b"
       }
     },
     "success": {
@@ -466,7 +466,7 @@
       "foreground": {
         "_ref": "aliases.color.brand.primary",
         "_primitiveRef": "primitives.colors.primary.500",
-        "_value": "#5d7ea6"
+        "_value": "#48628b"
       }
     },
     "hover": {
@@ -487,7 +487,7 @@
       "foreground": {
         "_ref": "aliases.color.brand.secondary",
         "_primitiveRef": "primitives.colors.secondary.500",
-        "_value": "#6b998d"
+        "_value": "#507b6f"
       }
     },
     "transition": {

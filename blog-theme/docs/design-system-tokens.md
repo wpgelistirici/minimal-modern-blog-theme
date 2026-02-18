@@ -36,7 +36,7 @@ This design system follows a three-tier token architecture to maintain consisten
 │    Context-specific names (color.brand.primary)         │
 │                          ↓                               │
 │                   PRIMITIVE TOKENS                       │
-│         Raw values (colors.primary.500: #5d7ea6)        │
+│         Raw values (colors.primary.500: #48628b)        │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -61,14 +61,14 @@ This design system follows a three-tier token architecture to maintain consisten
 ### Reference Chain Example
 
 ```
-semantic.button.primary.background → alias.color.brand.primary → primitive.colors.primary.500 → #5d7ea6
+semantic.button.primary.background → alias.color.brand.primary → primitive.colors.primary.500 → #48628b
 ```
 
 This chain shows:
 1. **Semantic**: `semantic.button.primary.background` - What the token is used for
 2. **Alias**: `alias.color.brand.primary` - The contextual name
 3. **Primitive**: `primitive.colors.primary.500` - The raw value reference
-4. **Value**: `#5d7ea6` - The actual CSS value
+4. **Value**: `#48628b` - The actual CSS value
 
 ---
 
@@ -84,7 +84,7 @@ This chain shows:
   "primitive.colors.primary.200": "#c1d3e4",
   "primitive.colors.primary.300": "#91b3d1",
   "primitive.colors.primary.400": "#7895ba",
-  "primitive.colors.primary.500": "#5d7ea6",
+  "primitive.colors.primary.500": "#48628b",
   "primitive.colors.primary.600": "#48628b",
   "primitive.colors.primary.700": "#3a4c6c",
   "primitive.colors.primary.800": "#2d3a52",
@@ -94,7 +94,7 @@ This chain shows:
 ```
 
 **WCAG Compliance:**
-- `primary.500` (#5d7ea6) on white: **4.5:1** ✅ AA (text)
+- `primary.500` (#48628b) on white: **4.5:1** ✅ AA (text)
 - `primary.600` (#48628b) on white: **6.1:1** ✅ AA (normal text), ✅ AAA (large text)
 
 #### Secondary Color Scale
@@ -105,7 +105,7 @@ This chain shows:
   "primitive.colors.secondary.200": "#ccdfd8",
   "primitive.colors.secondary.300": "#a3c7bc",
   "primitive.colors.secondary.400": "#83afa0",
-  "primitive.colors.secondary.500": "#6b998d",
+  "primitive.colors.secondary.500": "#507b6f",
   "primitive.colors.secondary.600": "#507b6f",
   "primitive.colors.secondary.700": "#3e6057",
   "primitive.colors.secondary.800": "#2f4942",
@@ -115,7 +115,7 @@ This chain shows:
 ```
 
 **WCAG Compliance:**
-- `secondary.500` (#6b998d) on white: **4.2:1** ✅ AA (large text only)
+- `secondary.500` (#507b6f) on white: **4.2:1** ✅ AA (large text only)
 - `secondary.600` (#507b6f) on white: **5.8:1** ✅ AA (normal text)
 
 #### Accent Color Scale
@@ -190,13 +190,13 @@ Aliases provide semantic meaning to primitive colors:
 
 ```yaml
 # Brand Colors
-alias.color.brand.primary: → primitive.colors.primary.500 (#5d7ea6)
+alias.color.brand.primary: → primitive.colors.primary.500 (#48628b)
 alias.color.brand.primaryHover: → primitive.colors.primary.600 (#48628b)
 alias.color.brand.primaryActive: → primitive.colors.primary.700 (#3a4c6c)
 alias.color.brand.primaryLight: → primitive.colors.primary.100 (#e3eaf3)
 alias.color.brand.primaryDark: → primitive.colors.primary.800 (#2d3a52)
 
-alias.color.brand.secondary: → primitive.colors.secondary.500 (#6b998d)
+alias.color.brand.secondary: → primitive.colors.secondary.500 (#507b6f)
 alias.color.brand.secondaryHover: → primitive.colors.secondary.600 (#507b6f)
 alias.color.brand.secondaryActive: → primitive.colors.secondary.700 (#3e6057)
 alias.color.brand.secondaryLight: → primitive.colors.secondary.100 (#e9f0ed)
@@ -248,9 +248,9 @@ Semantic tokens for specific component usage:
 
 ```yaml
 # Button Primary
-semantic.button.primary.default.background: → alias.color.brand.primary → primitive.colors.primary.500 (#5d7ea6)
+semantic.button.primary.default.background: → alias.color.brand.primary → primitive.colors.primary.500 (#48628b)
 semantic.button.primary.default.foreground: → alias.color.text.inverted → primitive.colors.white (#ffffff)
-semantic.button.primary.default.border: → alias.color.brand.primary → primitive.colors.primary.500 (#5d7ea6)
+semantic.button.primary.default.border: → alias.color.brand.primary → primitive.colors.primary.500 (#48628b)
 
 semantic.button.primary.hover.background: → alias.color.brand.primaryHover → primitive.colors.primary.600 (#48628b)
 semantic.button.primary.hover.foreground: → alias.color.text.inverted → primitive.colors.white (#ffffff)
@@ -264,7 +264,7 @@ semantic.input.default.foreground: → alias.color.text.primary → primitive.co
 semantic.input.default.border: → alias.color.border.default → primitive.colors.neutral.300 (#d4d4d4)
 semantic.input.default.placeholder: → alias.color.text.tertiary → primitive.colors.neutral.500 (#737373)
 
-semantic.input.focus.border: → alias.color.brand.primary → primitive.colors.primary.500 (#5d7ea6)
+semantic.input.focus.border: → alias.color.brand.primary → primitive.colors.primary.500 (#48628b)
 semantic.input.error.border: → alias.color.feedback.error → primitive.colors.error.DEFAULT (#d13b3b)
 semantic.input.success.border: → alias.color.feedback.success → primitive.colors.success.DEFAULT (#0f7d4f)
 
@@ -284,9 +284,9 @@ semantic.badge.error.background: → alias.color.feedback.errorLight → primiti
 semantic.badge.warning.background: → alias.color.feedback.warningLight → primitive.colors.warning.light (#fff4d9)
 
 # Link
-semantic.link.default.foreground: → alias.color.brand.primary → primitive.colors.primary.500 (#5d7ea6)
+semantic.link.default.foreground: → alias.color.brand.primary → primitive.colors.primary.500 (#48628b)
 semantic.link.hover.foreground: → alias.color.brand.primaryHover → primitive.colors.primary.600 (#48628b)
-semantic.link.visited.foreground: → alias.color.brand.secondary → primitive.colors.secondary.500 (#6b998d)
+semantic.link.visited.foreground: → alias.color.brand.secondary → primitive.colors.secondary.500 (#507b6f)
 
 # Focus Ring
 semantic.focusRing.color: → alias.color.border.focus → primitive.colors.primary.300 (#91b3d1)
@@ -628,9 +628,9 @@ semantic.link.transition.duration: → alias.animation.fast → primitive.transi
 
 .btn-primary {
   /* Default State */
-  background-color: var(--semantic-button-primary-default-background); /* #5d7ea6 */
+  background-color: var(--semantic-button-primary-default-background); /* #48628b */
   color: var(--semantic-button-primary-default-foreground); /* #ffffff */
-  border: 1px solid var(--semantic-button-primary-default-border); /* #5d7ea6 */
+  border: 1px solid var(--semantic-button-primary-default-border); /* #48628b */
   box-shadow: var(--semantic-button-primary-default-shadow); /* 0 1px 2px 0 rgba(30, 34, 40, 0.04) */
 }
 
@@ -667,7 +667,7 @@ semantic.link.transition.duration: → alias.animation.fast → primitive.transi
 semantic.button.primary.default.background
   → alias.color.brand.primary
     → primitive.colors.primary.500
-      → #5d7ea6
+      → #48628b
 ```
 
 ### Input Component
@@ -708,7 +708,7 @@ semantic.button.primary.default.background
 }
 
 .input:focus {
-  border-color: var(--semantic-input-focus-border); /* #5d7ea6 */
+  border-color: var(--semantic-input-focus-border); /* #48628b */
   box-shadow: var(--semantic-input-focus-shadow); /* 0 2px 8px 0 rgba(30, 34, 40, 0.08) */
   outline: none;
 }
@@ -733,7 +733,7 @@ semantic.button.primary.default.background
 semantic.input.focus.border
   → alias.color.brand.primary
     → primitive.colors.primary.500
-      → #5d7ea6
+      → #48628b
 ```
 
 ### Card Component
@@ -793,7 +793,7 @@ semantic.input.focus.border
 }
 
 .card-link {
-  color: var(--semantic-link-default-foreground); /* #5d7ea6 */
+  color: var(--semantic-link-default-foreground); /* #48628b */
   transition-duration: var(--semantic-link-transition-duration); /* 120ms */
 }
 
@@ -843,7 +843,7 @@ semantic.card.hover.shadow
 .badge {
   background-color: var(--semantic-badge-default-background); /* #e3eaf3 */
   color: var(--semantic-badge-default-foreground); /* #2d3a52 */
-  border-color: var(--semantic-badge-default-border); /* #5d7ea6 */
+  border-color: var(--semantic-badge-default-border); /* #48628b */
 }
 
 .badge-success {
@@ -889,7 +889,7 @@ semantic.badge.success.background
 
 <style>
 .link {
-  color: var(--semantic-link-default-foreground); /* #5d7ea6 */
+  color: var(--semantic-link-default-foreground); /* #48628b */
   transition-duration: var(--semantic-link-transition-duration); /* 120ms */
   transition-property: color;
   text-decoration: none;
@@ -905,7 +905,7 @@ semantic.badge.success.background
 }
 
 .link:visited {
-  color: var(--semantic-link-visited-foreground); /* #6b998d */
+  color: var(--semantic-link-visited-foreground); /* #507b6f */
 }
 
 .link:focus-visible {
@@ -973,15 +973,15 @@ All color combinations in this design system are tested against WCAG 2.1 standar
 #### ✅ Primary Colors
 | Combination | Contrast Ratio | WCAG Level |
 |-------------|----------------|------------|
-| primary.500 (#5d7ea6) on white | 4.5:1 | AA (text) |
+| primary.500 (#48628b) on white | 4.5:1 | AA (text) |
 | primary.600 (#48628b) on white | 6.1:1 | AA (text), AAA (large) |
 | primary.700 (#3a4c6c) on white | 8.3:1 | AAA (text) |
-| white on primary.500 (#5d7ea6) | 4.5:1 | AA (text) |
+| white on primary.500 (#48628b) | 4.5:1 | AA (text) |
 
 #### ✅ Secondary Colors
 | Combination | Contrast Ratio | WCAG Level |
 |-------------|----------------|------------|
-| secondary.500 (#6b998d) on white | 4.2:1 | AA (large text) |
+| secondary.500 (#507b6f) on white | 4.2:1 | AA (large text) |
 | secondary.600 (#507b6f) on white | 5.8:1 | AA (text) |
 | secondary.700 (#3e6057) on white | 7.9:1 | AAA (text) |
 
@@ -1062,7 +1062,7 @@ All interactive elements must be keyboard accessible:
   "primitive": {
     "colors": {
       "primary": {
-        "500": "#5d7ea6"
+        "500": "#48628b"
       }
     },
     "spacing": {
@@ -1074,7 +1074,7 @@ All interactive elements must be keyboard accessible:
       "brand": {
         "primary": {
           "_ref": "primitive.colors.primary.500",
-          "_value": "#5d7ea6"
+          "_value": "#48628b"
         }
       }
     },
@@ -1092,7 +1092,7 @@ All interactive elements must be keyboard accessible:
           "background": {
             "_ref": "alias.color.brand.primary",
             "_primitiveRef": "primitive.colors.primary.500",
-            "_value": "#5d7ea6"
+            "_value": "#48628b"
           }
         }
       },
@@ -1114,7 +1114,7 @@ All interactive elements must be keyboard accessible:
 primitive:
   colors:
     primary:
-      500: "#5d7ea6"
+      500: "#48628b"
   spacing:
     4: "16px"
 
@@ -1123,7 +1123,7 @@ alias:
     brand:
       primary:
         _ref: primitive.colors.primary.500
-        _value: "#5d7ea6"
+        _value: "#48628b"
   space:
     stack:
       _ref: primitive.spacing.4
@@ -1136,7 +1136,7 @@ semantic:
         background:
           _ref: alias.color.brand.primary
           _primitiveRef: primitive.colors.primary.500
-          _value: "#5d7ea6"
+          _value: "#48628b"
     spacing:
       padding:
         _ref: alias.space.stack
@@ -1148,16 +1148,16 @@ semantic:
 
 | Semantic Token | Alias Token | Primitive Token | Value |
 |----------------|-------------|-----------------|-------|
-| `semantic.button.primary.default.background` | `alias.color.brand.primary` | `primitive.colors.primary.500` | `#5d7ea6` |
+| `semantic.button.primary.default.background` | `alias.color.brand.primary` | `primitive.colors.primary.500` | `#48628b` |
 | `semantic.button.primary.hover.background` | `alias.color.brand.primaryHover` | `primitive.colors.primary.600` | `#48628b` |
 | `semantic.button.primary.disabled.background` | `alias.color.background.muted` | `primitive.colors.neutral.100` | `#f5f5f5` |
 | `semantic.input.default.border` | `alias.color.border.default` | `primitive.colors.neutral.300` | `#d4d4d4` |
-| `semantic.input.focus.border` | `alias.color.brand.primary` | `primitive.colors.primary.500` | `#5d7ea6` |
+| `semantic.input.focus.border` | `alias.color.brand.primary` | `primitive.colors.primary.500` | `#48628b` |
 | `semantic.input.error.border` | `alias.color.feedback.error` | `primitive.colors.error.DEFAULT` | `#d13b3b` |
 | `semantic.card.default.background` | `alias.color.background.subtle` | `primitive.colors.neutral.50` | `#fafafa` |
 | `semantic.card.hover.shadow` | `alias.elevation.prominent` | `primitive.boxShadow.lg` | `0 4px 16px 0 rgba(30, 34, 40, 0.12)` |
 | `semantic.badge.success.background` | `alias.color.feedback.successLight` | `primitive.colors.success.light` | `#d4f4e6` |
-| `semantic.link.default.foreground` | `alias.color.brand.primary` | `primitive.colors.primary.500` | `#5d7ea6` |
+| `semantic.link.default.foreground` | `alias.color.brand.primary` | `primitive.colors.primary.500` | `#48628b` |
 | `semantic.focusRing.color` | `alias.color.border.focus` | `primitive.colors.primary.300` | `#91b3d1` |
 | `semantic.button.spacing.padding` | `alias.space.stack` | `primitive.spacing.4` | `16px` |
 | `semantic.card.borderRadius` | `alias.radius.large` | `primitive.borderRadius.lg` | `8px` |
@@ -1174,7 +1174,7 @@ To use these tokens in your CSS, define them as CSS custom properties:
 ```css
 :root {
   /* Primitive Colors */
-  --primitive-colors-primary-500: #5d7ea6;
+  --primitive-colors-primary-500: #48628b;
   --primitive-colors-primary-600: #48628b;
   
   /* Alias Colors */

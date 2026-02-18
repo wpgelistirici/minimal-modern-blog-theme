@@ -7,11 +7,11 @@
     "brand": {
       "primary": {
         "_ref": "primitives.colors.primary.500",
-        "_value": "#5d7ea6"
+        "_value": "#48628b"
       },
       "primaryHover": {
         "_ref": "primitives.colors.primary.600",
-        "_value": "#48628b"
+        "_value": "#3a4c6c"
       },
       "primaryActive": {
         "_ref": "primitives.colors.primary.700",
@@ -27,11 +27,11 @@
       },
       "secondary": {
         "_ref": "primitives.colors.secondary.500",
-        "_value": "#6b998d"
+        "_value": "#507b6f"
       },
       "secondaryHover": {
         "_ref": "primitives.colors.secondary.600",
-        "_value": "#507b6f"
+        "_value": "#3e6057"
       },
       "secondaryActive": {
         "_ref": "primitives.colors.secondary.700",
