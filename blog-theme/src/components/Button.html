@@ -1,0 +1,65 @@
+<!-- Button Component -->
+<!-- Usage: Base button component with design system tokens -->
+<button 
+  class="btn inline-flex items-center justify-center gap-2 px-4 py-2 
+         bg-primary-500 text-white font-body text-body
+         rounded-md shadow-sm
+         transition-colors duration-normal ease-default
+         hover:bg-primary-600 hover:shadow-md hover:scale-[1.02] 
+         active:bg-primary-700 active:scale-[0.98] active:shadow-sm
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary-500 disabled:hover:scale-100">
+  <slot>Button</slot>
+</button>
+
+<!-- Variant: Secondary -->
+<button 
+  class="btn inline-flex items-center justify-center gap-2 px-4 py-2 
+         bg-secondary-500 text-white font-body text-body
+         rounded-md shadow-sm
+         transition-colors duration-normal ease-default
+         hover:bg-secondary-600 hover:shadow-md hover:scale-[1.02] 
+         active:bg-secondary-700 active:scale-[0.98] active:shadow-sm
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-300 focus-visible:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-secondary-500 disabled:hover:scale-100">
+  <slot>Secondary Button</slot>
+</button>
+
+<!-- Variant: Accent -->
+<button 
+  class="btn inline-flex items-center justify-center gap-2 px-4 py-2 
+         bg-accent-500 text-white font-body text-body
+         rounded-md shadow-sm
+         transition-colors duration-normal ease-default
+         hover:bg-accent-600 hover:shadow-md hover:scale-[1.02] 
+         active:bg-accent-700 active:scale-[0.98] active:shadow-sm
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-300 focus-visible:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-accent-500 disabled:hover:scale-100">
+  <slot>Accent Button</slot>
+</button>
+
+<!-- Variant: Outline -->
+<button 
+  class="btn inline-flex items-center justify-center gap-2 px-4 py-2 
+         bg-transparent text-primary-500 border border-primary-500 font-body text-body
+         rounded-md shadow-sm
+         transition-colors duration-normal ease-default
+         hover:bg-primary-50 hover:shadow-md hover:scale-[1.02] 
+         active:bg-primary-100 active:scale-[0.98] active:shadow-sm
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:scale-100">
+  <slot>Outline Button</slot>
+</button>
+
+<!-- Variant: Ghost -->
+<button 
+  class="btn inline-flex items-center justify-center gap-2 px-4 py-2 
+         bg-transparent text-primary-500 font-body text-body
+         rounded-md
+         transition-colors duration-normal ease-default
+         hover:bg-primary-50 hover:scale-[1.02] 
+         active:bg-primary-100 active:scale-[0.98]
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:scale-100">
+  <slot>Ghost Button</slot>
+</button>
