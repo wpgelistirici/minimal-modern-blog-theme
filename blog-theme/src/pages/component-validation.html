@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Token Validation | Minimal Modern Blog Theme</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@600;700&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="../styles/tailwind.css">
+  
+  <style>
+    .token-badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      margin: 0.25rem;
+      font-size: 0.75rem;
+      font-family: 'Fira Mono', monospace;
+      background: #f3f4f6;
+      border-radius: 0.25rem;
+      color: #374151;
+    }
+    
+    .component-showcase {
+      padding: 2rem;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .state-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-surface-background text-surface-foreground font-body antialiased">
+  
+  <!-- Header -->
+  <header class="border-b border-surface-border py-6">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between">
+        <h1 class="text-h3 font-heading">Component Token Validation</h1>
+        <button 
+          onclick="document.documentElement.classList.toggle('dark')"
+          class="btn px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600 transition-colors duration-normal">
+          Toggle Dark Mode
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 md:px-6 py-12">
+    
+    <!-- Button Component Section -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Button Component</h2>
+      <p class="text-body mb-6 text-surface-mutedForeground">
+        Testing all button variants, sizes, and states with design system tokens.
+      </p>
+      
+      <div class="component-showcase">
+        <h3 class="text-h4 font-heading mb-4">Variants</h3>
+        <div class="flex flex-wrap gap-4 mb-4">
+          <button class="btn px-4 py-2 bg-primary-500 text-white rounded-md shadow-sm hover:bg-primary-600 hover:shadow-md hover:scale-[1.02] transition-all duration-normal">
+            Primary Button
+          </button>
+          <button class="btn px-4 py-2 bg-secondary-500 text-white rounded-md shadow-sm hover:bg-secondary-600 hover:shadow-md hover:scale-[1.02] transition-all duration-normal">
+            Secondary Button
+          </button>
+          <button class="btn px-4 py-2 bg-accent-500 text-white rounded-md shadow-sm hover:bg-accent-600 hover:shadow-md hover:scale-[1.02] transition-all duration-normal">
+            Accent Button
+          </button>
+          <button class="btn px-4 py-2 bg-transparent text-primary-500 border border-primary-500 rounded-md shadow-sm hover:bg-primary-50 hover:shadow-md hover:scale-[1.02] transition-all duration-normal">
+            Outline Button
+          </button>
+          <button class="btn px-4 py-2 bg-transparent text-primary-500 rounded-md hover:bg-primary-50 hover:scale-[1.02] transition-all duration-normal">
+            Ghost Button
+          </button>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="token-badge">bg-primary-500</span>
+          <span class="token-badge">rounded-md</span>
+          <span class="token-badge">shadow-sm</span>
+          <span class="token-badge">hover:shadow-md</span>
+          <span class="token-badge">duration-normal</span>
+        </div>
+      </div>
+
+      <div class="component-showcase">
+        <h3 class="text-h4 font-heading mb-4">Sizes</h3>
+        <div class="flex flex-wrap items-center gap-4 mb-4">
+          <button class="btn px-3 py-1.5 text-body-sm bg-primary-500 text-white rounded-md shadow-sm hover:bg-primary-600 transition-colors duration-normal">
+            Small
+          </button>
+          <button class="btn px-4 py-2 text-body bg-primary-500 text-white rounded-md shadow-sm hover:bg-primary-600 transition-colors duration-normal">
+            Medium
+          </button>
+          <button class="btn px-6 py-3 text-body-lg bg-primary-500 text-white rounded-md shadow-sm hover:bg-primary-600 transition-colors duration-normal">
+            Large
+          </button>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="token-badge">text-body-sm</span>
+          <span class="token-badge">text-body</span>
+          <span class="token-badge">text-body-lg</span>
+          <span class="token-badge">spacing: px-3, py-1.5</span>
+        </div>
+      </div>
+
+      <div class="component-showcase">
+        <h3 class="text-h4 font-heading mb-4">States</h3>
+        <div class="state-grid mb-4">
+          <div>
+            <p class="text-caption mb-2 text-surface-mutedForeground">Default</p>
+            <button class="btn w-full px-4 py-2 bg-primary-500 text-white rounded-md shadow-sm">
+              Default
+            </button>
+          </div>
+          <div>
+            <p class="text-caption mb-2 text-surface-mutedForeground">Hover (simulated)</p>
+            <button class="btn w-full px-4 py-2 bg-primary-600 text-white rounded-md shadow-md scale-[1.02]">
+              Hover
+            </button>
+          </div>
+          <div>
+            <p class="text-caption mb-2 text-surface-mutedForeground">Active</p>
+            <button class="btn w-full px-4 py-2 bg-primary-700 text-white rounded-md shadow-sm scale-[0.98]">
+              Active
+            </button>
+          </div>
+          <div>
+            <p class="text-caption mb-2 text-surface-mutedForeground">Disabled</p>
+            <button disabled class="btn w-full px-4 py-2 bg-primary-500 text-white rounded-md shadow-sm opacity-50 cursor-not-allowed">
+              Disabled
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="token-badge">opacity-50</span>
+          <span class="token-badge">cursor-not-allowed</span>
+          <span class="token-badge">scale-[1.02]</span>
+          <span class="token-badge">shadow-md</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Component Section -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Card Component</h2>
+      <p class="text-body mb-6 text-surface-mutedForeground">
+        Testing card variants with proper elevation, borders, and spacing tokens.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        <!-- Default Card -->
+        <div class="bg-surface-card border border-surface-border rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-normal">
+          <h3 class="text-h4 font-heading text-surface-foreground mb-3">Default Card</h3>
+          <p class="text-body font-body text-surface-mutedForeground mb-4">
+            Using design system tokens for consistent styling.
+          </p>
+          <button class="btn px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600">
+            Action
+          </button>
+        </div>
+
+        <!-- Featured Card -->
+        <div class="bg-primary-50 border-2 border-primary-200 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-normal">
+          <span class="inline-block px-3 py-1 text-caption font-body font-semibold bg-primary-500 text-white rounded-full mb-3">
+            Featured
+          </span>
+          <h3 class="text-h3 font-heading text-primary-700 mb-3">Featured Card</h3>
+          <p class="text-body font-body text-primary-600 mb-4">
+            Elevated styling with emphasis tokens.
+          </p>
+          <button class="btn px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600">
+            Learn More
+          </button>
+        </div>
+
+        <!-- Success Card -->
+        <div class="bg-success/5 border border-success rounded-lg p-6 shadow-md">
+          <div class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <div>
+              <h4 class="text-h6 font-heading text-success mb-2">Success</h4>
+              <p class="text-body-sm font-body text-success/80">
+                Action completed successfully.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="component-showcase">
+        <h3 class="text-h4 font-heading mb-4">Token Usage</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="token-badge">bg-surface-card</span>
+          <span class="token-badge">border-surface-border</span>
+          <span class="token-badge">rounded-lg</span>
+          <span class="token-badge">p-6 (spacing.6)</span>
+          <span class="token-badge">shadow-md</span>
+          <span class="token-badge">hover:shadow-lg</span>
+          <span class="token-badge">text-surface-foreground</span>
+          <span class="token-badge">text-surface-mutedForeground</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Input Component Section -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Input Component</h2>
+      <p class="text-body mb-6 text-surface-mutedForeground">
+        Testing input fields with various states and design tokens.
+      </p>
+
+      <div class="component-showcase">
+        <h3 class="text-h4 font-heading mb-6">Input States</h3>
+        <div class="space-y-6 max-w-md">
+          <!-- Default Input -->
+          <div>
+            <label class="block text-body-sm font-body font-medium text-surface-foreground mb-2">
+              Default Input
+            </label>
+            <input 
+              type="text" 
+              placeholder="Enter text..."
+              class="input w-full px-4 py-3 bg-surface-background text-surface-foreground border border-surface-border rounded-md shadow-sm hover:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-500 transition-colors duration-normal">
+          </div>
+
+          <!-- Error State -->
+          <div>
+            <label class="block text-body-sm font-body font-medium text-surface-foreground mb-2">
+              Error State
+            </label>
+            <input 
+              type="email" 
+              value="invalid-email"
+              class="input w-full px-4 py-3 bg-surface-background text-surface-foreground border-2 border-error rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-error transition-colors duration-normal">
+            <p class="mt-2 text-body-sm text-error">
+              Please enter a valid email address.
+            </p>
+          </div>
+
+          <!-- Success State -->
+          <div>
+            <label class="block text-body-sm font-body font-medium text-surface-foreground mb-2">
+              Success State
+            </label>
+            <input 
+              type="email" 
+              value="user@example.com"
+              class="input w-full px-4 py-3 bg-surface-background text-surface-foreground border-2 border-success rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-success transition-colors duration-normal">
+            <p class="mt-2 text-body-sm text-success">
+              Email looks good!
+            </p>
+          </div>
+
+          <!-- Disabled State -->
+          <div>
+            <label class="block text-body-sm font-body font-medium text-surface-mutedForeground mb-2">
+              Disabled State
+            </label>
+            <input 
+              type="text" 
+              value="Cannot edit this"
+              disabled
+              class="input w-full px-4 py-3 bg-surface-muted text-surface-mutedForeground border border-surface-border rounded-md shadow-sm opacity-50 cursor-not-allowed">
+          </div>
+        </div>
+      </div>
+
+      <div class="component-showcase">
+        <h3 class="text-h4 font-heading mb-4">Token Usage</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="token-badge">bg-surface-background</span>
+          <span class="token-badge">border-surface-border</span>
+          <span class="token-badge">text-surface-foreground</span>
+          <span class="token-badge">rounded-md</span>
+          <span class="token-badge">px-4 py-3 (spacing)</span>
+          <span class="token-badge">focus:ring-2</span>
+          <span class="token-badge">focus:ring-primary-300</span>
+          <span class="token-badge">border-error</span>
+          <span class="token-badge">border-success</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsive Test -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Responsive Breakpoints</h2>
+      <p class="text-body mb-6 text-surface-mutedForeground">
+        Resize the browser window to test responsive behavior.
+      </p>
+
+      <div class="component-showcase">
+        <h3 class="text-h4 font-heading mb-4">Responsive Grid</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+          <div class="bg-primary-100 p-4 rounded-md text-center">
+            <p class="font-medium">1 col</p>
+            <p class="text-caption">Mobile</p>
+          </div>
+          <div class="bg-secondary-100 p-4 rounded-md text-center">
+            <p class="font-medium">2 cols</p>
+            <p class="text-caption">Tablet (sm)</p>
+          </div>
+          <div class="bg-accent-100 p-4 rounded-md text-center">
+            <p class="font-medium">4 cols</p>
+            <p class="text-caption">Desktop (lg)</p>
+          </div>
+          <div class="bg-neutral-200 p-4 rounded-md text-center">
+            <p class="font-medium">4 cols</p>
+            <p class="text-caption">Desktop (lg)</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="token-badge">sm: 480px</span>
+          <span class="token-badge">md: 768px</span>
+          <span class="token-badge">lg: 1024px</span>
+          <span class="token-badge">xl: 1280px</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Test -->
+    <section class="mb-16">
+      <h2 class="text-h2 font-heading mb-6">Typography Tokens</h2>
+      
+      <div class="component-showcase space-y-4">
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-1">Display (2.986rem / 700)</p>
+          <h1 class="text-display font-heading">Display Heading</h1>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-1">H1 (2.488rem / 700)</p>
+          <h1 class="text-h1 font-heading">Heading 1</h1>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-1">H2 (2.074rem / 700)</p>
+          <h2 class="text-h2 font-heading">Heading 2</h2>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-1">H3 (1.728rem / 600)</p>
+          <h3 class="text-h3 font-heading">Heading 3</h3>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-1">Body (0.889rem / 400)</p>
+          <p class="text-body font-body">This is body text using IBM Plex Sans with design system tokens.</p>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-1">Caption (0.704rem / 400)</p>
+          <p class="text-caption font-body">This is caption text for additional information.</p>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-1">Code (Fira Mono)</p>
+          <code class="font-mono bg-surface-muted px-2 py-1 rounded">const designTokens = true;</code>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-surface-border py-8">
+    <div class="container mx-auto px-4 md:px-6 text-center text-body-sm text-surface-mutedForeground">
+      <p>Design System Token Validation Test Page</p>
+      <p class="mt-2">All components use design system tokens - no hardcoded values</p>
+    </div>
+  </footer>
+
+  <script>
+    // Log computed styles for debugging
+    console.log('Design System Validation');
+    console.log('======================');
+    
+    // Check primary button
+    const primaryBtn = document.querySelector('.btn.bg-primary-500');
+    if (primaryBtn) {
+      const styles = window.getComputedStyle(primaryBtn);
+      console.log('Primary Button:', {
+        backgroundColor: styles.backgroundColor,
+        padding: styles.padding,
+        borderRadius: styles.borderRadius,
+        boxShadow: styles.boxShadow,
+        fontFamily: styles.fontFamily,
+      });
+    }
+    
+    // Check card
+    const card = document.querySelector('.bg-surface-card');
+    if (card) {
+      const styles = window.getComputedStyle(card);
+      console.log('Card:', {
+        backgroundColor: styles.backgroundColor,
+        padding: styles.padding,
+        borderRadius: styles.borderRadius,
+        boxShadow: styles.boxShadow,
+        border: styles.border,
+      });
+    }
+  </script>
+</body>
+</html>
