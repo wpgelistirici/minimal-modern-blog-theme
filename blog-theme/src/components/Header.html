@@ -1,0 +1,141 @@
+<!-- Header Component -->
+<!-- Usage: Sticky header with logo, navigation, and mobile menu toggle -->
+<header 
+  class="header sticky top-0 z-50 bg-primary-50 shadow-sm
+         transition-shadow duration-normal ease-default">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a 
+        href="/" 
+        class="logo flex items-center gap-2 text-h4 font-heading text-primary-600 
+               transition-colors duration-normal ease-default
+               hover:text-primary-700
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm"
+        aria-label="Homepage">
+        <span>Blog</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav 
+        class="hidden md:flex items-center gap-6"
+        aria-label="Main navigation">
+        <a 
+          href="/" 
+          class="nav-link text-body font-body text-primary-600
+                 transition-colors duration-normal ease-default
+                 hover:text-primary-700 hover:underline underline-offset-4
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm"
+          aria-current="page">
+          Home
+        </a>
+        <a 
+          href="/blog.html" 
+          class="nav-link text-body font-body text-primary-600
+                 transition-colors duration-normal ease-default
+                 hover:text-primary-700 hover:underline underline-offset-4
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm">
+          Blog
+        </a>
+        <a 
+          href="/about.html" 
+          class="nav-link text-body font-body text-primary-600
+                 transition-colors duration-normal ease-default
+                 hover:text-primary-700 hover:underline underline-offset-4
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm">
+          About
+        </a>
+        <a 
+          href="/contact.html" 
+          class="nav-link text-body font-body text-primary-600
+                 transition-colors duration-normal ease-default
+                 hover:text-primary-700 hover:underline underline-offset-4
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm">
+          Contact
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button 
+        id="mobile-menu-toggle"
+        type="button"
+        class="mobile-menu-toggle md:hidden inline-flex items-center justify-center p-2 rounded-md
+               text-primary-600 bg-transparent
+               transition-colors duration-normal ease-out
+               hover:bg-primary-100 hover:text-primary-700
+               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle navigation menu">
+        <!-- Hamburger Icon -->
+        <svg 
+          class="hamburger-icon w-6 h-6 transition-transform duration-normal ease-out" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          aria-hidden="true">
+          <path 
+            class="hamburger-line-top"
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M4 6h16"/>
+          <path 
+            class="hamburger-line-middle"
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M4 12h16"/>
+          <path 
+            class="hamburger-line-bottom"
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      id="mobile-menu"
+      class="mobile-menu md:hidden hidden overflow-hidden transition-all duration-normal ease-out">
+      <nav class="py-4 space-y-2" aria-label="Mobile navigation">
+        <!-- NOTE: Set aria-current="page" dynamically based on the current page URL -->
+        <a 
+          href="/" 
+          class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
+                 transition-colors duration-normal ease-default
+                 hover:bg-primary-100 hover:text-primary-700
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+          aria-current="page">
+          Home
+        </a>
+        <a 
+          href="/blog.html" 
+          class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
+                 transition-colors duration-normal ease-default
+                 hover:bg-primary-100 hover:text-primary-700
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2">
+          Blog
+        </a>
+        <a 
+          href="/about.html" 
+          class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
+                 transition-colors duration-normal ease-default
+                 hover:bg-primary-100 hover:text-primary-700
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2">
+          About
+        </a>
+        <a 
+          href="/contact.html" 
+          class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
+                 transition-colors duration-normal ease-default
+                 hover:bg-primary-100 hover:text-primary-700
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2">
+          Contact
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
