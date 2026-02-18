@@ -87,11 +87,11 @@
   }
   
   .input-error {
-    @apply border-error-DEFAULT focus-visible:ring-error-DEFAULT;
+    @apply border-error focus-visible:ring-error;
   }
   
   .input-success {
-    @apply border-success-DEFAULT focus-visible:ring-success-DEFAULT;
+    @apply border-success focus-visible:ring-success;
   }
   
   /* Card states */
@@ -179,11 +179,11 @@
   }
   
   .focus-ring-error {
-    @apply focus-visible:ring-2 focus-visible:ring-error-DEFAULT focus-visible:ring-offset-2;
+    @apply focus-visible:ring-2 focus-visible:ring-error focus-visible:ring-offset-2;
   }
   
   .focus-ring-success {
-    @apply focus-visible:ring-2 focus-visible:ring-success-DEFAULT focus-visible:ring-offset-2;
+    @apply focus-visible:ring-2 focus-visible:ring-success focus-visible:ring-offset-2;
   }
   
   .focus-ring-none {

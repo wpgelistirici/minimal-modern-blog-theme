@@ -269,16 +269,13 @@ export default {
     },
     // Ensure ring utilities are generated
     {
-      pattern: /ring-(0|1|2|4|8|primary|state-focus-ring)/,
+      pattern: /ring-(0|1|2|4|8)/,
     },
     {
       pattern: /ring-offset-(0|1|2|4|8)/,
     },
     {
-      pattern: /focus-visible:ring/,
-    },
-    {
-      pattern: /focus:ring/,
+      pattern: /ring-(primary|state-focus-ring|error|success|warning|info)-(50|100|200|300|400|500|600|700|800|900|950|DEFAULT|light|dark)/,
     },
   ],
   plugins: [

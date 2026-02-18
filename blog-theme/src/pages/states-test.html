@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State & Focus-Ring Test | Minimal Modern Blog Theme</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@600;700&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="../styles/tailwind.css">
+</head>
+<body class="bg-surface-background text-surface-foreground font-body antialiased">
+  
+  <!-- Header -->
+  <header class="border-b border-surface-border py-6">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between">
+        <h1 class="text-h4 font-heading">State & Focus-Ring Test</h1>
+        <button 
+          onclick="document.documentElement.classList.toggle('dark')"
+          class="btn px-4 py-2 bg-primary-500 text-white rounded-md hover:bg-primary-600">
+          Toggle Dark Mode
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 md:px-6 py-12">
+    
+    <!-- Focus Ring Demo -->
+    <section class="mb-16">
+      <h2 class="text-h3 font-heading mb-6">Focus Ring (Keyboard Navigation)</h2>
+      <p class="text-body mb-6 text-surface-mutedForeground">
+        Use Tab key to navigate through these elements and see the focus ring in action.
+        Focus ring should only appear with keyboard navigation, not with mouse clicks.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <button class="btn px-6 py-3 bg-primary-500 text-white rounded-md">
+          Button with Focus
+        </button>
+        <input type="text" placeholder="Input with Focus" 
+          class="input px-4 py-3 border border-surface-border rounded-md">
+        <a href="#" class="link text-primary-500 px-4 py-3 inline-block">
+          Link with Focus Ring
+        </a>
+      </div>
+    </section>
+
+    <!-- Button States -->
+    <section class="mb-16">
+      <h2 class="text-h3 font-heading mb-6">Button States</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-2">Default</p>
+          <button class="btn px-6 py-3 bg-primary-500 text-white rounded-md w-full">
+            Button
+          </button>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-2">Hover (mouse over)</p>
+          <button class="btn px-6 py-3 bg-primary-500 text-white rounded-md w-full">
+            Hover Me
+          </button>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-2">Disabled</p>
+          <button disabled class="btn px-6 py-3 bg-primary-500 text-white rounded-md w-full">
+            Disabled
+          </button>
+        </div>
+        <div>
+          <p class="text-caption text-surface-mutedForeground mb-2">Loading</p>
+          <button class="btn loading px-6 py-3 bg-primary-500 text-white rounded-md w-full">
+            Loading...
+          </button>
+        </div>
+      </div>
+      
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-6">
+        <button class="btn px-6 py-3 bg-success-DEFAULT text-white rounded-md">
+          Success Button
+        </button>
+        <button class="btn px-6 py-3 bg-error-DEFAULT text-white rounded-md">
+          Error Button
+        </button>
+        <button class="btn px-6 py-3 bg-warning-DEFAULT text-neutral-900 rounded-md">
+          Warning Button
+        </button>
+      </div>
+    </section>
+
+    <!-- Input States -->
+    <section class="mb-16">
+      <h2 class="text-h3 font-heading mb-6">Input States</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-body-sm font-medium mb-2">Default Input</label>
+          <input type="text" placeholder="Type something..." 
+            class="input w-full px-4 py-3 border border-surface-border rounded-md bg-surface-background">
+        </div>
+        <div>
+          <label class="block text-body-sm font-medium mb-2">Disabled Input</label>
+          <input type="text" placeholder="Disabled" disabled
+            class="input w-full px-4 py-3 border border-surface-border rounded-md bg-surface-background">
+        </div>
+        <div>
+          <label class="block text-body-sm font-medium mb-2">Error Input</label>
+          <input type="text" placeholder="Invalid email" 
+            class="input input-error w-full px-4 py-3 border rounded-md bg-surface-background">
+          <p class="text-body-sm text-error-DEFAULT mt-1">Please enter a valid email</p>
+        </div>
+        <div>
+          <label class="block text-body-sm font-medium mb-2">Success Input</label>
+          <input type="text" value="john@example.com" 
+            class="input input-success w-full px-4 py-3 border rounded-md bg-surface-background">
+          <p class="text-body-sm text-success-DEFAULT mt-1">Email is valid</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card States -->
+    <section class="mb-16">
+      <h2 class="text-h3 font-heading mb-6">Card States</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-surface-card border border-surface-border rounded-lg p-6 shadow-sm">
+          <h3 class="text-h5 font-heading mb-2">Default Card</h3>
+          <p class="text-body text-surface-mutedForeground">
+            This is a static card without interactions.
+          </p>
+        </div>
+        
+        <button class="card-interactive text-left bg-surface-card border border-surface-border rounded-lg p-6 shadow-sm">
+          <h3 class="text-h5 font-heading mb-2">Interactive Card</h3>
+          <p class="text-body text-surface-mutedForeground">
+            Hover over me to see the effect. Also try keyboard navigation.
+          </p>
+        </button>
+        
+        <a href="#" class="card-interactive block text-left bg-surface-card border border-surface-border rounded-lg p-6 shadow-sm">
+          <h3 class="text-h5 font-heading mb-2">Clickable Card</h3>
+          <p class="text-body text-surface-mutedForeground">
+            I'm a link card with hover and focus states.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Badge States -->
+    <section class="mb-16">
+      <h2 class="text-h3 font-heading mb-6">Badge States</h2>
+      <div class="flex flex-wrap gap-3">
+        <span class="badge inline-flex items-center px-3 py-1 rounded-full text-body-sm bg-primary-100 text-primary-700 border border-primary-200">
+          Default
+        </span>
+        <button class="badge badge-interactive inline-flex items-center px-3 py-1 rounded-full text-body-sm bg-primary-100 text-primary-700 border border-primary-200">
+          Clickable
+        </button>
+        <span class="badge inline-flex items-center px-3 py-1 rounded-full text-body-sm bg-success-light text-success-dark border border-success">
+          Success
+        </span>
+        <span class="badge inline-flex items-center px-3 py-1 rounded-full text-body-sm bg-error-light text-error-dark border border-error">
+          Error
+        </span>
+        <span class="badge inline-flex items-center px-3 py-1 rounded-full text-body-sm bg-warning-light text-warning-dark border border-warning">
+          Warning
+        </span>
+        <span class="badge inline-flex items-center px-3 py-1 rounded-full text-body-sm bg-info-light text-info-dark border border-info">
+          Info
+        </span>
+      </div>
+    </section>
+
+    <!-- Link States -->
+    <section class="mb-16">
+      <h2 class="text-h3 font-heading mb-6">Link States</h2>
+      <div class="space-y-4">
+        <p class="text-body">
+          This is a paragraph with a <a href="#" class="link text-primary-500">default link</a> that changes on hover.
+        </p>
+        <p class="text-body">
+          Here's an <a href="#visited" class="link text-primary-500">unvisited link</a> and a 
+          <a href="#" class="link text-secondary-500 visited:text-secondary-700">visited link</a>.
+        </p>
+        <p class="text-body">
+          Links with <a href="#" class="link focus-ring-error text-error-DEFAULT">custom focus rings</a> for different contexts.
+        </p>
+      </div>
+    </section>
+
+    <!-- Focus Ring Variants -->
+    <section class="mb-16">
+      <h2 class="text-h3 font-heading mb-6">Focus Ring Variants</h2>
+      <p class="text-body mb-6 text-surface-mutedForeground">
+        Use Tab to navigate and see different focus ring colors for different contexts.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <button class="focus-ring px-6 py-3 bg-neutral-100 border border-neutral-300 rounded-md">
+          Default Ring
+        </button>
+        <button class="focus-ring-primary px-6 py-3 bg-primary-50 border border-primary-300 rounded-md">
+          Primary Ring
+        </button>
+        <button class="focus-ring-error px-6 py-3 bg-error-light border border-error rounded-md">
+          Error Ring
+        </button>
+        <button class="focus-ring-success px-6 py-3 bg-success-light border border-success rounded-md">
+          Success Ring
+        </button>
+      </div>
+    </section>
+
+    <!-- State Utility Classes Demo -->
+    <section class="mb-16">
+      <h2 class="text-h3 font-heading mb-6">State Utility Classes</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="p-6 bg-surface-card border border-surface-border rounded-lg state-default">
+          <p class="text-body-sm text-center">state-default</p>
+        </div>
+        <div class="p-6 bg-surface-card border border-surface-border rounded-lg state-hover">
+          <p class="text-body-sm text-center">state-hover</p>
+        </div>
+        <div class="p-6 bg-surface-card border border-surface-border rounded-lg state-active">
+          <p class="text-body-sm text-center">state-active</p>
+        </div>
+        <div class="p-6 bg-surface-card border border-surface-border rounded-lg state-disabled">
+          <p class="text-body-sm text-center">state-disabled</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessibility Notice -->
+    <section class="mb-16 p-6 bg-info-light border border-info-DEFAULT rounded-lg">
+      <h3 class="text-h5 font-heading mb-2 text-info-dark">♿ Accessibility Notes</h3>
+      <ul class="list-disc list-inside space-y-2 text-body text-info-dark">
+        <li>Focus rings only appear on keyboard navigation (focus-visible), not on mouse clicks</li>
+        <li>All interactive elements have proper focus indicators</li>
+        <li>Disabled states prevent interaction and show reduced opacity</li>
+        <li>Touch devices have optimized interactions (hover effects disabled)</li>
+        <li>All color combinations meet WCAG AA contrast requirements (except disabled states)</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-surface-border py-8 mt-16">
+    <div class="container mx-auto px-4 md:px-6 text-center">
+      <p class="text-body-sm text-surface-mutedForeground">
+        State & Focus-Ring Token System Test Page
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
