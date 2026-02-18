@@ -44,11 +44,11 @@ export default {
         },
       },
       animation: {
-        'fade-in': 'fadeIn 220ms cubic-bezier(0.4, 0, 0.2, 1)',
-        'fade-out': 'fadeOut 220ms cubic-bezier(0.4, 0, 0.2, 1)',
-        'slide-up': 'slideUp 220ms cubic-bezier(0, 0, 0.2, 1)',
-        'slide-down': 'slideDown 220ms cubic-bezier(0, 0, 0.2, 1)',
-        'scale-in': 'scaleIn 120ms cubic-bezier(0.22, 1, 0.36, 1)',
+        'fade-in': `fadeIn ${animations.transitionDuration.normal} ${animations.transitionTimingFunction.default}`,
+        'fade-out': `fadeOut ${animations.transitionDuration.normal} ${animations.transitionTimingFunction.default}`,
+        'slide-up': `slideUp ${animations.transitionDuration.normal} ${animations.transitionTimingFunction.out}`,
+        'slide-down': `slideDown ${animations.transitionDuration.normal} ${animations.transitionTimingFunction.out}`,
+        'scale-in': `scaleIn ${animations.transitionDuration.fast} ${animations.transitionTimingFunction.spring}`,
       },
       fontFamily: {
         heading: ['Inter', 'sans-serif'],
