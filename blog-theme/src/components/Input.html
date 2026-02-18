@@ -1,0 +1,126 @@
+<!-- Input Component -->
+<!-- Usage: Base input component with design system tokens -->
+<div class="w-full">
+  <label for="input-default" class="block text-body-sm font-body font-medium text-surface-foreground mb-2">
+    Default Input
+  </label>
+  <input 
+    id="input-default"
+    type="text" 
+    placeholder="Enter text..."
+    class="input w-full px-4 py-3 
+           bg-surface-background text-surface-foreground font-body text-body
+           border border-surface-border rounded-md shadow-sm
+           transition-colors duration-normal ease-default
+           hover:border-primary-300
+           focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-500
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-surface-border
+           placeholder:text-surface-mutedForeground">
+</div>
+
+<!-- Variant: With Icon -->
+<div class="w-full">
+  <label for="input-icon" class="block text-body-sm font-body font-medium text-surface-foreground mb-2">
+    Input with Icon
+  </label>
+  <div class="relative">
+    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+      <svg class="h-5 w-5 text-surface-mutedForeground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+    </div>
+    <input 
+      id="input-icon"
+      type="text" 
+      placeholder="Search..."
+      class="input w-full pl-10 pr-4 py-3 
+             bg-surface-background text-surface-foreground font-body text-body
+             border border-surface-border rounded-md shadow-sm
+             transition-colors duration-normal ease-default
+             hover:border-primary-300
+             focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-500
+             disabled:opacity-50 disabled:cursor-not-allowed
+             placeholder:text-surface-mutedForeground">
+  </div>
+</div>
+
+<!-- Variant: Error State -->
+<div class="w-full">
+  <label for="input-error" class="block text-body-sm font-body font-medium text-surface-foreground mb-2">
+    Error Input
+  </label>
+  <input 
+    id="input-error"
+    type="email" 
+    value="invalid-email"
+    class="input w-full px-4 py-3 
+           bg-surface-background text-surface-foreground font-body text-body
+           border-2 border-error rounded-md shadow-sm
+           transition-colors duration-normal ease-default
+           hover:border-error
+           focus:outline-none focus:ring-2 focus:ring-error focus:border-error
+           placeholder:text-surface-mutedForeground"
+    aria-invalid="true"
+    aria-describedby="input-error-message">
+  <p id="input-error-message" class="mt-2 text-body-sm text-error">
+    Please enter a valid email address.
+  </p>
+</div>
+
+<!-- Variant: Success State -->
+<div class="w-full">
+  <label for="input-success" class="block text-body-sm font-body font-medium text-surface-foreground mb-2">
+    Success Input
+  </label>
+  <input 
+    id="input-success"
+    type="email" 
+    value="user@example.com"
+    class="input w-full px-4 py-3 
+           bg-surface-background text-surface-foreground font-body text-body
+           border-2 border-success rounded-md shadow-sm
+           transition-colors duration-normal ease-default
+           hover:border-success
+           focus:outline-none focus:ring-2 focus:ring-success focus:border-success
+           placeholder:text-surface-mutedForeground"
+    aria-describedby="input-success-message">
+  <p id="input-success-message" class="mt-2 text-body-sm text-success">
+    Email looks good!
+  </p>
+</div>
+
+<!-- Variant: Disabled State -->
+<div class="w-full">
+  <label for="input-disabled" class="block text-body-sm font-body font-medium text-surface-mutedForeground mb-2">
+    Disabled Input
+  </label>
+  <input 
+    id="input-disabled"
+    type="text" 
+    value="Cannot edit this"
+    disabled
+    class="input w-full px-4 py-3 
+           bg-surface-muted text-surface-mutedForeground font-body text-body
+           border border-surface-border rounded-md shadow-sm
+           opacity-50 cursor-not-allowed">
+</div>
+
+<!-- Variant: Textarea -->
+<div class="w-full">
+  <label for="textarea-default" class="block text-body-sm font-body font-medium text-surface-foreground mb-2">
+    Textarea
+  </label>
+  <textarea 
+    id="textarea-default"
+    rows="4"
+    placeholder="Enter your message..."
+    class="input w-full px-4 py-3 
+           bg-surface-background text-surface-foreground font-body text-body
+           border border-surface-border rounded-md shadow-sm
+           transition-colors duration-normal ease-default
+           hover:border-primary-300
+           focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-500
+           disabled:opacity-50 disabled:cursor-not-allowed
+           placeholder:text-surface-mutedForeground
+           resize-y"></textarea>
+</div>

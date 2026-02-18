@@ -20,6 +20,7 @@ export default defineConfig({
         animations: resolve(__dirname, 'src/pages/animations-test.html'),
         states: resolve(__dirname, 'src/pages/states-test.html'),
         responsive: resolve(__dirname, 'src/pages/responsive-test.html'),
+        'component-validation': resolve(__dirname, 'src/pages/component-validation.html'),
       }
     }
   },
