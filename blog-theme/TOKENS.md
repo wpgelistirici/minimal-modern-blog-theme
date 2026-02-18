@@ -146,7 +146,7 @@ Here's an example combining all three token types:
 
 2. **Progressive Scale**: Spacing increases progressively (4, 8, 12, 16, 20, 24...) for clear visual hierarchy.
 
-3. **Border Radius Progression**: Border radius values double at each step (2, 4, 8, 12) for clear distinction.
+3. **Border Radius Progression**: Border radius values increase on a progressive scale (2, 4, 8, 12) for clear distinction.
 
 4. **Shadow Depth**: Shadow blur and spread increase proportionally to create realistic elevation levels.
 

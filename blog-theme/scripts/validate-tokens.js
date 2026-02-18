@@ -132,14 +132,12 @@ if (!shadows.boxShadow) {
   
   // Validate shadow format (should be valid CSS shadow syntax)
   Object.entries(shadows.boxShadow).forEach(([key, value]) => {
-    // CSS shadow syntax: offset-x offset-y blur-radius spread-radius color
-    const shadowRegex = /^\d+\s+\d+px\s+\d+px\s+\d+\s+rgba?\([^)]+\)$/;
-    if (!shadowRegex.test(value.replace(/\s+/g, ' '))) {
-      // More lenient check - just ensure it contains rgba and reasonable structure
-      if (!value.includes('rgba') && !value.includes('rgb')) {
-        console.error(`  ❌ boxShadow.${key} has invalid CSS shadow syntax: ${value}`);
-        hasErrors = true;
-      }
+    // Allow integers/decimals, optional negatives, and optional "px" units for each length.
+    const shadowRegex = /^-?\d+(\.\d+)?(px)?\s+-?\d+(\.\d+)?(px)?\s+-?\d+(\.\d+)?(px)?\s+-?\d+(\.\d+)?(px)?\s+rgba?\([^)]+\)$/;
+    const normalized = value.replace(/\s+/g, ' ').trim();
+    if (!shadowRegex.test(normalized)) {
+      console.error(`  ❌ boxShadow.${key} has invalid CSS shadow syntax: ${value}`);
+      hasErrors = true;
     }
   });
 }
