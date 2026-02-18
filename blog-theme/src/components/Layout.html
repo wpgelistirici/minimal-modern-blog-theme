@@ -1,19 +1,37 @@
 <!-- Layout Component -->
 <!-- Usage: Main layout wrapper with responsive container and grid structure -->
 <!-- Provides consistent spacing and grid system for all pages -->
+<!-- 
+  NOTE: This file contains EXAMPLE PATTERNS to be copied and customized for your pages.
+  These are not functional web components - copy the pattern you need and replace <slot> with your content.
+  
+  Custom Breakpoints (from design system):
+  - sm: 480px (not Tailwind default)
+  - md: 768px
+  - lg: 1024px  
+  - xl: 1280px
+  
+  Container Max-Widths (from design system):
+  - sm: 100%
+  - md: 720px
+  - lg: 960px
+  - xl: 1140px
+-->
 
-<!-- Main Container Layout -->
+<!-- PATTERN 1: Main Container Layout -->
 <!-- Uses container utility with responsive padding: 16px (sm) → 24px (md) → 32px (lg) → 40px (xl) -->
 <!-- Max-width: sm: 100%, md: 720px, lg: 960px, xl: 1140px -->
 <div class="container mx-auto bg-surface-background text-surface-foreground">
   <!-- Single Column Layout (Mobile Default) -->
   <div class="px-4 py-6 md:px-6 md:py-8">
+    <!-- Replace <slot> with your actual content -->
     <slot>Content goes here</slot>
   </div>
 </div>
 
-<!-- Grid Layout: Mobile (1 column) -->
-<!-- For mobile devices (<640px) - single column layout -->
+<!-- PATTERN 2: Grid Layout - Mobile (1 column) -->
+<!-- For mobile devices (<480px) - single column layout -->
+<!-- Replace <slot> elements with your actual grid items -->
 <div class="container mx-auto bg-surface-background text-surface-foreground">
   <div class="grid grid-cols-1 gap-4 px-4 py-6 md:gap-6 md:px-6 md:py-8">
     <slot>Grid item 1</slot>
@@ -22,8 +40,9 @@
   </div>
 </div>
 
-<!-- Grid Layout: Tablet (2 columns) -->
-<!-- For tablet devices (≥640px) - two column layout -->
+<!-- PATTERN 3: Grid Layout - Tablet (2 columns) -->
+<!-- For tablet devices (≥480px) - two column layout -->
+<!-- Replace <slot> elements with your actual grid items -->
 <div class="container mx-auto bg-surface-background text-surface-foreground">
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4 py-6 md:gap-6 md:px-6 md:py-8">
     <slot>Grid item 1</slot>
@@ -33,8 +52,10 @@
   </div>
 </div>
 
-<!-- Grid Layout: Desktop (3 columns) -->
+<!-- PATTERN 4: Grid Layout - Desktop (3 columns) -->
 <!-- For desktop devices (≥1024px) - three column layout -->
+<!-- Mobile: 1 column, Tablet (≥480px): 2 columns, Desktop (≥1024px): 3 columns -->
+<!-- Replace <slot> elements with your actual grid items -->
 <div class="container mx-auto bg-surface-background text-surface-foreground">
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 py-6 md:gap-6 md:px-6 md:py-8">
     <slot>Grid item 1</slot>
@@ -46,19 +67,21 @@
   </div>
 </div>
 
-<!-- Full-Width Layout with Max-Width Constraints -->
-<!-- Uses breakpoint-based max-widths: sm: 480px, md: 768px, lg: 1024px, xl: 1280px -->
+<!-- PATTERN 5: Full-Width Layout with Max-Width Constraints -->
+<!-- Uses breakpoint-based max-widths from design system -->
+<!-- Replace <slot> with your actual content -->
 <div class="w-full bg-surface-background text-surface-foreground">
   <div class="mx-auto max-w-screen-xl px-4 py-6 md:px-6 md:py-8">
     <slot>Full-width content with max-width constraint</slot>
   </div>
 </div>
 
-<!-- Responsive Grid with Custom Spacing -->
+<!-- PATTERN 6: Responsive Grid with Custom Spacing -->
 <!-- Uses spacing.4 (16px) and spacing.6 (24px) as per design system -->
+<!-- Example with card components - replace with your content -->
 <section class="container mx-auto bg-surface-background text-surface-foreground">
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:gap-6 md:p-6">
-    <!-- Grid Item Example -->
+    <!-- Grid Item Example - Replace entire <article> with your content -->
     <article class="bg-surface-card p-4 rounded-md border border-surface-border md:p-6">
       <h3 class="text-h4 font-heading mb-3">Card Title</h3>
       <p class="text-body font-body text-surface-foreground">Card content goes here</p>
@@ -76,8 +99,9 @@
   </div>
 </section>
 
-<!-- Semantic Section Layout -->
+<!-- PATTERN 7: Semantic Section Layout -->
 <!-- Provides semantic HTML structure with proper accessibility -->
+<!-- Replace <slot> elements with your actual content sections -->
 <main class="container mx-auto bg-surface-background text-surface-foreground min-h-screen">
   <!-- Header Section -->
   <header class="px-4 py-6 md:px-6 md:py-8">
@@ -88,6 +112,7 @@
   <!-- Main Content Area with Grid -->
   <section class="px-4 py-6 md:px-6 md:py-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <!-- Replace <slot> with your actual grid items -->
       <slot>Main content grid items</slot>
     </div>
   </section>
@@ -100,8 +125,9 @@
   </footer>
 </main>
 
-<!-- Asymmetric Grid Layout -->
+<!-- PATTERN 8: Asymmetric Grid Layout -->
 <!-- Main content area with sidebar (blog layout pattern) -->
+<!-- Replace <slot> elements with your actual main and sidebar content -->
 <div class="container mx-auto bg-surface-background text-surface-foreground">
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 py-6 md:px-6 md:py-8">
     <!-- Main Content (2/3 width on desktop) -->
@@ -116,8 +142,9 @@
   </div>
 </div>
 
-<!-- Responsive Article Layout -->
+<!-- PATTERN 9: Responsive Article Layout -->
 <!-- Optimized for reading with constrained width -->
+<!-- Replace <slot> with your article content -->
 <article class="container mx-auto bg-surface-background text-surface-foreground">
   <div class="max-w-3xl mx-auto px-4 py-6 md:px-6 md:py-8">
     <header class="mb-6 md:mb-8">
@@ -131,8 +158,9 @@
   </div>
 </article>
 
-<!-- Grid with Equal Height Items -->
+<!-- PATTERN 10: Grid with Equal Height Items -->
 <!-- Ensures consistent card heights in grid layout -->
+<!-- Replace card content with your actual items -->
 <div class="container mx-auto bg-surface-background text-surface-foreground">
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4 py-6 md:px-6 md:py-8">
     <div class="bg-surface-card p-4 rounded-md border border-surface-border flex flex-col md:p-6">
