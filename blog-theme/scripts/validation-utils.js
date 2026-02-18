@@ -49,11 +49,17 @@ export function isValidHex(color) {
 
 /**
  * Calculate relative luminance of a color (WCAG 2.1)
- * @param {string} hex - HEX color value
+ * @param {string} hex - HEX color value (should be validated with isValidHex first)
  * @returns {number} Relative luminance (0-1)
+ * @throws {Error} If hex value is invalid
  */
 export function getLuminance(hex) {
   if (hex === 'transparent' || hex === 'none') return 1;
+  
+  // Validate input to prevent incorrect calculations
+  if (!isValidHex(hex)) {
+    throw new Error(`Invalid HEX color value for luminance calculation: ${hex}`);
+  }
   
   const rgb = parseInt(hex.slice(1), 16);
   const r = (rgb >> 16) & 0xff;
@@ -99,6 +105,10 @@ export function readTextFile(filePath, fileName = 'file') {
   } catch (error) {
     if (error.code === 'EACCES') {
       throw new Error(`Permission denied reading ${fileName}`);
+    }
+    // Wrap other errors with descriptive messages
+    if (error.message && !error.message.includes(fileName)) {
+      throw new Error(`Failed to read ${fileName} at ${filePath}: ${error.message}`);
     }
     throw error;
   }

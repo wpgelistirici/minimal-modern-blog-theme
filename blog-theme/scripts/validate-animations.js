@@ -10,143 +10,140 @@
  * 4. All tokens are present and properly structured
  */
 
-import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { readJSONFile, readTextFile } from './validation-utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Read animation token file
-const animationsPath = join(__dirname, '../src/styles/tokens/animations.json');
-const animations = JSON.parse(fs.readFileSync(animationsPath, 'utf8'));
+// Main validation function
+function main() {
+  try {
+    // Read animation token file with proper error handling
+    const animationsPath = join(__dirname, '../src/styles/tokens/animations.json');
+    const animations = readJSONFile(animationsPath, 'animations.json');
 
-let hasErrors = false;
+    let hasErrors = false;
 
-console.log('🔍 Validating Animation Tokens...\n');
+    console.log('🔍 Validating Animation Tokens...\n');
 
-// Validate transition durations
-console.log('⏱️  Validating Transition Durations:');
-const expectedDurationKeys = ['fast', 'normal', 'slow'];
-const expectedDurationValues = {
-  'fast': '120ms',
-  'normal': '220ms',
-  'slow': '420ms'
-};
+    // Validate transition durations
+    console.log('⏱️  Validating Transition Durations:');
+    const expectedDurationKeys = ['fast', 'normal', 'slow'];
+    const expectedDurationValues = {
+      'fast': '120ms',
+      'normal': '220ms',
+      'slow': '420ms'
+    };
 
-if (!animations.transitionDuration) {
-  console.error('  ❌ Missing "transitionDuration" key in animations.json');
-  hasErrors = true;
-} else {
-  expectedDurationKeys.forEach(key => {
-    if (!animations.transitionDuration[key]) {
-      console.error(`  ❌ Missing transitionDuration.${key}`);
-      hasErrors = true;
-    } else if (animations.transitionDuration[key] !== expectedDurationValues[key]) {
-      console.error(`  ❌ transitionDuration.${key} should be "${expectedDurationValues[key]}" but got "${animations.transitionDuration[key]}"`);
+    if (!animations.transitionDuration) {
+      console.error('  ❌ Missing "transitionDuration" key in animations.json');
       hasErrors = true;
     } else {
-      console.log(`  ✅ transitionDuration.${key} = ${animations.transitionDuration[key]}`);
+      expectedDurationKeys.forEach(key => {
+        if (!animations.transitionDuration[key]) {
+          console.error(`  ❌ Missing transitionDuration.${key}`);
+          hasErrors = true;
+        } else if (animations.transitionDuration[key] !== expectedDurationValues[key]) {
+          console.error(`  ❌ transitionDuration.${key} should be "${expectedDurationValues[key]}" but got "${animations.transitionDuration[key]}"`);
+          hasErrors = true;
+        } else {
+          console.log(`  ✅ transitionDuration.${key} = ${animations.transitionDuration[key]}`);
+        }
+      });
     }
-  });
-}
 
-// Validate easing functions
-console.log('\n📈 Validating Timing Functions (Easings):');
-const expectedEasingKeys = ['default', 'in', 'out', 'inOut', 'spring'];
-const expectedEasingValues = {
-  'default': 'cubic-bezier(0.4, 0, 0.2, 1)',
-  'in': 'cubic-bezier(0.4, 0, 1, 1)',
-  'out': 'cubic-bezier(0, 0, 0.2, 1)',
-  'inOut': 'cubic-bezier(0.4, 0, 0.2, 1)',
-  'spring': 'cubic-bezier(0.22, 1, 0.36, 1)'
-};
+    // Validate timing functions (easings)
+    console.log('\n📈 Validating Timing Functions (Easings):');
+    const expectedEasings = {
+      'default': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      'in': 'cubic-bezier(0.4, 0, 1, 1)',
+      'out': 'cubic-bezier(0, 0, 0.2, 1)',
+      'inOut': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      'spring': 'cubic-bezier(0.22, 1, 0.36, 1)'
+    };
 
-if (!animations.transitionTimingFunction) {
-  console.error('  ❌ Missing "transitionTimingFunction" key in animations.json');
-  hasErrors = true;
-} else {
-  expectedEasingKeys.forEach(key => {
-    if (!animations.transitionTimingFunction[key]) {
-      console.error(`  ❌ Missing transitionTimingFunction.${key}`);
-      hasErrors = true;
-    } else if (animations.transitionTimingFunction[key] !== expectedEasingValues[key]) {
-      console.error(`  ❌ transitionTimingFunction.${key} should be "${expectedEasingValues[key]}" but got "${animations.transitionTimingFunction[key]}"`);
-      hasErrors = true;
-    } else {
-      console.log(`  ✅ transitionTimingFunction.${key} = ${animations.transitionTimingFunction[key]}`);
-    }
-  });
-  
-  // Validate cubic-bezier format
-  Object.entries(animations.transitionTimingFunction).forEach(([key, value]) => {
-    const cubicBezierRegex = /^cubic-bezier\(\s*-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?\s*\)$/;
-    if (!cubicBezierRegex.test(value)) {
-      console.error(`  ❌ transitionTimingFunction.${key} has invalid cubic-bezier format: ${value}`);
-      hasErrors = true;
-    }
-  });
-}
-
-// Validate transition properties
-console.log('\n🎨 Validating Transition Properties:');
-const expectedPropertyKeys = ['colors', 'opacity', 'shadow', 'transform', 'all'];
-
-if (!animations.transitionProperty) {
-  console.error('  ❌ Missing "transitionProperty" key in animations.json');
-  hasErrors = true;
-} else {
-  expectedPropertyKeys.forEach(key => {
-    if (!animations.transitionProperty[key]) {
-      console.error(`  ❌ Missing transitionProperty.${key}`);
+    if (!animations.transitionTimingFunction) {
+      console.error('  ❌ Missing "transitionTimingFunction" key in animations.json');
       hasErrors = true;
     } else {
-      console.log(`  ✅ transitionProperty.${key} = ${animations.transitionProperty[key]}`);
+      Object.entries(expectedEasings).forEach(([key, expectedValue]) => {
+        if (!animations.transitionTimingFunction[key]) {
+          console.error(`  ❌ Missing transitionTimingFunction.${key}`);
+          hasErrors = true;
+        } else if (animations.transitionTimingFunction[key] !== expectedValue) {
+          console.error(`  ❌ transitionTimingFunction.${key} should be "${expectedValue}"`);
+          hasErrors = true;
+        } else {
+          console.log(`  ✅ transitionTimingFunction.${key} = ${animations.transitionTimingFunction[key]}`);
+        }
+      });
     }
-  });
-}
 
-// Validate animations.css file exists
-console.log('\n📄 Validating Animation Keyframes File:');
-const animationsCssPath = join(__dirname, '../src/styles/animations.css');
-if (!fs.existsSync(animationsCssPath)) {
-  console.error('  ❌ Missing src/styles/animations.css file');
-  hasErrors = true;
-} else {
-  const animationsCss = fs.readFileSync(animationsCssPath, 'utf8');
-  
-  // Check for required keyframes
-  const requiredKeyframes = ['fadeIn', 'fadeOut', 'slideUp', 'slideDown', 'scaleIn'];
-  requiredKeyframes.forEach(keyframe => {
-    if (!animationsCss.includes(`@keyframes ${keyframe}`)) {
-      console.error(`  ❌ Missing @keyframes ${keyframe} in animations.css`);
+    // Validate transition properties
+    console.log('\n🎨 Validating Transition Properties:');
+    const expectedProperties = ['colors', 'opacity', 'shadow', 'transform', 'all'];
+
+    if (!animations.transitionProperty) {
+      console.error('  ❌ Missing "transitionProperty" key in animations.json');
       hasErrors = true;
     } else {
-      console.log(`  ✅ @keyframes ${keyframe} defined`);
+      expectedProperties.forEach(key => {
+        if (!animations.transitionProperty[key]) {
+          console.error(`  ❌ Missing transitionProperty.${key}`);
+          hasErrors = true;
+        } else {
+          console.log(`  ✅ transitionProperty.${key} = ${animations.transitionProperty[key]}`);
+        }
+      });
     }
-  });
-  
-  // Check for prefers-reduced-motion
-  if (!animationsCss.includes('@media (prefers-reduced-motion: reduce)')) {
-    console.error('  ❌ Missing @media (prefers-reduced-motion: reduce) in animations.css');
-    hasErrors = true;
-  } else {
-    console.log('  ✅ prefers-reduced-motion media query defined');
+
+    // Validate keyframes in CSS file
+    console.log('\n📄 Validating Animation Keyframes File:');
+    const animationsCssPath = join(__dirname, '../src/styles/animations.css');
+    const animationsCss = readTextFile(animationsCssPath, 'animations.css');
+
+    const expectedKeyframes = ['fadeIn', 'fadeOut', 'slideUp', 'slideDown', 'scaleIn'];
+    expectedKeyframes.forEach(keyframe => {
+      if (animationsCss.includes(`@keyframes ${keyframe}`)) {
+        console.log(`  ✅ @keyframes ${keyframe} defined`);
+      } else {
+        console.error(`  ❌ Missing @keyframes ${keyframe} in animations.css`);
+        hasErrors = true;
+      }
+    });
+
+    // Check for prefers-reduced-motion support
+    if (animationsCss.includes('@media (prefers-reduced-motion: reduce)')) {
+      console.log('  ✅ prefers-reduced-motion media query defined');
+    } else {
+      console.error('  ❌ Missing prefers-reduced-motion media query');
+      hasErrors = true;
+    }
+
+    // Summary
+    console.log('\n' + '='.repeat(50));
+    if (hasErrors) {
+      console.error('❌ Animation token validation failed with errors');
+      process.exit(1);
+    } else {
+      console.log('✅ All animation tokens validated successfully!');
+      console.log('\n📊 Animation Token Summary:');
+      console.log(`  • Duration tokens: ${Object.keys(animations.transitionDuration).length}`);
+      console.log(`  • Easing tokens: ${Object.keys(animations.transitionTimingFunction).length}`);
+      console.log(`  • Property tokens: ${Object.keys(animations.transitionProperty).length}`);
+      console.log(`  • Keyframe animations: ${expectedKeyframes.length} (${expectedKeyframes.join(', ')})`);
+      console.log('  • Accessibility: prefers-reduced-motion supported');
+      process.exit(0);
+    }
+    
+  } catch (error) {
+    console.error('\n❌ Fatal error during validation:');
+    console.error(`   ${error.message}`);
+    process.exit(1);
   }
 }
 
-// Summary
-console.log('\n' + '='.repeat(50));
-if (hasErrors) {
-  console.error('❌ Validation failed! Please fix the errors above.');
-  process.exit(1);
-} else {
-  console.log('✅ All animation tokens validated successfully!');
-  console.log('\n📊 Animation Token Summary:');
-  console.log(`  • Duration tokens: ${Object.keys(animations.transitionDuration).length}`);
-  console.log(`  • Easing tokens: ${Object.keys(animations.transitionTimingFunction).length}`);
-  console.log(`  • Property tokens: ${Object.keys(animations.transitionProperty).length}`);
-  console.log(`  • Keyframe animations: 5 (fadeIn, fadeOut, slideUp, slideDown, scaleIn)`);
-  console.log(`  • Accessibility: prefers-reduced-motion supported`);
-  process.exit(0);
-}
+// Run main function
+main();
