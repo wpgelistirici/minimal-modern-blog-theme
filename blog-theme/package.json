@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "screenshots": "npm run build && node scripts/take-screenshots.js",
     "test:token-mapping": "node tests/token-mapping.test.js",
     "test:visual": "playwright test",
     "test:visual:ui": "playwright test --ui",
