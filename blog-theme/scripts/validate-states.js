@@ -12,53 +12,49 @@
  * 6. Dark mode variants exist for all states
  */
 
-import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { readJSONFile, isValidHex, getContrastRatio, formatResults } from './validation-utils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Read states.json
-const statesPath = join(__dirname, '../src/styles/tokens/states.json');
-const states = JSON.parse(fs.readFileSync(statesPath, 'utf8'));
-
-let errors = [];
-let warnings = [];
-
-// Helper function to validate HEX color
-function isValidHex(color) {
-  if (color === 'none' || color === 'transparent') return true;
-  return /^#[0-9A-F]{6}$/i.test(color);
-}
-
-// Calculate relative luminance
-function getLuminance(hex) {
-  if (hex === 'transparent' || hex === 'none') return 1;
-  const rgb = parseInt(hex.slice(1), 16);
-  const r = (rgb >> 16) & 0xff;
-  const g = (rgb >> 8) & 0xff;
-  const b = (rgb >> 0) & 0xff;
-  
-  const [rs, gs, bs] = [r, g, b].map(c => {
-    c = c / 255;
-    return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-  });
-  
-  return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
-}
-
-// Calculate contrast ratio
-function getContrastRatio(hex1, hex2) {
-  const lum1 = getLuminance(hex1);
-  const lum2 = getLuminance(hex2);
-  const lighter = Math.max(lum1, lum2);
-  const darker = Math.min(lum1, lum2);
-  return (lighter + 0.05) / (darker + 0.05);
+// Main validation function
+function main() {
+  try {
+    // Read states.json with proper error handling
+    const statesPath = join(__dirname, '../src/styles/tokens/states.json');
+    const states = readJSONFile(statesPath, 'states.json');
+    
+    const errors = [];
+    const warnings = [];
+    
+    console.log('🔍 Validating state tokens...');
+    
+    // Run all validations
+    validateFocusRing(states, errors, warnings);
+    validateComponentStates(states, errors, warnings);
+    
+    // Report results with formatted output
+    const results = {
+      passed: warnings.length === 0 && errors.length === 0 ? 1 : 0,
+      failed: errors.length,
+      errors,
+      warnings
+    };
+    
+    const success = formatResults(results);
+    process.exit(success ? 0 : 1);
+    
+  } catch (error) {
+    console.error('\n❌ Fatal error during validation:');
+    console.error(`   ${error.message}`);
+    process.exit(1);
+  }
 }
 
 // Validate focus ring configuration
-function validateFocusRing() {
+function validateFocusRing(states, errors, warnings) {
   console.log('\n✓ Validating focus ring configuration...');
   
   if (!states.focusRing) {
@@ -113,7 +109,7 @@ function validateFocusRing() {
 }
 
 // Validate component states
-function validateComponentStates() {
+function validateComponentStates(states, errors, warnings) {
   console.log('\n✓ Validating component states...');
   
   const components = ['button', 'input', 'card', 'badge', 'link'];
@@ -149,19 +145,19 @@ function validateComponentStates() {
       
       // Validate colors in light mode
       if (stateConfig.light) {
-        validateStateColors(component, state, 'light', stateConfig.light);
+        validateStateColors(component, state, 'light', stateConfig.light, errors, warnings);
       }
       
       // Validate colors in dark mode
       if (stateConfig.dark) {
-        validateStateColors(component, state, 'dark', stateConfig.dark);
+        validateStateColors(component, state, 'dark', stateConfig.dark, errors, warnings);
       }
     }
   }
 }
 
 // Validate state colors
-function validateStateColors(component, state, mode, config) {
+function validateStateColors(component, state, mode, config, errors, warnings) {
   const colorProps = ['background', 'foreground', 'border', 'placeholder', 'underline'];
   
   for (const prop of colorProps) {
@@ -187,28 +183,5 @@ function validateStateColors(component, state, mode, config) {
   }
 }
 
-// Run all validations
-console.log('🔍 Validating state tokens...');
-validateFocusRing();
-validateComponentStates();
-
-// Report results
-console.log('\n📊 Validation Results:');
-console.log('='.repeat(50));
-
-if (errors.length === 0) {
-  console.log('✅ All validations passed!');
-} else {
-  console.log(`❌ ${errors.length} error(s) found:`);
-  errors.forEach(error => console.log(`  - ${error}`));
-}
-
-if (warnings.length > 0) {
-  console.log(`\n⚠️  ${warnings.length} warning(s):`);
-  warnings.forEach(warning => console.log(`  - ${warning}`));
-}
-
-console.log('\n' + '='.repeat(50));
-
-// Exit with error code if there are errors
-process.exit(errors.length > 0 ? 1 : 0);
+// Run main function
+main();
