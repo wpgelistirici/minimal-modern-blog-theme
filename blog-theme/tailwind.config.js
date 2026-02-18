@@ -4,6 +4,7 @@ import spacing from './src/styles/tokens/spacing.json' with { type: 'json' };
 import borders from './src/styles/tokens/borders.json' with { type: 'json' };
 import shadows from './src/styles/tokens/shadows.json' with { type: 'json' };
 import animations from './src/styles/tokens/animations.json' with { type: 'json' };
+import states from './src/styles/tokens/states.json' with { type: 'json' };
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -21,6 +22,16 @@ export default {
       transitionDuration: animations.transitionDuration,
       transitionTimingFunction: animations.transitionTimingFunction,
       transitionProperty: animations.transitionProperty,
+      // Focus ring configuration
+      ringWidth: {
+        'DEFAULT': states.focusRing.width,
+      },
+      ringOffsetWidth: {
+        'DEFAULT': states.focusRing.offset,
+      },
+      ringOffsetColor: {
+        'DEFAULT': 'transparent',
+      },
       keyframes: {
         fadeIn: {
           from: { opacity: '0' },
@@ -146,6 +157,11 @@ export default {
           muted: 'rgb(var(--color-surface-muted) / <alpha-value>)',
           mutedForeground: 'rgb(var(--color-surface-mutedForeground) / <alpha-value>)',
         },
+        
+        // State colors (use CSS variables for dark mode support)
+        state: {
+          'focus-ring': 'rgb(var(--state-focus-ring) / <alpha-value>)',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -248,8 +264,24 @@ export default {
     {
       pattern: /animate-(fade-in|fade-out|slide-up|slide-down|scale-in)/,
     },
+    // Ensure ring utilities are generated
+    {
+      pattern: /ring-(0|1|2|4|8)/,
+    },
+    {
+      pattern: /ring-offset-(0|1|2|4|8)/,
+    },
+    {
+      pattern: /ring-(primary|error|success|warning|info)(-300|-DEFAULT)?/,
+    },
+    {
+      pattern: /ring-state-focus-ring/,
+    },
   ],
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
   ],
 }

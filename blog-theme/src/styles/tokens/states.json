@@ -1,0 +1,353 @@
+{
+  "focusRing": {
+    "width": "2px",
+    "offset": "2px",
+    "color": {
+      "light": "#91b3d1",
+      "dark": "#7895ba"
+    },
+    "_note": "Focus ring colors should match primary-300 (light) and primary-400 (dark) from colors.json. Update manually if primary colors change."
+  },
+  "button": {
+    "default": {
+      "light": {
+        "background": "#48628b",
+        "foreground": "#ffffff",
+        "border": "#48628b",
+        "shadow": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+      },
+      "dark": {
+        "background": "#7895ba",
+        "foreground": "#0a0a0a",
+        "border": "#7895ba",
+        "shadow": "0 1px 2px 0 rgba(255, 255, 255, 0.08)"
+      }
+    },
+    "hover": {
+      "light": {
+        "background": "#3a4c6c",
+        "foreground": "#ffffff",
+        "border": "#3a4c6c",
+        "shadow": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+      },
+      "dark": {
+        "background": "#91b3d1",
+        "foreground": "#0a0a0a",
+        "border": "#91b3d1",
+        "shadow": "0 2px 8px 0 rgba(255, 255, 255, 0.12)"
+      }
+    },
+    "active": {
+      "light": {
+        "background": "#2d3a52",
+        "foreground": "#ffffff",
+        "border": "#2d3a52",
+        "shadow": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+      },
+      "dark": {
+        "background": "#c1d3e4",
+        "foreground": "#0a0a0a",
+        "border": "#c1d3e4",
+        "shadow": "0 1px 2px 0 rgba(255, 255, 255, 0.08)"
+      }
+    },
+    "disabled": {
+      "light": {
+        "background": "#e5e5e5",
+        "foreground": "#a3a3a3",
+        "border": "#e5e5e5",
+        "shadow": "none"
+      },
+      "dark": {
+        "background": "#262626",
+        "foreground": "#525252",
+        "border": "#262626",
+        "shadow": "none"
+      }
+    },
+    "loading": {
+      "light": {
+        "background": "#48628b",
+        "foreground": "#ffffff",
+        "border": "#48628b",
+        "shadow": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+      },
+      "dark": {
+        "background": "#7895ba",
+        "foreground": "#0a0a0a",
+        "border": "#7895ba",
+        "shadow": "0 1px 2px 0 rgba(255, 255, 255, 0.08)"
+      }
+    }
+  },
+  "input": {
+    "default": {
+      "light": {
+        "background": "#ffffff",
+        "foreground": "#232323",
+        "border": "#e0e0e0",
+        "placeholder": "#a3a3a3",
+        "shadow": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+      },
+      "dark": {
+        "background": "#171717",
+        "foreground": "#fafafa",
+        "border": "#262626",
+        "placeholder": "#737373",
+        "shadow": "0 1px 2px 0 rgba(255, 255, 255, 0.08)"
+      }
+    },
+    "hover": {
+      "light": {
+        "background": "#ffffff",
+        "foreground": "#232323",
+        "border": "#91b3d1",
+        "placeholder": "#a3a3a3",
+        "shadow": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+      },
+      "dark": {
+        "background": "#171717",
+        "foreground": "#fafafa",
+        "border": "#7895ba",
+        "placeholder": "#737373",
+        "shadow": "0 1px 2px 0 rgba(255, 255, 255, 0.08)"
+      }
+    },
+    "focus": {
+      "light": {
+        "background": "#ffffff",
+        "foreground": "#232323",
+        "border": "#48628b",
+        "placeholder": "#a3a3a3",
+        "shadow": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+      },
+      "dark": {
+        "background": "#171717",
+        "foreground": "#fafafa",
+        "border": "#7895ba",
+        "placeholder": "#737373",
+        "shadow": "0 2px 8px 0 rgba(255, 255, 255, 0.12)"
+      }
+    },
+    "disabled": {
+      "light": {
+        "background": "#f5f5f5",
+        "foreground": "#a3a3a3",
+        "border": "#e5e5e5",
+        "placeholder": "#d4d4d4",
+        "shadow": "none"
+      },
+      "dark": {
+        "background": "#171717",
+        "foreground": "#525252",
+        "border": "#262626",
+        "placeholder": "#404040",
+        "shadow": "none"
+      }
+    },
+    "error": {
+      "light": {
+        "background": "#ffffff",
+        "foreground": "#232323",
+        "border": "#d13b3b",
+        "placeholder": "#a3a3a3",
+        "shadow": "0 1px 2px 0 rgba(209, 59, 59, 0.12)"
+      },
+      "dark": {
+        "background": "#171717",
+        "foreground": "#fafafa",
+        "border": "#a52d2d",
+        "placeholder": "#737373",
+        "shadow": "0 1px 2px 0 rgba(165, 45, 45, 0.16)"
+      }
+    },
+    "success": {
+      "light": {
+        "background": "#ffffff",
+        "foreground": "#232323",
+        "border": "#0f7d4f",
+        "placeholder": "#a3a3a3",
+        "shadow": "0 1px 2px 0 rgba(15, 125, 79, 0.12)"
+      },
+      "dark": {
+        "background": "#171717",
+        "foreground": "#fafafa",
+        "border": "#0a5a38",
+        "placeholder": "#737373",
+        "shadow": "0 1px 2px 0 rgba(10, 90, 56, 0.16)"
+      }
+    }
+  },
+  "card": {
+    "default": {
+      "light": {
+        "background": "#f7f7f7",
+        "foreground": "#232323",
+        "border": "#e0e0e0",
+        "shadow": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+      },
+      "dark": {
+        "background": "#171717",
+        "foreground": "#fafafa",
+        "border": "#262626",
+        "shadow": "0 2px 8px 0 rgba(255, 255, 255, 0.08)"
+      }
+    },
+    "hover": {
+      "light": {
+        "background": "#ffffff",
+        "foreground": "#232323",
+        "border": "#91b3d1",
+        "shadow": "0 4px 16px 0 rgba(30, 34, 40, 0.12)"
+      },
+      "dark": {
+        "background": "#262626",
+        "foreground": "#fafafa",
+        "border": "#7895ba",
+        "shadow": "0 4px 16px 0 rgba(255, 255, 255, 0.12)"
+      }
+    },
+    "active": {
+      "light": {
+        "background": "#f7f7f7",
+        "foreground": "#232323",
+        "border": "#48628b",
+        "shadow": "0 2px 8px 0 rgba(30, 34, 40, 0.08)"
+      },
+      "dark": {
+        "background": "#171717",
+        "foreground": "#fafafa",
+        "border": "#91b3d1",
+        "shadow": "0 2px 8px 0 rgba(255, 255, 255, 0.08)"
+      }
+    }
+  },
+  "badge": {
+    "default": {
+      "light": {
+        "background": "#e3eaf3",
+        "foreground": "#2d3a52",
+        "border": "#c1d3e4",
+        "shadow": "none"
+      },
+      "dark": {
+        "background": "#1e2838",
+        "foreground": "#c1d3e4",
+        "border": "#2d3a52",
+        "shadow": "none"
+      }
+    },
+    "hover": {
+      "light": {
+        "background": "#c1d3e4",
+        "foreground": "#2d3a52",
+        "border": "#91b3d1",
+        "shadow": "0 1px 2px 0 rgba(30, 34, 40, 0.04)"
+      },
+      "dark": {
+        "background": "#2d3a52",
+        "foreground": "#e3eaf3",
+        "border": "#48628b",
+        "shadow": "0 1px 2px 0 rgba(255, 255, 255, 0.08)"
+      }
+    },
+    "success": {
+      "light": {
+        "background": "#d4f4e6",
+        "foreground": "#0a5a38",
+        "border": "#0f7d4f",
+        "shadow": "none"
+      },
+      "dark": {
+        "background": "#0a5a38",
+        "foreground": "#d4f4e6",
+        "border": "#0f7d4f",
+        "shadow": "none"
+      }
+    },
+    "error": {
+      "light": {
+        "background": "#fce8e8",
+        "foreground": "#a52d2d",
+        "border": "#d13b3b",
+        "shadow": "none"
+      },
+      "dark": {
+        "background": "#a52d2d",
+        "foreground": "#fce8e8",
+        "border": "#d13b3b",
+        "shadow": "none"
+      }
+    },
+    "warning": {
+      "light": {
+        "background": "#fff4d9",
+        "foreground": "#cc9619",
+        "border": "#ffbb23",
+        "shadow": "none"
+      },
+      "dark": {
+        "background": "#cc9619",
+        "foreground": "#fff4d9",
+        "border": "#ffbb23",
+        "shadow": "none"
+      }
+    },
+    "info": {
+      "light": {
+        "background": "#e0f3f9",
+        "foreground": "#2382a7",
+        "border": "#2fa3d1",
+        "shadow": "none"
+      },
+      "dark": {
+        "background": "#2382a7",
+        "foreground": "#e0f3f9",
+        "border": "#2fa3d1",
+        "shadow": "none"
+      }
+    }
+  },
+  "link": {
+    "default": {
+      "light": {
+        "foreground": "#48628b",
+        "underline": "transparent"
+      },
+      "dark": {
+        "foreground": "#91b3d1",
+        "underline": "transparent"
+      }
+    },
+    "hover": {
+      "light": {
+        "foreground": "#3a4c6c",
+        "underline": "#3a4c6c"
+      },
+      "dark": {
+        "foreground": "#c1d3e4",
+        "underline": "#c1d3e4"
+      }
+    },
+    "active": {
+      "light": {
+        "foreground": "#2d3a52",
+        "underline": "#2d3a52"
+      },
+      "dark": {
+        "foreground": "#e3eaf3",
+        "underline": "#e3eaf3"
+      }
+    },
+    "visited": {
+      "light": {
+        "foreground": "#507b6f",
+        "underline": "transparent"
+      },
+      "dark": {
+        "foreground": "#a3c7bc",
+        "underline": "transparent"
+      }
+    }
+  }
+}

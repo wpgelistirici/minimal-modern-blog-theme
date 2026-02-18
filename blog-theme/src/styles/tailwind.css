@@ -15,6 +15,9 @@
     --color-surface-border: 224 224 224;
     --color-surface-muted: 245 245 245;
     --color-surface-mutedForeground: 115 115 115;
+    
+    /* Light mode state colors */
+    --state-focus-ring: 145 179 209; /* primary-300 */
   }
   
   .dark {
@@ -26,6 +29,9 @@
     --color-surface-border: 38 38 38;
     --color-surface-muted: 38 38 38;
     --color-surface-mutedForeground: 163 163 163;
+    
+    /* Dark mode state colors */
+    --state-focus-ring: 120 149 186; /* primary-400 */
   }
 }
 
@@ -33,5 +39,181 @@
 @layer base {
   body {
     @apply bg-surface-background text-surface-foreground;
+  }
+  
+  /* Remove default focus outlines only when :focus-visible is supported */
+  @supports selector(:focus-visible) {
+    *:focus {
+      outline: none;
+    }
+  }
+  
+  /* Ensure focus-visible rings are prominent for keyboard navigation on interactive elements */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible,
+  [tabindex]:focus-visible {
+    @apply ring-2 ring-state-focus-ring ring-offset-2 ring-offset-surface-background;
+  }
+}
+
+/* State utility classes */
+@layer components {
+  /* Button states */
+  .btn {
+    @apply transition-all duration-fast ease-default;
+    @apply focus-visible:ring-2 focus-visible:ring-state-focus-ring focus-visible:ring-offset-2;
+  }
+  
+  .btn:hover:not(:disabled) {
+    @apply shadow-md scale-[1.02];
+  }
+  
+  .btn:active:not(:disabled) {
+    @apply scale-[0.98];
+  }
+  
+  .btn:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+  
+  /* Input states */
+  .input {
+    @apply transition-all duration-fast ease-default;
+    @apply focus-visible:ring-2 focus-visible:ring-state-focus-ring focus-visible:ring-offset-2;
+  }
+  
+  .input:hover:not(:disabled):not(:focus) {
+    @apply border-primary-300;
+  }
+  
+  .input:disabled {
+    @apply opacity-50 cursor-not-allowed bg-surface-muted;
+  }
+  
+  .input-error {
+    @apply border-error focus-visible:ring-error;
+  }
+  
+  .input-success {
+    @apply border-success focus-visible:ring-success;
+  }
+  
+  /* Card states */
+  .card-interactive {
+    @apply transition-all duration-fast ease-default;
+    @apply focus-visible:ring-2 focus-visible:ring-state-focus-ring focus-visible:ring-offset-2;
+  }
+  
+  .card-interactive:hover {
+    @apply shadow-lg border-primary-300 scale-[1.02];
+  }
+  
+  .card-interactive:active {
+    /* Reset scale on active to cancel hover scale effect */
+    @apply scale-100;
+  }
+  
+  /* Badge states */
+  .badge {
+    @apply transition-colors duration-fast ease-default;
+  }
+  
+  .badge-interactive {
+    @apply focus-visible:ring-2 focus-visible:ring-state-focus-ring focus-visible:ring-offset-2;
+  }
+  
+  .badge-interactive:hover {
+    @apply shadow-sm;
+  }
+  
+  /* Link states */
+  .link {
+    @apply transition-colors duration-fast ease-default;
+    @apply focus-visible:ring-2 focus-visible:ring-state-focus-ring focus-visible:ring-offset-2 focus-visible:rounded-sm;
+  }
+  
+  .link:hover {
+    @apply underline;
+  }
+  
+  /* Loading state */
+  .loading {
+    @apply opacity-75 cursor-wait pointer-events-none;
+  }
+  
+  /* Touch device optimization - disable hover effects */
+  @media (hover: none) and (pointer: coarse) {
+    .btn:hover:not(:disabled),
+    .card-interactive:hover,
+    .badge-interactive:hover {
+      @apply transform-none scale-100 shadow-none border-surface-border;
+    }
+  }
+  
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .btn:hover:not(:disabled) {
+      /* Remove scale animation for users who prefer reduced motion */
+      @apply scale-100;
+    }
+
+    .btn:active:not(:disabled) {
+      /* Avoid additional scaling on active state */
+      @apply scale-100;
+    }
+
+    .card-interactive:hover {
+      /* Keep hover styling but neutralize scale */
+      @apply scale-100;
+    }
+  }
+}
+
+/* Utility classes for component states */
+@layer utilities {
+  /* State modifiers */
+  .state-default {
+    @apply opacity-100;
+  }
+  
+  .state-hover {
+    @apply hover:opacity-90 hover:shadow-md;
+  }
+  
+  .state-active {
+    @apply active:opacity-80 active:scale-[0.98];
+  }
+  
+  .state-disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+  
+  .state-loading {
+    @apply opacity-75 cursor-wait pointer-events-none;
+  }
+  
+  /* Focus ring utilities */
+  .focus-ring {
+    @apply focus-visible:ring-2 focus-visible:ring-state-focus-ring focus-visible:ring-offset-2;
+  }
+  
+  .focus-ring-primary {
+    @apply focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2;
+  }
+  
+  .focus-ring-error {
+    @apply focus-visible:ring-2 focus-visible:ring-error focus-visible:ring-offset-2;
+  }
+  
+  .focus-ring-success {
+    @apply focus-visible:ring-2 focus-visible:ring-success focus-visible:ring-offset-2;
+  }
+  
+  .focus-ring-none {
+    @apply focus-visible:ring-0 focus-visible:ring-offset-0;
   }
 }
