@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Token Test - Minimal Modern Blog Theme</title>
+  <link rel="stylesheet" href="../styles/tailwind.css">
+</head>
+<body class="p-8">
+  <div class="max-w-6xl mx-auto space-y-8">
+    <!-- Header -->
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold text-primary-600 mb-2">Color Token System Test</h1>
+      <p class="text-surface-mutedForeground">Testing primitive, alias, and semantic color tokens</p>
+      <button 
+        onclick="document.documentElement.classList.toggle('dark')"
+        class="mt-4 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200"
+      >
+        Toggle Dark Mode
+      </button>
+    </header>
+
+    <!-- Primary Colors -->
+    <section class="bg-surface-card p-6 rounded-lg border border-surface-border">
+      <h2 class="text-2xl font-bold mb-4 text-surface-foreground">Primary Colors</h2>
+      <div class="grid grid-cols-5 md:grid-cols-11 gap-2">
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-50 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">50</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-100 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">100</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-200 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">200</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-300 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">300</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-400 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">400</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-500 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">500 ⭐</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-600 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">600</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-700 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">700</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-800 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">800</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-900 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">900</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-primary-950 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">950</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary Colors -->
+    <section class="bg-surface-card p-6 rounded-lg border border-surface-border">
+      <h2 class="text-2xl font-bold mb-4 text-surface-foreground">Secondary Colors</h2>
+      <div class="grid grid-cols-5 md:grid-cols-11 gap-2">
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-50 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">50</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-100 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">100</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-200 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">200</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-300 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">300</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-400 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">400</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-500 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">500 ⭐</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-600 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">600</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-700 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">700</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-800 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">800</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-900 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">900</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-secondary-950 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">950</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accent Colors -->
+    <section class="bg-surface-card p-6 rounded-lg border border-surface-border">
+      <h2 class="text-2xl font-bold mb-4 text-surface-foreground">Accent Colors</h2>
+      <div class="grid grid-cols-5 md:grid-cols-11 gap-2">
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-50 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">50</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-100 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">100</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-200 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">200</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-300 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">300</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-400 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">400</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-500 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">500 ⭐</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-600 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">600</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-700 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">700</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-800 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">800</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-900 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">900</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-accent-950 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">950</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Neutral Colors -->
+    <section class="bg-surface-card p-6 rounded-lg border border-surface-border">
+      <h2 class="text-2xl font-bold mb-4 text-surface-foreground">Neutral Colors</h2>
+      <div class="grid grid-cols-5 md:grid-cols-11 gap-2">
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-50 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">50</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-100 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">100</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-200 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">200</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-300 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">300</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-400 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">400</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-500 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">500</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-600 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">600</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-700 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">700</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-800 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">800</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-900 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">900</p>
+        </div>
+        <div class="space-y-2">
+          <div class="h-16 bg-neutral-950 rounded border border-surface-border"></div>
+          <p class="text-xs text-center">950</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Semantic Colors -->
+    <section class="bg-surface-card p-6 rounded-lg border border-surface-border">
+      <h2 class="text-2xl font-bold mb-4 text-surface-foreground">Semantic Colors</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Success -->
+        <div class="space-y-2">
+          <h3 class="font-semibold text-sm">Success</h3>
+          <div class="space-y-2">
+            <div class="h-16 bg-success-light rounded border border-surface-border flex items-center justify-center">
+              <span class="text-xs">Light</span>
+            </div>
+            <div class="h-16 bg-success rounded border border-surface-border flex items-center justify-center text-white">
+              <span class="text-xs font-semibold">DEFAULT</span>
+            </div>
+            <div class="h-16 bg-success-dark rounded border border-surface-border flex items-center justify-center text-white">
+              <span class="text-xs">Dark</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error -->
+        <div class="space-y-2">
+          <h3 class="font-semibold text-sm">Error</h3>
+          <div class="space-y-2">
+            <div class="h-16 bg-error-light rounded border border-surface-border flex items-center justify-center">
+              <span class="text-xs">Light</span>
+            </div>
+            <div class="h-16 bg-error rounded border border-surface-border flex items-center justify-center text-white">
+              <span class="text-xs font-semibold">DEFAULT</span>
+            </div>
+            <div class="h-16 bg-error-dark rounded border border-surface-border flex items-center justify-center text-white">
+              <span class="text-xs">Dark</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Warning -->
+        <div class="space-y-2">
+          <h3 class="font-semibold text-sm">Warning</h3>
+          <div class="space-y-2">
+            <div class="h-16 bg-warning-light rounded border border-surface-border flex items-center justify-center">
+              <span class="text-xs">Light</span>
+            </div>
+            <div class="h-16 bg-warning rounded border border-surface-border flex items-center justify-center text-neutral-900">
+              <span class="text-xs font-semibold">DEFAULT</span>
+            </div>
+            <div class="h-16 bg-warning-dark rounded border border-surface-border flex items-center justify-center text-white">
+              <span class="text-xs">Dark</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="space-y-2">
+          <h3 class="font-semibold text-sm">Info</h3>
+          <div class="space-y-2">
+            <div class="h-16 bg-info-light rounded border border-surface-border flex items-center justify-center">
+              <span class="text-xs">Light</span>
+            </div>
+            <div class="h-16 bg-info rounded border border-surface-border flex items-center justify-center text-white">
+              <span class="text-xs font-semibold">DEFAULT</span>
+            </div>
+            <div class="h-16 bg-info-dark rounded border border-surface-border flex items-center justify-center text-white">
+              <span class="text-xs">Dark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Surface Aliases -->
+    <section class="bg-surface-card p-6 rounded-lg border border-surface-border">
+      <h2 class="text-2xl font-bold mb-4 text-surface-foreground">Surface Aliases</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-surface-background p-4 rounded border border-surface-border">
+          <p class="text-surface-foreground font-semibold mb-2">surface.background + foreground</p>
+          <p class="text-surface-foreground text-sm">This is the main background color with foreground text</p>
+        </div>
+        <div class="bg-surface-card p-4 rounded border border-surface-border">
+          <p class="text-surface-cardForeground font-semibold mb-2">surface.card + cardForeground</p>
+          <p class="text-surface-cardForeground text-sm">This is the card background with card foreground text</p>
+        </div>
+        <div class="bg-surface-muted p-4 rounded border border-surface-border">
+          <p class="text-surface-mutedForeground font-semibold mb-2">surface.muted + mutedForeground</p>
+          <p class="text-surface-mutedForeground text-sm">This is muted background with muted foreground text</p>
+        </div>
+        <div class="bg-surface-background p-4 rounded border-2 border-surface-border">
+          <p class="text-surface-foreground font-semibold mb-2">surface.border</p>
+          <p class="text-surface-foreground text-sm">This card uses the border color token</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component Examples -->
+    <section class="bg-surface-card p-6 rounded-lg border border-surface-border">
+      <h2 class="text-2xl font-bold mb-4 text-surface-foreground">Component Examples</h2>
+      
+      <!-- Buttons -->
+      <div class="mb-6">
+        <h3 class="font-semibold mb-3 text-surface-foreground">Buttons</h3>
+        <div class="flex flex-wrap gap-3">
+          <button class="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors duration-200">
+            Primary Button
+          </button>
+          <button class="px-4 py-2 bg-secondary-500 text-white rounded-lg hover:bg-secondary-600 transition-colors duration-200">
+            Secondary Button
+          </button>
+          <button class="px-4 py-2 bg-accent-500 text-white rounded-lg hover:bg-accent-600 transition-colors duration-200">
+            Accent Button
+          </button>
+          <button class="px-4 py-2 bg-success text-white rounded-lg hover:bg-success-dark transition-colors duration-200">
+            Success Button
+          </button>
+          <button class="px-4 py-2 bg-error text-white rounded-lg hover:bg-error-dark transition-colors duration-200">
+            Error Button
+          </button>
+        </div>
+      </div>
+
+      <!-- Alert Cards -->
+      <div class="space-y-3">
+        <h3 class="font-semibold mb-3 text-surface-foreground">Alert Cards</h3>
+        <div class="bg-success-light border-l-4 border-success p-4 rounded">
+          <p class="font-semibold text-success-dark">Success</p>
+          <p class="text-sm text-neutral-700">Your changes have been saved successfully.</p>
+        </div>
+        <div class="bg-error-light border-l-4 border-error p-4 rounded">
+          <p class="font-semibold text-error-dark">Error</p>
+          <p class="text-sm text-neutral-700">There was an error processing your request.</p>
+        </div>
+        <div class="bg-warning-light border-l-4 border-warning p-4 rounded">
+          <p class="font-semibold text-warning-dark">Warning</p>
+          <p class="text-sm text-neutral-700">Please review your input before submitting.</p>
+        </div>
+        <div class="bg-info-light border-l-4 border-info p-4 rounded">
+          <p class="font-semibold text-info-dark">Info</p>
+          <p class="text-sm text-neutral-700">Did you know? You can customize your profile settings.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WCAG Contrast Tests -->
+    <section class="bg-surface-card p-6 rounded-lg border border-surface-border">
+      <h2 class="text-2xl font-bold mb-4 text-surface-foreground">WCAG AA Contrast Tests</h2>
+      <p class="text-sm text-surface-mutedForeground mb-4">All text combinations below should meet WCAG AA standard (4.5:1 ratio)</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-surface-background p-4 rounded border border-surface-border">
+          <p class="text-surface-foreground">Background + Foreground</p>
+          <p class="text-xs text-surface-mutedForeground mt-1">Contrast: High ✓</p>
+        </div>
+        <div class="bg-surface-card p-4 rounded border border-surface-border">
+          <p class="text-surface-cardForeground">Card + Card Foreground</p>
+          <p class="text-xs text-surface-mutedForeground mt-1">Contrast: High ✓</p>
+        </div>
+        <div class="bg-primary-500 p-4 rounded">
+          <p class="text-white">Primary 500 + White Text</p>
+          <p class="text-xs text-primary-50 mt-1">Contrast: High ✓</p>
+        </div>
+        <div class="bg-secondary-500 p-4 rounded">
+          <p class="text-white">Secondary 500 + White Text</p>
+          <p class="text-xs text-secondary-50 mt-1">Contrast: High ✓</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
