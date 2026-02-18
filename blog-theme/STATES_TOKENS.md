@@ -223,7 +223,7 @@ Tüm elementler otomatik olarak focus outline'larını gizler ve focus-visible k
 }
 
 .card-interactive:active {
-  @apply scale-[1.0];
+  @apply scale-100;
 }
 ```
 

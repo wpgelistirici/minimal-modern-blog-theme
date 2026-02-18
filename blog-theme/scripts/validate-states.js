@@ -93,6 +93,7 @@ function validateFocusRing() {
     }
     
     // Check contrast for focus ring on white background
+    // WCAG 2.1 SC 1.4.11 (Non-text Contrast) requires 3:1 for UI components
     if (states.focusRing.color.light) {
       const contrast = getContrastRatio(states.focusRing.color.light, '#ffffff');
       if (contrast < 3) {
@@ -101,6 +102,7 @@ function validateFocusRing() {
     }
     
     // Check contrast for focus ring on black background
+    // WCAG 2.1 SC 1.4.11 (Non-text Contrast) requires 3:1 for UI components
     if (states.focusRing.color.dark) {
       const contrast = getContrastRatio(states.focusRing.color.dark, '#0a0a0a');
       if (contrast < 3) {
@@ -171,6 +173,7 @@ function validateStateColors(component, state, mode, config) {
   }
   
   // Check contrast between foreground and background
+  // WCAG 2.1 SC 1.4.3 (Contrast Minimum) requires 4.5:1 for normal text, 3:1 for large text (18pt+ or 14pt+ bold)
   if (config.foreground && config.background && 
       config.foreground !== 'transparent' && config.background !== 'transparent') {
     const contrast = getContrastRatio(config.foreground, config.background);
@@ -184,42 +187,10 @@ function validateStateColors(component, state, mode, config) {
   }
 }
 
-// Validate transition and easing
-function validateTransitionAndEasing() {
-  console.log('\n✓ Validating transition and easing...');
-  
-  if (!states.transition) {
-    errors.push('Missing transition configuration');
-  } else {
-    const requiredDurations = ['fast', 'normal', 'slow'];
-    for (const duration of requiredDurations) {
-      if (!states.transition[duration]) {
-        errors.push(`Missing transition.${duration}`);
-      } else if (!/^\d+ms$/.test(states.transition[duration])) {
-        errors.push(`Invalid transition.${duration} format: ${states.transition[duration]}`);
-      }
-    }
-  }
-  
-  if (!states.easing) {
-    errors.push('Missing easing configuration');
-  } else {
-    const requiredEasings = ['default', 'in', 'out', 'inOut', 'spring'];
-    for (const easing of requiredEasings) {
-      if (!states.easing[easing]) {
-        errors.push(`Missing easing.${easing}`);
-      } else if (!/^cubic-bezier\([\d.]+,\s*[\d.]+,\s*[\d.]+,\s*[\d.]+\)$/.test(states.easing[easing])) {
-        errors.push(`Invalid easing.${easing} format: ${states.easing[easing]}`);
-      }
-    }
-  }
-}
-
 // Run all validations
 console.log('🔍 Validating state tokens...');
 validateFocusRing();
 validateComponentStates();
-validateTransitionAndEasing();
 
 // Report results
 console.log('\n📊 Validation Results:');

@@ -5,7 +5,8 @@
     "color": {
       "light": "#91b3d1",
       "dark": "#7895ba"
-    }
+    },
+    "_note": "Focus ring colors should match primary-300 (light) and primary-400 (dark) from colors.json. Update manually if primary colors change."
   },
   "button": {
     "default": {
@@ -348,17 +349,5 @@
         "underline": "transparent"
       }
     }
-  },
-  "transition": {
-    "fast": "120ms",
-    "normal": "220ms",
-    "slow": "420ms"
-  },
-  "easing": {
-    "default": "cubic-bezier(0.4, 0, 0.2, 1)",
-    "in": "cubic-bezier(0.4, 0, 1, 1)",
-    "out": "cubic-bezier(0, 0, 0.2, 1)",
-    "inOut": "cubic-bezier(0.4, 0, 0.2, 1)",
-    "spring": "cubic-bezier(0.22, 1, 0.36, 1)"
   }
 }

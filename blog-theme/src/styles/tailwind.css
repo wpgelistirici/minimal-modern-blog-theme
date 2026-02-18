@@ -41,13 +41,21 @@
     @apply bg-surface-background text-surface-foreground;
   }
   
-  /* Remove default focus outlines, we use focus-visible instead */
-  *:focus {
-    outline: none;
+  /* Remove default focus outlines only when :focus-visible is supported */
+  @supports selector(:focus-visible) {
+    *:focus {
+      outline: none;
+    }
   }
   
-  /* Ensure focus-visible rings are prominent for keyboard navigation */
-  *:focus-visible {
+  /* Ensure focus-visible rings are prominent for keyboard navigation on interactive elements */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible,
+  [tabindex]:focus-visible {
     @apply ring-2 ring-state-focus-ring ring-offset-2 ring-offset-surface-background;
   }
 }
@@ -115,7 +123,7 @@
   }
   
   .badge-interactive {
-    @apply focus-visible:ring-2 focus-visible:ring-state-focus-ring focus-visible:ring-offset-1;
+    @apply focus-visible:ring-2 focus-visible:ring-state-focus-ring focus-visible:ring-offset-2;
   }
   
   .badge-interactive:hover {
@@ -142,7 +150,25 @@
     .btn:hover:not(:disabled),
     .card-interactive:hover,
     .badge-interactive:hover {
-      @apply transform-none shadow-none;
+      @apply transform-none scale-100 shadow-none border-surface-border;
+    }
+  }
+  
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .btn:hover:not(:disabled) {
+      /* Remove scale animation for users who prefer reduced motion */
+      @apply scale-100;
+    }
+
+    .btn:active:not(:disabled) {
+      /* Avoid additional scaling on active state */
+      @apply scale-100;
+    }
+
+    .card-interactive:hover {
+      /* Keep hover styling but neutralize scale */
+      @apply scale-100;
     }
   }
 }

@@ -29,9 +29,6 @@ export default {
       ringOffsetWidth: {
         'DEFAULT': states.focusRing.offset,
       },
-      ringColor: {
-        'DEFAULT': states.focusRing.color.light,
-      },
       ringOffsetColor: {
         'DEFAULT': 'transparent',
       },
@@ -275,7 +272,7 @@ export default {
       pattern: /ring-offset-(0|1|2|4|8)/,
     },
     {
-      pattern: /ring-(primary|error|success|warning|info)-(300|DEFAULT)/,
+      pattern: /ring-(primary|error|success|warning|info)(-300|-DEFAULT)?/,
     },
     {
       pattern: /ring-state-focus-ring/,
@@ -283,6 +280,8 @@ export default {
   ],
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
   ],
 }
