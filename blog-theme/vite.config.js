@@ -22,6 +22,7 @@ export default defineConfig({
         responsive: resolve(__dirname, 'src/pages/responsive-test.html'),
         'component-validation': resolve(__dirname, 'src/pages/component-validation.html'),
         'layout-test': resolve(__dirname, 'src/pages/layout-test.html'),
+        'header-test': resolve(__dirname, 'src/pages/header-test.html'),
       }
     }
   },

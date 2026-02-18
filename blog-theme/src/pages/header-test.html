@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Header Component Test | Minimal Modern Blog Theme</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@600;700&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="../styles/tailwind.css">
+</head>
+<body class="bg-surface-background text-surface-foreground font-body antialiased">
+
+  <!-- Header Component -->
+  <header 
+    class="header sticky top-0 z-50 bg-primary-50 shadow-sm
+           transition-shadow duration-normal ease-default">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a 
+          href="/" 
+          class="logo flex items-center gap-2 text-h4 font-heading text-primary-600 
+                 transition-colors duration-normal ease-default
+                 hover:text-primary-700
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm"
+          aria-label="Homepage">
+          <span>Blog</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav 
+          class="hidden md:flex items-center gap-6"
+          aria-label="Main navigation">
+          <a 
+            href="/" 
+            class="nav-link text-body font-body text-primary-600
+                   transition-colors duration-normal ease-default
+                   hover:text-primary-700 hover:underline underline-offset-4
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm"
+            aria-current="page">
+            Home
+          </a>
+          <a 
+            href="/blog.html" 
+            class="nav-link text-body font-body text-primary-600
+                   transition-colors duration-normal ease-default
+                   hover:text-primary-700 hover:underline underline-offset-4
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm">
+            Blog
+          </a>
+          <a 
+            href="/about.html" 
+            class="nav-link text-body font-body text-primary-600
+                   transition-colors duration-normal ease-default
+                   hover:text-primary-700 hover:underline underline-offset-4
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm">
+            About
+          </a>
+          <a 
+            href="/contact.html" 
+            class="nav-link text-body font-body text-primary-600
+                   transition-colors duration-normal ease-default
+                   hover:text-primary-700 hover:underline underline-offset-4
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:rounded-sm">
+            Contact
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-toggle"
+          type="button"
+          class="mobile-menu-toggle md:hidden inline-flex items-center justify-center p-2 rounded-md
+                 text-primary-600 bg-transparent
+                 transition-colors duration-normal ease-out
+                 hover:bg-primary-100 hover:text-primary-700
+                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu">
+          <!-- Hamburger Icon -->
+          <svg 
+            class="hamburger-icon w-6 h-6 transition-transform duration-normal ease-out" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path 
+              class="hamburger-line-top"
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M4 6h16"/>
+            <path 
+              class="hamburger-line-middle"
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M4 12h16"/>
+            <path 
+              class="hamburger-line-bottom"
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div 
+        id="mobile-menu"
+        class="mobile-menu md:hidden hidden overflow-hidden transition-all duration-normal ease-out"
+        role="navigation"
+        aria-label="Mobile navigation">
+        <nav class="py-4 space-y-2">
+          <a 
+            href="/" 
+            class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
+                   transition-colors duration-normal ease-default
+                   hover:bg-primary-100 hover:text-primary-700
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+            aria-current="page">
+            Home
+          </a>
+          <a 
+            href="/blog.html" 
+            class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
+                   transition-colors duration-normal ease-default
+                   hover:bg-primary-100 hover:text-primary-700
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2">
+            Blog
+          </a>
+          <a 
+            href="/about.html" 
+            class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
+                   transition-colors duration-normal ease-default
+                   hover:bg-primary-100 hover:text-primary-700
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2">
+            About
+          </a>
+          <a 
+            href="/contact.html" 
+            class="mobile-nav-link block px-4 py-2 text-body font-body text-primary-600 rounded-md
+                   transition-colors duration-normal ease-default
+                   hover:bg-primary-100 hover:text-primary-700
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2">
+            Contact
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 md:px-6 py-12">
+    <section class="mb-16">
+      <h1 class="text-h1 font-heading mb-6">Header Component Test</h1>
+      <p class="text-body mb-6 text-surface-mutedForeground">
+        This page demonstrates the Header component with sticky positioning, responsive navigation, and mobile menu toggle.
+      </p>
+
+      <!-- Test Sections -->
+      <div class="space-y-12">
+        <!-- Design Tokens Section -->
+        <div class="bg-surface-card border border-surface-border rounded-lg p-6 shadow-md">
+          <h2 class="text-h3 font-heading mb-4">Design System Tokens Applied</h2>
+          <div class="space-y-3 text-body font-body">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-500 text-white text-caption font-semibold">✓</span>
+              <div>
+                <strong>Background:</strong> <code class="px-2 py-1 bg-neutral-100 rounded text-caption font-mono">bg-primary-50</code> (#f0f4f8)
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-500 text-white text-caption font-semibold">✓</span>
+              <div>
+                <strong>Shadow:</strong> <code class="px-2 py-1 bg-neutral-100 rounded text-caption font-mono">shadow-sm</code> (0 1px 2px 0 rgba(30,34,40,0.04))
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-500 text-white text-caption font-semibold">✓</span>
+              <div>
+                <strong>Logo Typography:</strong> <code class="px-2 py-1 bg-neutral-100 rounded text-caption font-mono">text-h4</code> (1.44rem/600)
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-500 text-white text-caption font-semibold">✓</span>
+              <div>
+                <strong>Logo Font:</strong> <code class="px-2 py-1 bg-neutral-100 rounded text-caption font-mono">font-heading</code> ('Inter', sans-serif)
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-500 text-white text-caption font-semibold">✓</span>
+              <div>
+                <strong>Logo Color:</strong> <code class="px-2 py-1 bg-neutral-100 rounded text-caption font-mono">text-primary-600</code> (#3a4c6c)
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-500 text-white text-caption font-semibold">✓</span>
+              <div>
+                <strong>Transition:</strong> <code class="px-2 py-1 bg-neutral-100 rounded text-caption font-mono">duration-normal</code> (220ms) + <code class="px-2 py-1 bg-neutral-100 rounded text-caption font-mono">ease-out</code>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-500 text-white text-caption font-semibold">✓</span>
+              <div>
+                <strong>Focus Ring:</strong> <code class="px-2 py-1 bg-neutral-100 rounded text-caption font-mono">ring-2 ring-primary-300 ring-offset-2</code>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="bg-surface-card border border-surface-border rounded-lg p-6 shadow-md">
+          <h2 class="text-h3 font-heading mb-4">Features</h2>
+          <ul class="space-y-3 text-body font-body list-disc list-inside">
+            <li><strong>Sticky positioning:</strong> Header stays at the top when scrolling</li>
+            <li><strong>Responsive:</strong> Desktop horizontal nav, mobile hamburger menu</li>
+            <li><strong>Keyboard accessible:</strong> Full keyboard navigation support (Tab, Shift+Tab, Enter, Escape)</li>
+            <li><strong>Focus trap:</strong> Focus stays within mobile menu when open</li>
+            <li><strong>ARIA labels:</strong> Proper semantic markup and ARIA attributes</li>
+            <li><strong>Smooth animations:</strong> Hamburger icon animates to X when menu opens</li>
+          </ul>
+        </div>
+
+        <!-- Keyboard Navigation Guide -->
+        <div class="bg-info/5 border border-info rounded-lg p-6 shadow-md">
+          <h2 class="text-h3 font-heading text-info mb-4">Keyboard Navigation Guide</h2>
+          <div class="space-y-2 text-body font-body">
+            <p><kbd class="px-2 py-1 bg-neutral-200 rounded text-caption font-mono">Tab</kbd> - Navigate forward through links and buttons</p>
+            <p><kbd class="px-2 py-1 bg-neutral-200 rounded text-caption font-mono">Shift+Tab</kbd> - Navigate backward</p>
+            <p><kbd class="px-2 py-1 bg-neutral-200 rounded text-caption font-mono">Enter</kbd> - Activate focused link or button</p>
+            <p><kbd class="px-2 py-1 bg-neutral-200 rounded text-caption font-mono">Escape</kbd> - Close mobile menu (when open)</p>
+          </div>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="space-y-6">
+          <h2 class="text-h2 font-heading">Scroll Test Content</h2>
+          <p class="text-body text-surface-mutedForeground">
+            Scroll down to see the sticky header in action. The header will remain at the top of the viewport as you scroll.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="h-64 bg-primary-50 rounded-lg flex items-center justify-center">
+              <p class="text-h4 font-heading text-primary-600">Scroll Section 1</p>
+            </div>
+            <div class="h-64 bg-secondary-50 rounded-lg flex items-center justify-center">
+              <p class="text-h4 font-heading text-secondary-600">Scroll Section 2</p>
+            </div>
+            <div class="h-64 bg-accent-50 rounded-lg flex items-center justify-center">
+              <p class="text-h4 font-heading text-accent-600">Scroll Section 3</p>
+            </div>
+            <div class="h-64 bg-primary-50 rounded-lg flex items-center justify-center">
+              <p class="text-h4 font-heading text-primary-600">Scroll Section 4</p>
+            </div>
+            <div class="h-64 bg-secondary-50 rounded-lg flex items-center justify-center">
+              <p class="text-h4 font-heading text-secondary-600">Scroll Section 5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-card border-t border-surface-border py-8 mt-20">
+    <div class="container mx-auto px-4 md:px-6">
+      <p class="text-body-sm text-surface-mutedForeground text-center">
+        Header Component Test Page | Minimal Modern Blog Theme
+      </p>
+    </div>
+  </footer>
+
+  <!-- HeaderMenu JavaScript -->
+  <script type="module" src="../components/HeaderMenu.js"></script>
+</body>
+</html>
