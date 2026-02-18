@@ -16,6 +16,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/pages/index.html'),
         typography: resolve(__dirname, 'src/pages/typography-test.html'),
+        tokens: resolve(__dirname, 'src/pages/tokens-test.html'),
       }
     }
   },

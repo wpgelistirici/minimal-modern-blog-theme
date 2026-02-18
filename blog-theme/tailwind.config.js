@@ -1,5 +1,8 @@
 import colors from './src/styles/tokens/colors.json' with { type: 'json' };
 import typography from './src/styles/tokens/typography.json' with { type: 'json' };
+import spacing from './src/styles/tokens/spacing.json' with { type: 'json' };
+import borders from './src/styles/tokens/borders.json' with { type: 'json' };
+import shadows from './src/styles/tokens/shadows.json' with { type: 'json' };
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -11,6 +14,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      spacing: spacing.spacing,
+      borderRadius: borders.borderRadius,
+      boxShadow: shadows.boxShadow,
       fontFamily: {
         heading: ['Inter', 'sans-serif'],
         body: ['IBM Plex Sans', 'sans-serif'],
@@ -167,6 +173,33 @@ export default {
     },
     {
       pattern: /border-surface-(background|foreground|card|cardForeground|border|muted|mutedForeground)/,
+    },
+    // Ensure spacing utilities are generated
+    {
+      pattern: /p[trblxy]?-(0|1|2|3|4|5|6|8|10|12|16|20|24)/,
+    },
+    {
+      pattern: /m[trblxy]?-(0|1|2|3|4|5|6|8|10|12|16|20|24)/,
+    },
+    {
+      pattern: /gap-(0|1|2|3|4|5|6|8|10|12|16|20|24)/,
+    },
+    {
+      pattern: /space-[xy]-(0|1|2|3|4|5|6|8|10|12|16|20|24)/,
+    },
+    // Ensure border radius utilities are generated
+    {
+      pattern: /rounded-(none|sm|md|lg|xl|full)/,
+    },
+    {
+      pattern: /rounded-[trbl]-(none|sm|md|lg|xl|full)/,
+    },
+    {
+      pattern: /rounded-[trbl][trbl]-(none|sm|md|lg|xl|full)/,
+    },
+    // Ensure shadow utilities are generated
+    {
+      pattern: /shadow-(sm|md|lg|xl)/,
     },
   ],
   plugins: [

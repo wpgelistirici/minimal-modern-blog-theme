@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "validate:colors": "node scripts/validate-colors.js",
     "validate:typography": "node scripts/validate-typography.js",
-    "validate:all": "npm run validate:colors && npm run validate:typography"
+    "validate:tokens": "node scripts/validate-tokens.js",
+    "validate:all": "npm run validate:colors && npm run validate:typography && npm run validate:tokens"
   },
   "keywords": [
     "blog",
