@@ -283,12 +283,12 @@ function runTests() {
     failed++;
   }
 
-  // Test 20: All token files have proper JSON structure
+  // Test 20: All token files have proper JSON structure with metadata
   try {
-    assert.ok(primitives.$schema || primitives.$id || true, 'Primitives has metadata');
-    assert.ok(aliases.$schema || aliases.$id || true, 'Aliases has metadata');
-    assert.ok(semantic.$schema || semantic.$id || true, 'Semantic has metadata');
-    console.log('✓ Test 20: Token files have proper structure');
+    assert.ok(primitives.$schema || primitives.$id, 'Primitives should have $schema or $id');
+    assert.ok(aliases.$schema || aliases.$id, 'Aliases should have $schema or $id');
+    assert.ok(semantic.$schema || semantic.$id, 'Semantic should have $schema or $id');
+    console.log('✓ Test 20: Token files have proper structure with metadata');
     passed++;
   } catch (error) {
     console.error('✗ Test 20 Failed:', error.message);
