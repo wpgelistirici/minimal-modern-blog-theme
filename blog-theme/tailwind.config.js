@@ -1,4 +1,4 @@
-import colors from './src/styles/tokens/colors.json' assert { type: 'json' };
+import colors from './src/styles/tokens/colors.json' with { type: 'json' };
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -23,15 +23,15 @@ export default {
         warning: colors.semantic.warning,
         info: colors.semantic.info,
         
-        // Surface aliases (light mode)
+        // Surface aliases (use CSS variables for dark mode support)
         surface: {
-          background: colors.surface.light.background,
-          foreground: colors.surface.light.foreground,
-          card: colors.surface.light.card,
-          cardForeground: colors.surface.light.cardForeground,
-          border: colors.surface.light.border,
-          muted: colors.surface.light.muted,
-          mutedForeground: colors.surface.light.mutedForeground,
+          background: 'rgb(var(--color-surface-background) / <alpha-value>)',
+          foreground: 'rgb(var(--color-surface-foreground) / <alpha-value>)',
+          card: 'rgb(var(--color-surface-card) / <alpha-value>)',
+          cardForeground: 'rgb(var(--color-surface-cardForeground) / <alpha-value>)',
+          border: 'rgb(var(--color-surface-border) / <alpha-value>)',
+          muted: 'rgb(var(--color-surface-muted) / <alpha-value>)',
+          mutedForeground: 'rgb(var(--color-surface-mutedForeground) / <alpha-value>)',
         },
       },
     },
